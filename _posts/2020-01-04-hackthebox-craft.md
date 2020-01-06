@@ -201,8 +201,7 @@ It was my first writeup about HackThebox, I hope you enjoyed!
 
 Feedback is welcome.
 
-![](img/1__hTnIRaCf103wKz1rU1__SUw.png)
-
+<script src="https://www.hackthebox.eu/badge/94787"></script>
 ### References
 
 1\. http://vipulchaskar.blogspot.com/2012/10/exploiting-eval-function-in-python.html  

@@ -1,0 +1,226 @@
+I"m$<h1 id="crafthackthebox">Craft — hackthebox</h1>
+
+<p>This is a write-up on how I solved craft from HacktheBox.</p>
+
+<p><img src="img/1__hkyydqOLVEybt__rUpz3S4w.png" alt="" /></p>
+
+<p>This is a write-up on how I solved craft from HacktheBox.</p>
+
+<p><a href="http://hackthebox.eu/">Hack the Box</a> is an online platform to test and advance your skills in penetration testing and cybersecurity.</p>
+
+<h3 id="about-thisbox">About this box:</h3>
+
+<p>One of my favorite boxes from HackTheBox, very real-world applicable. There are lots of steps, but it’s very straightforward and you probably have already found your next step before you know how to use it, we will see a lot of common mistakes, this one really forces you to understand all the pieces of the web-app it is running in order to get user. So it feels very real.</p>
+
+<p>Actually, Craft was my first Medium level box.</p>
+
+<h3 id="recon">Recon:</h3>
+
+<p>Use Nmap to scan the target ports:</p>
+
+<p><img src="img/1__E__jspoUOY6Qjo6dHZcUSGg.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>nmap</strong> Network exploration tool and security / port scanner<br />
+<strong>-sV</strong> (Version detection) <br />
+<strong>-sC</strong> Performs a script scan using the default set of scripts.</p>
+</blockquote>
+
+<p>Only two ports are opened 22 and 443. We can directly access to <a href="https://10.10.10.110">https://10.10.10.110</a> and see what we get.</p>
+
+<p><img src="img/1__FcctlriPFrdSfZebLMmSKg.png" alt="" /></p>
+
+<p>So, we got a simple page, if we navigate to the source we get two URL.</p>
+
+<p>https://api.craft.htb/api/<br />
+https://gogs.craft.htb/</p>
+
+<p><img src="img/1__LhX__gzFJRjPUrvTMzAV3Xg.png" alt="" /></p>
+
+<p>To access these URLs we need to add them in the host file.</p>
+
+<p>Open hosts file with your favorite editor and add the IP address and URLs:</p>
+
+<p>sudo vim /etc/hosts</p>
+
+<p><img src="img/1__4W2BrGIzQBGOqBJtPjid8Q.png" alt="" /></p>
+
+<p>We have craft API:</p>
+
+<p><img src="img/1__412bo93DszQhZLPOxin44Q.png" alt="" /></p>
+
+<p>And also we have “A painless self-hosted Git service.” — <a href="https://gogs.io">GOGS</a>, where craft-API source code is hosted:</p>
+
+<p><img src="img/1__rBCr2Z7KLsWZIXTUYL8wDw.png" alt="" /></p>
+
+<p>And we got a flask based web application:</p>
+
+<p><img src="img/1__IyCTfAPcROe23vC4jrf59A.png" alt="" /></p>
+
+<h3 id="lets-dive-intocode">Let’s dive into code</h3>
+
+<p>If we look at API modules, we will see ‘eval’ function in</p>
+
+<p>craft_api/api/brew/endpoints/brew.py</p>
+
+<p><img src="img/1__FMgu3zS__YZ__2DFwUmaIYUQ.png" alt="" /></p>
+
+<p>Eval is a very dangerous function, we can use it to <a href="http://vipulchaskar.blogspot.com/2012/10/exploiting-eval-function-in-python.html">execute System command</a>.</p>
+
+<p>However, when a user is able to provide the input, <code class="highlighter-rouge">eval()</code> will execute anything that’s fed to it. A user could build a string where additional python code is executed, such as erasing all files on the system or spawning a reverse shell. Therefore, <code class="highlighter-rouge">eval()</code> should never be used to process user input.</p>
+
+<p>We see that <code class="highlighter-rouge">eval()</code> is used to make sure the ‘abv’ value submitted by the user is less than 1.0.</p>
+
+<p>It expects something like this:</p>
+
+<p><img src="img/1__lHPGt3dKAd__Zy3pHzfs2PA.png" alt="" /></p>
+
+<p>We can exploit this by sending the following POST request to the API, which would open a reverse shell to the device with IP 10.10.15.130 on Port 9999.</p>
+
+<p><img src="img/1__DopAYt2rL9te4TOZha4PEA.png" alt="" /></p>
+
+<p>BUT, this won’t spawn the reverse shell, To trigger the eval function, we need to send an authorized request on brew endpoint.</p>
+
+<h3 id="get-reverseshell">Get reverse shell</h3>
+
+<p>For authorization, we need the username and password. Random/Default one does not work. Let’s continue looking at the Gogs repository.</p>
+
+<p><img src="img/1__mwBl__Lo5P3MmUPYX1uBb7g.png" alt="" /></p>
+
+<p>If we look at the commit history, we will see that Dinesh has no idea about cyber hygiene. he left username and password in the history:</p>
+
+<p><img src="img/1__Nres3klQy2Jsrp1tIy837w.png" alt="" /></p>
+
+<p>Let’s generate token and send an authorized request on the API:</p>
+
+<p><img src="img/1__cSWQfXQ8fnP__IeIyAG4AbA.png" alt="[https://gist.github.com/ls4cfk/ab6c1115f3f3da247b65041e93771486#file-exploit-py](https://gist.github.com/ls4cfk/ab6c1115f3f3da247b65041e93771486#file-exploit-py)" />
+<a href="https://gist.github.com/ls4cfk/ab6c1115f3f3da247b65041e93771486#file-exploit-py">https://gist.github.com/ls4cfk/ab6c1115f3f3da247b65041e93771486#file-exploit-py</a></p>
+
+<p>First set up a listener on port 9999:</p>
+
+<p>nc -nvlp 9999</p>
+
+<p><img src="img/1__KMx__MSim40__vPUC1seB4Mg.png" alt="" /></p>
+
+<p>And run our python script:</p>
+
+<p><img src="img/1__loU8lFKf__CGJhWPg1mJ3PQ.png" alt="" /></p>
+
+<p>We got the shell!</p>
+
+<p>Wait a sec! we are root? Where is the flag?</p>
+
+<p><img src="img/1__X9CnwxFuK6DA__M3GbAuO__Q.png" alt="" /></p>
+
+<p>We are in jail! It’s a docker container.</p>
+
+<p><img src="img/1__TnB8FxJ2fBZaFCAIcAuUCA.png" alt="" /></p>
+
+<p>Okay, let’s look at what we got.</p>
+
+<p>We have the same repository but the difference is that we got credentials of the MySQL</p>
+
+<p><img src="img/1__aWtFiFyADeaE9T1KCX7uaQ.png" alt="" /></p>
+
+<p>From <code class="highlighter-rouge">database/models.py</code> we know that there is 2 table in our database.</p>
+
+<p><img src="img/1__AzAbQynb3A6USXsUYJ__4Zg.png" alt="" /></p>
+
+<p>We can modify <code class="highlighter-rouge">dbtest.py</code> code and dump all the content from the “user” table</p>
+
+<p><img src="img/1__Un____E80BmRuts1LK3N0GIw.png" alt="" /></p>
+
+<p>Change SQL query to:</p>
+
+<p>sql = “SELECT * FROM `user`”</p>
+
+<p>And to get all row:</p>
+
+<p>result = cursor.fetchone() <br />
+ <strong>=&gt;</strong>result = cursor.fetchall()</p>
+
+<p>We get new credentials!</p>
+
+<p><img src="img/1__WfQEpeMx__nX7oMQcjA9mrw.png" alt="" /></p>
+
+<p>Use those credentials to log in on Gogs, Ebachman’s credentials do not work but we can log in as a Gilfoyle.</p>
+
+<p><img src="img/1__4Klj1o54STmK1u6f9y6ZhA.png" alt="" /></p>
+
+<p>Oh man, Gilfoyle has a secret repository that contains a .ssh folder. Why him? he is my idol! c’mon… it should be Denish 🤣</p>
+
+<p><img src="img/1__lofhUd5kFc6wOXxfjfOzYg.png" alt="" /></p>
+
+<p>We have a public and private key:</p>
+
+<p><img src="img/1__JwprPCamCvs46E65d56yRA.png" alt="" /></p>
+
+<p>Okay, grab id_rsa and ssh via Gilfoyle’s account:</p>
+
+<p>ssh -i id_rsa gilfoyle@10.10.10.110</p>
+
+<p><img src="img/1__QoTDsEEyahUTHMTHTwxHsQ.png" alt="" /></p>
+
+<p>Oh crap, it needs the passphrase. I tried to crack it with John but it took me a while and realized that it can be the password of Gilfoyle’s account.</p>
+
+<blockquote>
+  <p>Use ‘ZEU3N8WNM2rh4T’ as passphrase and we are in!</p>
+</blockquote>
+
+<p><img src="img/1__toQLazmPkh6ipfIw5wcnCw.png" alt="" /></p>
+
+<p>Okay, we can read user.txt and submit it for 15 points:</p>
+
+<p><img src="img/1__OMTjZx9WoS39HIUTbcvLnA.png" alt="" /></p>
+
+<h3 id="privilege-escalation">Privilege escalation</h3>
+
+<p>From the secret repository, we know that we have vault on our box</p>
+
+<p><img src="img/1____5O8l8fWZ0t7Pnny__tEXIg.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>Vault</strong> is a tool for securely accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, SSH keys, or certificates. <strong>Vault</strong> provides a unified interface to any secret while providing tight access control and recording a detailed audit log.</p>
+</blockquote>
+
+<blockquote>
+  <p>— <a href="https://www.vaultproject.io/docs/what-is-vault/index.html">https://www.vaultproject.io</a></p>
+</blockquote>
+
+<p>In the vault directory, we also have secrets.sh file</p>
+
+<p><img src="img/1__YM__UhT2aO8roW5TezmodtA.png" alt="" /></p>
+
+<p>It appears as though he’s running vault as root.</p>
+
+<p><img src="img/1__CLuk4GxO__otACGLYBuijdA.png" alt="" /></p>
+
+<p>With the following command, we can generate OTP(one-time password) for SSH.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vault write ssh/creds/root_otp ip=10.10.10.110
+</code></pre></div></div>
+
+<p>And we are root!</p>
+
+<p><img src="img/1__K9DN__IbEvFWlBKDn__XAm8Q.png" alt="" /></p>
+
+<p>It was my first writeup about HackThebox, I hope you enjoyed!</p>
+
+<p>Feedback is welcome.</p>
+
+<script src="https://www.hackthebox.eu/badge/94787"></script>
+
+<h3 id="references">References</h3>
+
+<p>1. http://vipulchaskar.blogspot.com/2012/10/exploiting-eval-function-in-python.html<br />
+2. http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet/<br />
+3. <a href="https://www.vaultproject.io/docs/commands/ssh.html">https://www.vaultproject.io/docs/commands/ssh.html</a></p>
+
+<p>4. <a href="https://carbon.now.sh/">https://carbon.now.sh/</a></p>
+
+<p>By <a href="https://medium.com/@aleksikistauri">Aleksi Kistauri</a> on <a href="https://medium.com/p/fd1dd7842586">January 4, 2020</a>.</p>
+
+<p><a href="https://medium.com/@aleksikistauri/craft-hackthebox-fd1dd7842586">Canonical link</a></p>
+
+<p>Exported from <a href="https://medium.com">Medium</a> on January 6, 2020.</p>
+:ET

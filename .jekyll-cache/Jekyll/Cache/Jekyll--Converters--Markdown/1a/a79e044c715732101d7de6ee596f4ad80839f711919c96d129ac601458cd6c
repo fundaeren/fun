@@ -1,0 +1,232 @@
+I"�A<h1 id="pcap-analysis">Pcap Analysis</h1>
+
+<p>საქართველოში ყოველწლიურად ტარტდება კიბერ ოლიმპიადა(cybercube), რომელიც რამდენიმე ტიპისი სავარჯიშოს მოიცავ. დღეს განვიხილავ ერთ-ერთი…</p>
+
+<p>საქართველოში ყოველწლიურად ტარტდება კიბერ ოლიმპიადა(<strong>cybercube</strong>), რომელიც რამდენიმე ტიპის სავარჯიშოს მოიცავს.</p>
+
+<p>დღეს განვიხილავ ერთ-ერთი კატეგორიის, ქსელური ნაკადის ანალიზის, რამდენიმე ამოცანას და ვეცდები, თითოეული ნაბიჯი დეტალურად ავხსნა.</p>
+
+<p>კიბერ ოლიმპიადაზე გამოყენებული სავარჯიშოები შეგიძლიათ <a href="https://cyber-lab.tech/geo/challenges"><strong>cyber-lab</strong></a> — ზე იხილოთ.</p>
+
+<p>ჩვენი პირველი ამოცანა იქნება <strong>Heist2</strong>, რომლის პირობაც შემდეგია:</p>
+
+<p><img src="img/1__sOUQr9L54zZck__Q0L0z7zA.png" alt="" /></p>
+
+<p>მოცემული გვაქვს <strong>PCAPNG</strong> ფაილი, რომელზე სამუშაოდაც, <strong>Heist2</strong> ის მაგალითზე, <strong>wireshark</strong>-ს გამოვიყენებ, ის იდეალური ხელსაწყოა ქსელური ნაკადის ანალიზისთვის. <a href="https://www.wireshark.org/download.html"><strong>wireshark</strong></a> ის დაყენება ძალიან მარტივია, ყველა პლატფორმაზეა ხელმისაწვდომი.</p>
+
+<p><strong>wireshark</strong> — ის დაყენების შემდეგ გახსენით ამოცანა. ის შემდეგნაირად გამოიყურება:</p>
+
+<p><img src="img/1__pEqjkyiZ96Z6Mtg__nkggKQ.png" alt="" /></p>
+
+<p>სანამ უშუალოდ <strong>PCAP</strong> ზე გადავალთ, ვნახოთ ამოცანის პირველი კითხვა:</p>
+
+<p><img src="img/1__AvXd0bK__tuQhMsChnm3Szg.png" alt="" /></p>
+
+<p><strong>IP</strong> მისამართის გაგება რამდენიმე გზით შეგვიძლია, ამ შემთხვევაში შეგვიძლია ვნახოთ სტატისტიკა, თუ რომელ <strong>IP</strong> მისამართს რა წილი უკავია. <strong>Statistics =&gt; IPv4 =&gt; Statistics =&gt; All Addresses</strong></p>
+
+<p><img src="img/1__Lk5vs6UKubX28A7RZKeqVA.png" alt="" /></p>
+
+<p><strong>192.168.2.25</strong> დიდ ადგილს იკავებს, მოდი გავყვეთ მას და გავიგოთ სად და რაში ფიგურირებს. ამოცანის მეორე კითხვიდან ვასკვნით, რომ დამნაშავეები ერთმანეთს მეილის საშუალებით უკავშირებიან. ჩვენ შეგვიძლია გავფილტროთ მონაცემები და ვნახოთ, ფიგურირებს თუ არა ეს ჩვენი <strong>IP</strong> ბოროტმოქმედების მეილებში.</p>
+
+<p>ინფორმაცია შეგვიძლია შემდეგი ბრძანებით გავფილტროთ, რომელიც გვიჩვენებს მხოლოდ იმ ინფორმაციას სადაც ჩვენი აიპი ფიგურირებს და მას გაფილტრავს <strong>smtp</strong> პროტოკოლის მიხედვით (მეილები იყენებენ მას)</p>
+
+<blockquote>
+  <p><strong>ip.host == 192.168.2.25 &amp;&amp; smtp</strong></p>
+</blockquote>
+
+<p><img src="img/1__gE35PeCejHEnEXUX9fth0Q.png" alt="" /></p>
+
+<p>გამოვიჭირეთ, ეს IP ნამდვილად ჩვენი ბოროტმოქმედისაა, ამასთან ერთად მეორე კითხვის პასუხიც გავიგეთ, 3 მეილი რომელიც მიმოწერაში ფიგურირებს :</p>
+
+<blockquote>
+  <p>dkvatadze@dea.gov.ge, lkhasaia@dea.gov.ge, ltakashvili@dea.gov.ge</p>
+</blockquote>
+
+<p><img src="img/1__WseKyn7AnfhYcgbNrnS4Hw.png" alt="" /></p>
+
+<p>მეილის შიგთავსის ნახვა მარტივად შეგვიძლია:</p>
+
+<p><strong>Rigth click =&gt; Follow = &gt; TCP stream</strong></p>
+
+<p><img src="img/1__JPU6Eg9aBc5fbTiJTH__aGw.png" alt="" /></p>
+
+<p>მეილშიც გვაქვს ტექსტი რომელიც ენკოდირებულია <strong>base64</strong> ით, მისი დეკოდირება მარტივად შეგვიძლია  <a href="https://www.base64decode.org/"><strong>base64decode.org</strong></a>  ით, ასევე ლინუქსის მარტივი ქომანდითაც ¯\_(ツ)_/¯</p>
+
+<p><img src="img/1__Z7tk__Z734t__DgGBPXV2ZmQ.png" alt="" /></p>
+
+<p>მეილის დეკოდირების შემდეგ ცალსახა ხდება მეხუთე ამოცანის პასუხიც, კრიმინალები <strong>skimmer</strong> —ის შეძენას აპირებენ.</p>
+
+<p><img src="img/1__s__nZIOWXPuYAvPZpGSJQrg.png" alt="" /></p>
+
+<p>პირველ მეილში საინტერესო აღარაფერია, გადავიდეთ შემდეგზე (იგივე ნაბიჯები უნდა გაიაროთ რაც პირველზე გავაკეთეთ):</p>
+
+<p><img src="img/1__QIhdBnq1pzOdItwSUzBbwg.png" alt="" /></p>
+
+<p>მეორე მეილით ვიგებთ მესამე კითხვის პასუხს, ბოროტმოქმედები იყენებენ <strong>openstego</strong>-ს რომელიც <strong>steganography</strong>-ის ერთ-ერთი თულია.</p>
+
+<blockquote>
+  <p>შიფრაციის მეთოდით სწორედ <strong>steganography</strong> — ია იქნება</p>
+</blockquote>
+
+<p>ასევე ვიგებთ ენკოდირებისას გამოყენებულ პაროლს — <strong>cali cartel</strong>, ისღა დაგვრჩენია სურათი ვიპოვოთ.</p>
+
+<p>სურათიც მეილშია გაყოლილი, რომელიც დანარჩენი ინფორმაციისავით <strong>base64</strong> ით არის ენკოდირებული.</p>
+
+<p><img src="img/1__OYvps3dV3XnlC6Uom8c7nA.png" alt="" /></p>
+
+<p>ჩვენი ენკოდირებული ტექსტის სურათად გარდასაქმელად შეგვიძლია ონლაინ თულები გამოვიყენოთ, მოვაკოპიროთ მთლიანი ტექსტი და ჩავაფეისთოთ მაგალითად აქ <a href="https://codebeautify.org/base64-to-image-converter"><strong>codebeautify.org</strong></a>, ნუ, უამრავი ასეთი საიტია.</p>
+
+<p>ან ლინუქსით, უფრო მარტივად:</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>**cat secret.txt</td>
+        <td>base64 -D &gt; secret.png**</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<blockquote>
+  <p>სადაც <strong>secret.txt</strong> ის ფაილია რომელიც ჩვენ <strong>base64</strong> ით ენკოდირებულ ტექსტს შეიცავს.</p>
+</blockquote>
+
+<p>ჩვენი base64 იდან ვიღებთ სურათს, რომლის დეკოდირებისთვისაც მიმოწერაში ნახსენები პროგრამა <strong>openstego</strong> შეგვიძლია გამოვიყენოთ.</p>
+
+<p><img src="img/1__QCh7Hcskd33mvdkA5__EK6w.png" alt="" /></p>
+
+<p>როგორც ამოცანის მეოთხე კითხვა გვეუბნება, <strong>openstego</strong>-ს <a href="https://github.com/syvaidya/openstego/releases/tag/openstego-0.7.0"><strong>0.7.0</strong></a>  ვერსია გვჭირდება.</p>
+
+<p><strong>openstego</strong>-ს დაყენების შემდეგ გადავიდეთ <strong>Extract Data</strong> -ზე, პირველ ველში ვუთითებთ ჩვენ სურათს, ხოლო მეორეში მისამართს სადაც გვუსრს, რომ დაექსტრაქტებული მონაცემები გამოიტანოს.</p>
+
+<p>პაროლიც ვიცით — <strong>cali cartel</strong></p>
+
+<p><img src="img/1__HX8AUuhAPdM2negt1WFV6g.png" alt="" /></p>
+
+<p>დაექსპორტების შემდეგ ვიღებთ სურათს, სადაც დროა მოცემული. მეოთხე კითხვის პასუხიც ცალსახა ხდება:</p>
+
+<blockquote>
+  <p><strong>25 dec 2017 23:00</strong></p>
+</blockquote>
+
+<p><strong>P.S.</strong> ვინდოუსზე თუ ხართ, გაფართოება შეუცვალეთ .<strong>txt</strong> ზე, რის შემდეგაც თავისუფლად გახსნით, ან პირდაპირ რომელიმე ტექსტური ედიტორით გახსენით.</p>
+
+<p><img src="img/1__8ckzUgg97__YExjB4tj6GUg.png" alt="" /></p>
+
+<p>დაგვრჩა ბოლო კითხვა და ბოლო მეილი, რომლის შიგთავსიც შემდეგია :</p>
+
+<p><img src="img/1__H55W2hpWjiVpBmmWCeBi0g.png" alt="" /></p>
+
+<p>კოორდინატებს რუკაზე თუ ვნახავთ, დავინახავთ <strong>TBC</strong> ბანკის ბანკომატს, საბოლოო კითხვის პასუხიც გავიგეთ:</p>
+
+<blockquote>
+  <p><strong>TBC</strong></p>
+</blockquote>
+
+<p><img src="img/1__lxSd4rYf7hBGrQ1VHFX6RQ.png" alt="" /></p>
+
+<h3 id="შემდეგი-ამოცანა-covertchannel"><strong>შემდეგი ამოცანა Covert Channel</strong></h3>
+
+<p>მისი პირობა შემდეგია :</p>
+
+<p><img src="img/1__qAIWzVlSTP__seiHB9nlD9w.png" alt="" /></p>
+
+<p>მოდი ამ ამოცანის ამოსახნელად გამოვიყენო ხელსაწყო <strong>tcpdump</strong> რომელის დაყენებაც ლინუქსზე ძალიან მარტივად შეგიძლიათ.</p>
+
+<p>გავხსნათ ჩვენი <strong>PCAP</strong>-ი და ვნახოთ რა არის შიგნით:</p>
+
+<blockquote>
+  <p><strong>tcpdump -X -r covert-channel.pcap</strong></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>-r</strong> ფაილის წასკითხად, <strong>-X</strong> მთლიანი შიგთავსის სანახავად</p>
+</blockquote>
+
+<p><img src="img/1__KJKL1y3EPkoTLd9e6bASiQ.png" alt="" /></p>
+
+<p>ერთი შეხედვით საინტერესო არაფერია, მაგრამ თუ დავაკვირდებით <strong>Ip — 10.10.75.1</strong> დან გაგზავნილი ინფორმაციაში, გვხდება ასოები, რომლებიც ყოველ შემდეგ პაკეტში იცვლება</p>
+
+<p>მოდი გრეპის საშუალებით ვნახოთ ამ <strong>IP</strong> იდან გაგზავნილი პაკეტები:</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>**tcpdump -X -r covert-channel.pcap</td>
+        <td>grep -A1 10.10.75.1.distinct</td>
+        <td>grep -v 10.10.75.1.distinc**t</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<blockquote>
+  <p><strong>-A1</strong> ჩვენი აიპის შემდგომი ხაზის სანახავად, <strong>grep -v 10.10.75.1.distinct</strong> — მხოლოდ შემდგომი ხაზის სანახავად, აიპის გარეშე</p>
+</blockquote>
+
+<p><img src="img/1__wlYh2MBH4gBdZp4cZ__vQHg.png" alt="" /></p>
+
+<p>შეტყობინებაც უკვე შესამჩნევი ხდება, ცალ-ცალკე ასოები, რომ არ ვიწეროთ, როგორც ვინდოუსზე მოგვიწევდა, მოვაშოროთ ზედმეტი ყველაფერი და ვნახოთ ჩვენი შეტყობინება:</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>**tcpdump -X -r covert-channel.pcap</td>
+        <td>grep -A1 10.10.75.1.distinct</td>
+        <td>grep -o ‘\E..(.\{1\}’</td>
+        <td>sed ‘s/E..(//g’</td>
+        <td>tr -d ‘\n’</td>
+        <td>tr ‘.’ ‘ ‘**</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>**grep -o ‘\E..(.\{1\}’</td>
+        <td>sed ‘s/E..(//g’**</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<blockquote>
+  <p>მხოლოდ იმ სიმბოლოს სანახავად რაც ‘<strong>E..(</strong>’ — ს შემდეგ მოდის</p>
+</blockquote>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>**tr -d ‘\n’</td>
+        <td>tr ‘.’ ‘ ‘**</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<blockquote>
+  <p>‘<strong>\n</strong>’ -ს მოსაშორებლად და წერტილის სფეისით შესაცვლელად.</p>
+</blockquote>
+
+<p><img src="img/1__LhU4iFTRyFCP3__SaOblm4Q.png" alt="" /></p>
+
+<p>მივიღეთ ჩვენი შეტყობინებაც — ‘<strong>we will place a bomb at the second floor</strong>’.</p>
+
+<p>სულ ეს იყო, იმედია მოგეწონათ.</p>
+
+<p>კიბერ ოლიმპიადა ძალიან კარგი საშუალებაა ახალი ინფორმაციის შესასწავლად, პირადად მე ბევრი რამ მასწავლა, <a href="https://cyber-lab.tech"><strong>cyber-lab</strong></a> ზე შეგიძლიათ აკეთოთ სავარჯიშოები, რომლებიც გაგაცნობენ რეალურ ინციდენტებს და მსგავსი სავარჯიშოების კეთების ‘აზარტში’ შეგიყვანენ.</p>
+
+<p>By <a href="https://medium.com/@aleksikistauri">Aleksi Kistauri</a> on <a href="https://medium.com/p/d9a32c28c3ca">August 3, 2019</a>.</p>
+
+<p><a href="https://medium.com/@aleksikistauri/pcap-analysis-d9a32c28c3ca">Canonical link</a></p>
+
+<p>Exported from <a href="https://medium.com">Medium</a> on January 6, 2020.</p>
+:ET

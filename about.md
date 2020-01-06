@@ -3,4 +3,4 @@ layout: page
 title: About
 ---
 
-Something about me.
+19 year old kid, who loves Cyber Security.

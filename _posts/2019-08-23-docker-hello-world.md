@@ -1,7 +1,5 @@
 # Docker - Hello world
 
-ავტორები: Aleksi Kistauri, Nikoloz Bokeria
-
 ![](img/1__GU8Zdm__oyCWhxSmDNguxbA.jpeg)
 
 ავტორები: [Aleksi Kistauri](https://medium.com/u/c0fbcc820d6d), [Nikoloz Bokeria](https://medium.com/u/6498150f0037)

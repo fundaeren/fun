@@ -199,8 +199,3 @@ Sweet!, 36 რექვესთზე დავედით. მოდი ჩ�
 
 კიბერ ოლიმპიადა ძალიან კარგი საშუალებაა ახალი ინფორმაციის შესასწავლად, [**cyber-lab**](https://cyber-lab.tech/) ზე შეგიძლიათ აკეთოთ სავარჯიშოები, რომლებიც გაგაცნობენ რეალურ ინციდენტებს, მსგავსი ტიპის ფიშინგ შეტევები უამრავია, ზარალდება ბევრი ადამიანი იმის გამო, რომ არ უკვირდებიან ლინკს სადაც ისინი გადადიან. ¯\\\_(ツ)\_/¯
 
-By [Aleksi Kistauri](https://medium.com/@aleksikistauri) on [August 10, 2019](https://medium.com/p/a6404da4a4df).
-
-[Canonical link](https://medium.com/@aleksikistauri/log-analysis-a6404da4a4df)
-
-Exported from [Medium](https://medium.com) on January 6, 2020.

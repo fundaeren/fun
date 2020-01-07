@@ -115,8 +115,3 @@ Wordpress — ი წარმატებით დაინსტალი
 
 სულ ეს იყო, ვეცადე დეტალურად ამეხსნა ყველაფერი. მადლობა თუ აქამდე ჩამოხვედი და გირჩევ, რომ Education pack — ს ხელახლა გადახედო, უამრავ საინტერესო რაღაცას აღმოაჩენ !
 
-By [Aleksi Kistauri](https://medium.com/@aleksikistauri) on [January 12, 2019](https://medium.com/p/613250c162fb).
-
-[Canonical link](https://medium.com/@aleksikistauri/digitalocean-50-coupon-613250c162fb)
-
-Exported from [Medium](https://medium.com) on January 6, 2020.

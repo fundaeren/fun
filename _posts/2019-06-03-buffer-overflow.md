@@ -212,8 +212,3 @@ cat საშუალებას გვაძლევს ინტერა�
 
 **Follow me for future posts ✌️**
 
-By [Aleksi Kistauri](https://medium.com/@aleksikistauri) on [June 2, 2019](https://medium.com/p/4f4cc46a3508).
-
-[Canonical link](https://medium.com/@aleksikistauri/what-is-buffer-overflow-4f4cc46a3508)
-
-Exported from [Medium](https://medium.com) on January 6, 2020.

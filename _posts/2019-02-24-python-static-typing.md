@@ -100,8 +100,3 @@ Tuple ცოტა უფრო განსხვავებულია რ�
 
 მადლობა პოსტის წაკითხვისთვის. Follow me, for future posts ❤ .
 
-By [Aleksi Kistauri](https://medium.com/@aleksikistauri) on [February 24, 2019](https://medium.com/p/771893e8c9fb).
-
-[Canonical link](https://medium.com/@aleksikistauri/static-typing-in-python-771893e8c9fb)
-
-Exported from [Medium](https://medium.com) on January 6, 2020.

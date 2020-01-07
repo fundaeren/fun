@@ -146,8 +146,3 @@
 
 **Follow me, for future posts ❤ .**
 
-By [Aleksi Kistauri](https://medium.com/@aleksikistauri) on [May 18, 2019](https://medium.com/p/a4d56e92acb5).
-
-[Canonical link](https://medium.com/@aleksikistauri/owasp-tbilisi-ctf-a4d56e92acb5)
-
-Exported from [Medium](https://medium.com) on January 6, 2020.

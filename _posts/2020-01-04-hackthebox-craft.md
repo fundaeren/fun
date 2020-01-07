@@ -210,8 +210,3 @@ Feedback is welcome.
 
 4\. [https://carbon.now.sh/](https://carbon.now.sh/)
 
-By [Aleksi Kistauri](https://medium.com/@aleksikistauri) on [January 4, 2020](https://medium.com/p/fd1dd7842586).
-
-[Canonical link](https://medium.com/@aleksikistauri/craft-hackthebox-fd1dd7842586)
-
-Exported from [Medium](https://medium.com) on January 6, 2020.

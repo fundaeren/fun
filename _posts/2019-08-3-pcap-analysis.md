@@ -152,8 +152,3 @@
 
 კიბერ ოლიმპიადა ძალიან კარგი საშუალებაა ახალი ინფორმაციის შესასწავლად, პირადად მე ბევრი რამ მასწავლა, [**cyber-lab**](https://cyber-lab.tech) ზე შეგიძლიათ აკეთოთ სავარჯიშოები, რომლებიც გაგაცნობენ რეალურ ინციდენტებს და მსგავსი სავარჯიშოების კეთების ‘აზარტში’ შეგიყვანენ.
 
-By [Aleksi Kistauri](https://medium.com/@aleksikistauri) on [August 3, 2019](https://medium.com/p/d9a32c28c3ca).
-
-[Canonical link](https://medium.com/@aleksikistauri/pcap-analysis-d9a32c28c3ca)
-
-Exported from [Medium](https://medium.com) on January 6, 2020.

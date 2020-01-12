@@ -1,0 +1,249 @@
+I"__<h1 id="რა-არის-buffer-overflow">რა არის Buffer Overflow ?</h1>
+
+<p>buffer</p>
+
+<p>რა არის buffer-ი? ის არის გაშვებული პროგრამის მეხსიერების ადგილები, რომლებიც წინასწარ არის რეზერვირებული და გამოიყენება დროებითი მონაცემების შესანახად.</p>
+
+<p><img src="img/1__Ggwl1L1j__ngnb1FGMs8lqw.jpeg" alt="" /></p>
+
+<h3 id="buffer">buffer</h3>
+
+<p>რა არის <strong>buffer</strong>-ი?</p>
+
+<p>ეს არის გაშვებული პროგრამის მეხსიერების ადგილი, რომელიც წინასწარ არის რეზერვირებული და გამოიყენება დროებითი მონაცემების შესანახად. <strong>buffer</strong>-ი წარმოიქმნება პროგრამის გაშვებისას, ინახება <strong>RAM</strong>-ში ხოლო ნადგურდება პროგრამის გათიშვის დროს.</p>
+
+<p>მაგალითად, გვაქვს პროგრამა, რომელიც მომხარებელს ეკითხება სახელს, ინახავს მას ცვალდში სახელად ‘<strong>username</strong>’ და აბრუნებს — ‘<strong>Hello</strong> <strong>username</strong>’.</p>
+
+<p><img src="img/1__7tOE1Nq4lcf52dbJJG47kA.png" alt="" /></p>
+
+<h3 id="ჩავშალოთ-ჩვენიპროგრამა">ჩავშალოთ ჩვენი პროგრამა</h3>
+
+<p><strong>int main()</strong> — განსაზღვრავს ჩვენ მთავარ ფუნქციას</p>
+
+<p><strong>char username[20]</strong> — ეს ის ადგილია სადაც განვსაზღვრავთ ცვლადის სახელს, მაგრამ ამ ხაზში ყველაზე მნიშვნელოვანია <strong>char</strong> …. <strong>[20]</strong> ეს არის ის ადგილი სადაც განვსაზღვრავთ <strong>buffer</strong>-ს ჩვენი ცვლადისთვის, ჩვენ განვუსაზღვრეთ მას ზომა, რომელიც <strong>20</strong> ის ტოლი უნდა იყოს.</p>
+
+<p>დანარჩენი კოდი იღებს მომხარებლის შემოტანილ მნიშვნელობას და პრინტავს მას.</p>
+
+<blockquote>
+  <p><strong>printf(“name : “);<br />
+scanf(“%s”, username);</strong></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>printf(“Hello %s\n”, username);</strong></p>
+</blockquote>
+
+<p>რა შედეგს მივიღებთ თუ ჩვენ პროგრამას დავაკომპილირებთ და გავუშვებთ? ვიღებთ იმ აუთფუთს რასაც ველოდით, არა?</p>
+
+<p><img src="img/1__wAv0cMOkztXdyogIo5xvoA.png" alt="" /></p>
+
+<p>ახლა სანამ <strong>buffer overflow</strong>-ზე გადავალთ გავიგოთ თუ როგორ მუშაობს აპლიკაციის მეხსიერება.</p>
+
+<h3 id="აპლიკაციის-მეხსიერება-stack-ი-და-მეხსიერების-მისამართები">აპლიკაციის მეხსიერება, stack-ი და მეხსიერების მისამართები</h3>
+
+<p>როგორ გამოიყურება აპლიკაციის მეხსიერება და რა არის <strong>stack</strong>?</p>
+
+<p><strong>stack</strong> ში გვაქვს მეხსიერების <strong>buffer</strong>-ი რომელიც გამოიყენება იმ ფუნქციების და ლოკალური ცვლადების შესანახად, რომლებიც პროგრამას ჭირდება მუშაობისთვის. სადემონსტრაციოდ ვნახოთ ფოტო:</p>
+
+<p><img src="img/1__GRv3vhYnZWVkKpAxPHd2Ew.png" alt="" /></p>
+
+<p>თავდაპირველად ჩვენ გვაქვს კოდი რომელიც არის ჩვენი პროგრამის სორს კოდი, ის მოიცავს ჩვენი პროგრამის მთავარ ინსტრუქციებს.</p>
+
+<p>შემდეგ ჩვენ გვაქვს <strong>buffer</strong>-ი რომელშიც შენახულია გლობალური ცვლადები.</p>
+
+<p>ამის მერე ჩვენ გვაქვს <strong>stack</strong>, რომელიც როგორც ავღნიშნეთ ჩვენთვის ყველაზე მნიშვნელოვანია რადგან სწორედ აქ ხდება <strong>buffer overflow</strong>. ის არის ადგილი სადაც შენახულია ლოკალური ცვლადები და ფუნქციები.</p>
+
+<p>ბოლოს <strong>Heap</strong>-ი, ის არის დინამიური მეხსიერების ალოკაცია.</p>
+
+<p>ახლა უკვე ვიცით თუ როგორ გამოიყურება აპლიკაციის მეხსიერება და რა არის <strong>stack</strong>-ი, მაგრამ რა არის მეხსიერების მისამართი?</p>
+
+<p>ჩვეულებრივ, როდესაც პროგრამა კომპილირდება და ეშვება, მის თითოეულ ინსტრუქციას ენიჭება ადგილი მეხსიერებაში, სწორედ ეს არის მეხსიერების მისამართი, როგორც წესი ის წარმოდგენილია <strong>hexadecimal</strong> ფორმატში.</p>
+
+<p>თუ დავშლით ჩვენ პროგრამას და შევხედავთ, ვიპოვით თითოეულ მეხსიერების მისამართს, რომელიც ჩვენი პროგრამის მაგალითზე ასე გამოიყურება:</p>
+
+<p><img src="img/1__20capErvcsp12724Bk9q5g.png" alt="" /></p>
+
+<h3 id="რატომ-ხდება-buffer-overflow"><strong>რატომ ხდება Buffer overflow?</strong></h3>
+
+<p>ჩვენ უკვე ვიცით რა არის <strong>buffer</strong>-ი, ალბათ უკვე მიხდვი რატომ და როდის ხდება <strong>buffer overflow.</strong></p>
+
+<p>ის თავს იჩენს მაშინ, როდესაც მეხსიერებაში ვცდილობთ წინასწარ რეზერვირებული ადგილის გამოყენებას, მაგრამ ვაწვდით მონაცემების იმ რაოდენობაზე მეტს, რაც მისთვის რეზერვირებული იყო . ამ შემთხვევაში მონაცემები, რომელსაც მივაწვდით ინახება იმ მეხსიერების გარეთ სადაც უნდა შენახულიყო, რაც იწვევს უამრავ პრობლემას, პროგრამა იქრაშება.</p>
+
+<p>შესადარებლად მოვიყვან ფინჯანისა და წყლის მაგალითს. წარმოვიდგნოთ ჩვენი პროგრამა როგორც ფინჯანი, ხოლო წყალი როგორც მონაცემები, რომელსაც პროგრამას ვაწვდით.</p>
+
+<p>რახდება მაშინ როდისეც ფინჯანში ვასხავთ იმაზე მეტ წყალს, ვიდრე მაშ შეუძლია დაიტიოს? წყალი გადმოდის ფინჯანიდან და ისხმევა სხვა ადგილას.</p>
+
+<p><img src="img/1__SyqphmfMS118ZD7LIWzrvg.png" alt="" /></p>
+
+<p>სადემონსტრაციოდ დავუბრუნდეთ პირველ მაგალითს.</p>
+
+<p><img src="img/1__ZhWB9MP9bzj37REHYTCPrg.png" alt="" /></p>
+
+<p>მოდი დავამატოთ ახალი ხაზი რომელიც იმ შემთხვევაში თუ პროგრამა არ დაიქრაშება გამოიტანს შეტყობინებას ‘<strong>Works</strong>’.</p>
+
+<p>ახლა პროგრამა კითხავს მომხარებელს სახელს, და როგორც აქამდე უბრუნებდა, ისევ ისე დაუბრუნებს ‘<strong>Hello</strong> <strong>username</strong>’ და მიამატებს ახალ შეტყობინებას ‘<strong>Works</strong>’.</p>
+
+<p><strong>buffer</strong>-ი რომელიც <strong>username</strong>-ს ინახავს, როგორც ჩვენ განვსაზღვრეთ უნდა იყოს ზომაში <strong>20</strong> ბაიტი, ანუ სიმბოლოების ზომა მაქსიმუმ უნდა იყოს <strong>20</strong>-ის ტოლი.</p>
+
+<p>ყველაფერი იდეალურად მუშაობს მანამ სანამ შეყვანილი <strong>username</strong>-ს ზომა არ იქნება <strong>20</strong>-ზე მეტი.<br />
+როდესაც ის მეტი გახდება, პროგრამა, როგორც ვახსენეთ, დაიქრაშება.</p>
+
+<p>თავდიპირველად გავუშვათ პროგრამა ნორმალური, <strong>20</strong>-ზე ნაკლები ზომის <strong>username</strong>-ით:</p>
+
+<p><img src="img/1__zwjN2IEOgMLoQ7Gm8ePcgQ.png" alt="" /></p>
+
+<p>სავსებით ნორმალური შედეგი მივიღეთ, მოდი ახლა <strong>20</strong>-ზე გრძელი მნიშვნელობა ვცადოთ და ვნახოთ რა მოხდება:</p>
+
+<p><img src="img/1__nADhaO7JMiSxAqEXsOdkew.png" alt="" /></p>
+
+<p><strong>Bazinga!</strong> ჩვენი პროგრამა დაიქრაშა და მივიღეთ <strong>segmentation fault</strong> ერორი. ეს მოხდა იმიტომ, რომ პროგრამა ელოდა <strong>20</strong> სიმბოლოს, ხოლო გადაეცა მასზე მეტი, რამაც გამოიწვია <strong>buffer overflow</strong> და მივიღეთ <strong>segmentation fault</strong>-ი.</p>
+
+<h3 id="რატომ-არის-buffer-overflowსაშიში">რატომ არის Buffer overflow საშიში?</h3>
+
+<p>ალბათ გაგიჩნდებოდა კითხვა როგორ შეიძლება მისი გამოყენებით რაიმე დავაზიანო?</p>
+
+<p><strong>Buffer Overflow</strong> - განსაკუთრბით საშიშია მაშინ როდესაც მოწყვლადი პროგრამა გაშვებულია როგორც რუთი. ხოლო როდესაც ის მოწყვლადია <strong>Buffer Overflow</strong> — ს მიმართ, შემტევს შეუძლია მისი საშუალებით მონაცამებს გადააწეროს საკუთარი <strong>payload</strong>-ი რომელიც სისტემაში გაუშვებს <strong>root shell</strong>-ს.</p>
+
+<h3 id="protostar-stack0">Protostar Stack0</h3>
+
+<p>ახლა გავაკეთოთ პრაკტიკული მაგალითი</p>
+
+<blockquote>
+  <p>ჩასაწერი ლინკი <a href="https://www.vulnhub.com/entry/exploit-exercises-protostar-v2,32/">https://www.vulnhub.com/entry/exploit-exercises-protostar-v2,32/</a></p>
+</blockquote>
+
+<p><img src="img/1__Tlp9XMS__6S__TJfG8c1Ni3Q.png" alt="" /></p>
+
+<p>კოდიდან ვიგებთ რომ პროგრამაში გვაქვს ცვლადი ‘<strong>buffer</strong>’ რომელიც განსაზღვრულია რომ იყოს <strong>64</strong> სიმბოლოსგან შედმგარი. ასევე გვაქვს სხვა ცვლადი სახელად ‘<strong>modifed</strong>’ რომელიც 0 ის ტოლია. ხოლო <strong>gets(buffer)</strong> გვაძლევს საშუალებას შემოვიტანოთ მნიშვნელობა და შევინახოთ ცვლადში — <strong>buffer</strong>. შედმეგია <strong>if statement</strong>, რომელიც ამოწმებს modified-ის მნიშვნელობას და თუ არ უდრის 0-ს აბრუნებს <strong>‘you have changed the ‘modified’ variable\n’</strong> შესაბამისად ჩვენი მისია შევცალოთ მისი მნიშვნელობა.</p>
+
+<p>ჩვენ უკვე ვიცით, რომ <strong>buffer</strong> არის <strong>64</strong> სიმბოლოსგან შემდგარი, <strong>65</strong> სიმბოლო უკვე შეცვლის <strong>modified</strong> — ის მნიშვნელობას.</p>
+
+<p><strong>64</strong> სიმბოლოს შემთხვევაში კოდი ჩვეულებრივ ეშვება:</p>
+
+<p>ls4cfk@ls4cfk:~$ (python -c “print ‘a’*64”) | ./stack0<br />
+Try again?<br />
+ls4cfk@ls4cfk:~$</p>
+
+<p>ხოლო <strong>65</strong> ის შემთხვევაში, <strong>modified</strong> ცვლადს ეწერება ზედ მნიშვნელობა, იცვლება და ჩვენი <strong>if statement</strong> იც სრულდება.</p>
+
+<p>ls4cfk@ls4cfk:~$ (python -c “print ‘a’*65”) | ./stack0<br />
+you have changed the ‘modified’ variable<br />
+ls4cfk@ls4cfk:~$</p>
+
+<h3 id="მოდი-ცოტა-გავართულოთ">მოდი ცოტა გავართულოთ</h3>
+
+<p>განვიხილოთ კიბერ ოლიმპიადის, ექსპლოიტ დეველოპმენტის, ამოცანა — <strong>Klasika</strong>, რომლის ნახვაც <a href="http://cyber-lab.tech"><strong>Cyber-lab.tech</strong></a> — ზე შეგიძლიათ.</p>
+
+<p>პირობაში ბევრი არაფერი არ გვაქვს მოცემული:</p>
+
+<p><img src="img/1__4DBb94ge5YBeYLATRtiMBQ.png" alt="" /></p>
+
+<p>ისღა დაგვრჩენია გავუშვათ სერვერი</p>
+
+<p><strong>nmap</strong> ით მარტივად შეგვიძლია ვნახოთ თუ რომელი პორტებია ღია.</p>
+
+<blockquote>
+  <p><strong>nmap ip</strong>-რომელსაც სერვერის გაშვების შემდეგ მიიღებთ</p>
+</blockquote>
+
+<p><img src="img/1__LyVBxbWLY3k6gJ4rga93zw.png" alt="" /></p>
+
+<p>მოცემული გვაქვს ორი საინტერესო პორტი, <strong>21</strong> და <strong>443</strong>.</p>
+
+<p><strong>ftp</strong>-ზე თუ შევიხედავთ ვნახავთ ჩვენთვის საინტერესო ფაილებს:</p>
+
+<p><img src="img/1__TN7AgBVQIy5FDHSUGoKg2A.png" alt="" /></p>
+
+<p>დროებით დავივიწყოთ სერვერი და ლოკალურად გაკეთება ვცადოთ.</p>
+
+<p>ჩვენი პროგრამა ასე გამოიყურება:</p>
+
+<p><img src="img/1__uKiMY7ax0tw__DIz2MuaKKg.png" alt="" /></p>
+
+<p>ის იღებს არგუმენტად სახელს და ინახავს ცვლადში <strong>name.</strong></p>
+
+<p>ჩვენ ასევე გვაქვს მოცემული ფუნქცია — <strong>giveme_shell</strong> რომელიც სისტემაში უშვების <strong>bash</strong>-ს და გვაძლევს მასზე წვდომას. სისტემაზე წვდომის მოსაპოვებლად უნდა გამოვიძახოთ ჩვენი ფუნქცია — რისთვისაც საჭიროა პირველ რიგში ვიპოვოთ <strong>offset</strong>-ი, ანუ გვჭირდება არსებული <strong>buffer</strong> ის <strong>overflow</strong> , რადგან შევცვალოთ <strong>stack</strong>-ში არსებული <strong>return address</strong>-ი და დავაბრუნოთ ჩვენი ფუნქცია.</p>
+
+<p><strong>offset</strong> — ის საპოვნელი მარტივი გზაა <a href="https://github.com/Svenito/exploit-pattern"><strong>exploit-pattern</strong></a> ის გამოყენება, გავხსნათ ჩვენი <strong>pwn</strong> , <strong>gdb</strong>-ით და გადავაწოდოთ <strong>exploit-pattern</strong> ით დაგენერირებული მნიშვნელობა:</p>
+
+<blockquote>
+  <p><strong>gdb pwn</strong></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Aa0Aa0Aa1Aa1Aa2Aa2Aa3Aa3Aa4Aa4Aa5Aa5Aa6Aa6Aa7Aa7Aa8A</strong></p>
+</blockquote>
+
+<p><img src="img/1__wYYOFDS2Hzdw4EkNH3VuEQ.png" alt="" /></p>
+
+<p><strong>RBP</strong> -სა და <strong>RSP</strong>— ზე დაკვირვებით მარტივად შეგვიძლია გავიგოთ, რომ <strong>6A</strong>-ს მერე იწყება გადაწერა, ანუ ჩვენი <strong>offset</strong> არის ჩვენი პატერნი <strong>6A</strong>-ს ჩათვლით, რომლის სიგრძეც <strong>40</strong> — ია :</p>
+
+<p><strong>Aa0Aa0Aa1Aa1Aa2Aa2Aa3Aa3Aa4Aa4Aa5Aa5Aa6A</strong></p>
+
+<p>მაშ ასე, გვაქვს <strong>offset</strong>, ისღა დაგვრჩენია ვიპოვოთ <strong>giveme_shell</strong> ის მისამართი.</p>
+
+<p><img src="img/1__rmLqAwGUrE8Z00Fwf1rv0Q.png" alt="" /></p>
+
+<p>ფუნქციის მისამართიც გვაქვს:</p>
+
+<blockquote>
+  <p><strong>0x0000000000400711</strong></p>
+</blockquote>
+
+<p>მოდი ახლა ვცადოთ მისი ექსპლოიტი ლოკალურად.</p>
+
+<p>ამისთვის დაგვჭირდება <strong>python</strong> და მოდული <strong>struct</strong> რომლის საშუალებითაც მისამართს შესაბამის ფორმატში მივაწვდით. (რა თქმა უნდა, სხვა გზებიცაა. მე ყველაზე მეტად ეს მომწონს.)</p>
+
+<p>ჩვენი <strong>offset</strong> უნდა შედგებოდეს <strong>40</strong> სიმბოლოსგან, არ აქვს მნიშვნელობა რა იქნება, მე <strong>40</strong> ცალი <strong>A</strong> ავიღე.</p>
+
+<blockquote>
+  <p>ჩვენი <strong>payload</strong> -ი <strong>‘\n’-</strong>ის გარეშეც იმუშავებდა, უბრალოდ ასე უფრო კარგად ვნახავთ შედეგს.</p>
+</blockquote>
+
+<p><img src="img/1__cth8q4JHmxavXgRabWEVzA.png" alt="" /></p>
+
+<p>მზადაა ჩვენი <strong>payload</strong>, ისღა დაგვრჩენია ჩვენ მოწყვლად პროგრამას მივაწოდოთ ის.</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>**(./klasika_exploit.py; cat)</td>
+        <td> ./pwn**</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p>cat საშუალებას გვაძლევს ინტერაქტიულად გვქონდეს გაშვებული ჩვენი ექსპლოიტი, ანუ შეგვიძლია ნებისმიერი ბრძანების მიწოდება.</p>
+
+<p><img src="img/1__Jk1nTLPk2l2PAs0moa49xg.png" alt="" /></p>
+
+<p>ჩვენმა ექსპლოიტმა იმუშავა ლოკალურად, ისღა დაგვრჩა იგივე ვქნათ ოღონ ამ შემთხვევაში ჩვენ სერვერზე, რომელსაც <strong>netcat</strong> ით ვუკავშირდებით.</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>**(./klasika_exploit.py; cat)</td>
+        <td>nc 185.212.254.52 443**</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p><img src="img/1__4OhfOLvNYQGyK8fp4YHcgg.png" alt="" /></p>
+
+<p>სულ ეს იყო,სერვერზე გავხდით <strong>root</strong>-ი და ავიღეთ სასურველი <strong>flag</strong>-ი.</p>
+
+<p>იმედია მოგეწონათ და შეიძინეთ ცოდნა <strong>buffer overflow</strong> - ს შესახებ.</p>
+
+<p><strong>cyber-lab</strong> ზე უამრავი მსგავსი, ზოგიც უფრო საინტერესო ამოცანაა.</p>
+
+<p>თუ გაქვთ სურვილი, რომ დარეგისტრირდეთ პლატფორმაზე, საჭიროა მიწეროთ <a href="https://www.facebook.com/CyberLab.Tech/"><strong>Cyber-Lab.Tech</strong></a> ოფიციალურ გვერდზე. ან დაუკავშირდეთ ელ.ფოსტაზე: <strong>contact@cyber-lab.tech</strong>.</p>
+
+<p><strong>Have fun!</strong></p>
+
+<p><strong>Follow me for future posts ✌️</strong></p>
+
+:ET

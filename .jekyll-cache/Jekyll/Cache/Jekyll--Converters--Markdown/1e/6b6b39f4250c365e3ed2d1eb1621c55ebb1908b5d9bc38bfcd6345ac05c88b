@@ -1,0 +1,166 @@
+I"L2<h1 id="owasp-tbilisictf">OWASP Tbilisi — CTF</h1>
+
+<p>15 მაის, საქართველოში ჩატარდა პირველი, პროგრამული უზრუნველყოფის უსაფრთხოებაზე ორიენტირებული არაკომერციული ორგანიზაციის — OWASP ის შეხვედრა…</p>
+
+<p><img src="img/1__KG__Xru7iwJU1zZuIFaUFkg.jpeg" alt="" /></p>
+
+<p>15 მაის, საქართველოში ჩატარდა პირველი, პროგრამული უზრუნველყოფის უსაფრთხოებაზე ორიენტირებული არაკომერციული ორგანიზაციის — <strong>OWASP</strong> ის შეხვედრა, სადაც განხილული იყო ისეთი თემები, როგორიცაა : <strong>Application Security Verification Standard (ASVS)</strong>, <strong>OWASP top 10</strong> და ა.შ.</p>
+
+<p>ხოლო დღის ბოლოს ჩატარდა <strong>CTF</strong>, რომელიც 3 სავარჯისოსა და 9 კითხვას მოიცავდა. სავარჯიშოები კი განხილული თემებიდან იყო შედგენილი.</p>
+
+<p>დღეს განვიხილავ ამ სავარჯიშოებს და ვეცდები ყველაფერი გარკვევით ავხსნა. დასპოილერება თუ არ გინდათ, გირჩევთ არ წაიკითხოთ.</p>
+
+<p>დავიწყოთ კიბერ ჰიგიენის საკითხით.</p>
+
+<h3 id="thegovge"><strong>THE.GOV.GE</strong></h3>
+
+<p>აღსანიშნავია ის ფაქტი, რომ ეს სავარჯიშო <strong>OWASP</strong> ის შეხვედრამდეც იყო <a href="http://Cyber-lab.tech"><strong>Cyber-lab.tech</strong></a> — ზე მაგრამ არავის არ ქონდა ამოხსნილი.</p>
+
+<p>ამოცანის პირობა შემდეგია:</p>
+
+<p><img src="img/1__N7zBhv__jboVAlCdBpVereg.png" alt="" /></p>
+
+<p>მოცემული გვაქვს <strong>IAPP.ZIP</strong> — ფაილი, რომელშიც მარტივი, <strong>flask</strong> -ზე დაწერილი საიტია მოცემული.</p>
+
+<p>მისი სტრუქტურა შემდეგნაირია:</p>
+
+<p><img src="img/1__rVF6bazuqbdm2OlaTGiQ8Q.png" alt="" /></p>
+
+<p>ფაილებშიც არაფერია საინტერესო:</p>
+
+<p><img src="img/1__LF6KJEE04s0yAcC__En7GWg.png" alt="" /></p>
+
+<p>ამ მომენტზე დიდხანს ვიყავი გაჭედილი სანამ ჰინთი არ მივიღე, თუ მას <a href="http://github.com/"><strong>Github</strong></a> — ზე მოვძებნით, წავაწყდებით მის რეპოზიტორს.</p>
+
+<p><img src="img/1__7daekteKhav6dOi8VV1MmA.png" alt="" /></p>
+
+<p>რეპოზიტორში ერთი შეხევდით არაფერი საინტერესო არ ხდება, იგივეა თითქმის ყველაფერი. კონფიგურაციაზეც არაფერი ნახსენები</p>
+
+<p><img src="img/1__2u2YwHWltsQir1JM76Hxcg.png" alt="" /></p>
+
+<p>ერთადერთი განსხვავება რაც არის, დამატებულია <strong>app.zip</strong> ფაილი, რომელიც ჩვენთვის საინტერესო უნდა იყოს.</p>
+
+<p>სწორედ აქ ვხვდებით <strong>.git</strong> ფოლდერს</p>
+
+<p><img src="img/1__SWASocQ61Ooi92P3wVe74Q.png" alt="" /></p>
+
+<p>ლოგებს თუ ჩავხედავთ, აღმოვაჩენთ ჩვენთვის საინტერესო კომიტებს — “<strong>Remove database connection information.</strong>” და “<strong>Add database connection information.</strong>”</p>
+
+<p><img src="img/1__W9b0EoIC94J8vWVfSnjLZg.png" alt="" /></p>
+
+<p>რომლის ნახვაც მარტივად შეგვიძლია:</p>
+
+<blockquote>
+  <p><strong>git log -p -2 81bda1fefbfe08769d98fe41b7d0226e71481a84</strong></p>
+</blockquote>
+
+<p><img src="img/1__OZliOKeP0gn8aoW4XEJnHg.png" alt="" /></p>
+
+<p><strong>vuala !</strong> ვიპოვით კონფიგურაციის ფაილი. პირველ კითხვის პასუხიც აშკარა ხდება - <strong>Sensitive data exposure</strong>.</p>
+
+<p>შემდეგი სავარჯიშო:</p>
+
+<h3 id="tr33"><strong>Tr33</strong></h3>
+
+<p>ამოცანის პირობა შემდეგია:</p>
+
+<p><img src="img/1__wHL0T__yOihP1XN6dKX6__HA.png" alt="" /></p>
+
+<p><strong>nmap</strong> — მა და <strong>dirb</strong>- მა მნიშვნელოვანი არაფერი გვაჩვენა, გადავიდეთ საიტზე</p>
+
+<p><img src="img/1__cfXW7F3wY9cXCA33OuiRiQ.png" alt="" /></p>
+
+<p>თუ ჩავხედავთ <strong>script.js</strong>-ს შევამჩნევთ, რომ საიტზე იგზავნება <strong>XML</strong> ფაილი, რომელიც შეგვიძლია ინექციისთვის გამოვიყენოთ.</p>
+
+<p><img src="img/1__2__PlLUsX3COC7aNxzOAn__Q.png" alt="" /></p>
+
+<p>სანამ უშუალოდ ინექციაზე გადავალთ განვიხილოთ თუ რა არის თავად <strong>XML</strong>.</p>
+
+<p><strong>XML</strong> ანუ — <strong>eXtensible Markup Language</strong></p>
+
+<p>ჩავშალოთ :</p>
+
+<p><strong>eXtensible</strong> გულისხმობს იმას, რომ შენ შეგიძლია შექმნა შენი თეგები, აღწერო თუ როგორ გამოჩნდეს ეს თეგი და ა.შ.</p>
+
+<p><strong>Markup Language</strong> მა შეიძლება გაგვახსენოს <strong>HTML</strong> მაგრამ, <strong>XML</strong>-სგან განსხვავებით <strong>html</strong> არის უფრო ‘პრეზენტაციის’ ენა რაც იმას გულისხმობს, რომ ის არ გვაწვდის იმის შესახებ მონაცემებს, თუ როგორი სტრუქტურა აქვს დოკუმენტს.</p>
+
+<p>სწორად არასწორი <strong>XML</strong> გვაძლევს ისეთი შეტევის განხორციელების უფლებას, როგორიცაა <strong>XXE</strong>.</p>
+
+<p>აღნიშნულ დავალებაშიც სწორედ <strong>XXE</strong> სისუსტეა, დავტესტოტ <strong>XXE</strong>-ს მარტივი მაგალითით, ვნახოთ თუ რომელი დისტრიბუტორი აყენია სერვერზე:</p>
+
+<p><img src="img/1__SgfbztPAji0NjWgM__FdDqw.png" alt="" /></p>
+
+<p>ვნახოთ <strong>/etc/passwd</strong> ფაილი:</p>
+
+<p><img src="img/1__80Rp1drqsYB5lDxrNz3khQ.png" alt="" /></p>
+
+<p>როგორც ვხედავთ <strong>XXE</strong> შეტევა მუშაობს, დაგვრჩა <strong>index.php</strong> ფაილის შიგთავსის ნახვა.</p>
+
+<p>ერთი შეხედვით იოლია, მაგრამ ჩვენ არ შეგვიძლია მას მივწვდეთ რომელიმე იუზერით შემდეგნაირად:</p>
+
+<blockquote>
+  <p><strong>file:///var/home/vigaca/www/index.php</strong></p>
+</blockquote>
+
+<p>რადგან ამ იუზერის ფაილებს ვერ ვნახავთ.</p>
+
+<p>ჩვენ გვჭირდება <strong>PHP Wrapper</strong> ის განთავსება <strong>XXE</strong>-ში, <strong>PHP Wrapper</strong> ის საშუალებით შეგვიძლია index.php-ს შიგთავსი გადავიყვანოთ base64 ში და გამოვიტანოთ ეს შედეგი:</p>
+
+<blockquote>
+  <p><strong>&lt;!DOCTYPE replace [&lt;!ENTITY xxe SYSTEM “php://filter/convert.base64-encode/resource=index.php”&gt; ]&gt;</strong></p>
+</blockquote>
+
+<p><img src="img/1__5istAx5nf9uaZ1tpOEJflA.png" alt="" /></p>
+
+<p><strong>index.php</strong> ფაილიც მოვიპოვეთ, დაგვრჩა აუთფუთის <strong>base64</strong> იდან დიკოდი. რაც მარტივად შეგვიძლია <a href="https://www.base64decode.org"><strong>base64decode.org</strong></a> ის გამოყენებით.</p>
+
+<p><img src="img/1__4D7QYlJ4XfNoiXFRDIn7rA.png" alt="" /></p>
+
+<p><strong>vuala !</strong> გვაქვს ადმინისტრატორის პაროლიც და <strong>flag</strong>-იც.</p>
+
+<p>შემდეგი სავარჯიშო:</p>
+
+<h3 id="phel">PHEl</h3>
+
+<p>ამოცანის პირობა შემდეგია:</p>
+
+<p><img src="img/1__gWGJbTTAFvK9Rgqpy7s__0w.png" alt="" /></p>
+
+<p>მოცემული გვაქვს <strong>PHEL.ZIP</strong> არქივი, რომლის სტრუქტურაც შემდეგნაირია</p>
+
+<p><img src="img/1__Mgwz7KatXHo7KTR7YCO5Zw.png" alt="" /></p>
+
+<p><strong>index.php</strong> ში საინტერესო არაფერი არ ხდება, ხოლო <strong>.htaccess</strong> იდან ვარკვევთ, რომ იუზერს შეეძლო აეტვირთა <strong>PHP</strong> ფაილი, როგორც ფოტო. ანუ საქმე გვაქვს <strong>Security Misconfiguration</strong> — სთან</p>
+
+<blockquote>
+  <p><strong>AddHandler application/x-httpd-php .jpg</strong></p>
+</blockquote>
+
+<p><img src="img/1__rMWbJvGNcBS2156yzu4v8A.png" alt="" /></p>
+
+<p>ე.ი. შემტევს შეეძლო <strong>php shell-</strong>ი აეტვირთა როგორც ფოტო, შეგვიძლია მარტივად გავფილტროთ, თუ ფოტო შეიცავს სიტყვა <strong>php</strong>-ს გამოვიტანოთ შედეგი:</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>**strings *.jpg</td>
+        <td>grep php ***</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p><img src="img/1__xWumsDoXt0LmgcjtrLtpDA.png" alt="" /></p>
+
+<p>რის შედეგადაც ნათელი ხდება, რომ ფაილი, <strong>403.jpg</strong> შეიცავს <strong>PHP Shell</strong>-ს, შემდეგ კითხვის პასუხიც გავიგეთ. დაგვჩა პაროლის დეშიფრაცია, რაც მარტივად შეგვიძლია ონლაინ <a href="https://hashkiller.co.uk/Cracker/SHA1"><strong>hashkiller.co.uk</strong></a> ის გამოყენებით, ან თუ სურვილი გაქვთ <a href="https://github.com/magnumripper/JohnTheRipper"><strong>JohnTheRipper</strong></a> -ის გამოყენებაც შეგიძლიათ.</p>
+
+<p><img src="img/1__ifr__lounYCTQ2iyTmGpwmw.png" alt="" /></p>
+
+<p>პაროლიც გავიგეთ — Hack3r.</p>
+
+<p>მადლობა პოსტის წაკითხვისთვის ;დ, გავითვალისწინებ ნებისმიერ რჩევას და შენიშვნას.</p>
+
+<p><strong>Follow me, for future posts ❤ .</strong></p>
+
+:ET

@@ -1,7 +1,7 @@
 
 
 
-# AKTİF-PASİF BİLGİ TOPLAMA
+
 
 ## PASİF BİLGİ TOPLAMA
 Pasif bilgi toplama, bilgi topladığımız kişi veya kurumun haberi olmadan, sistemde log bırakmadan, internette açık olan bilgileri elde etmektir. Bu arama tipinde çeşitli uygulamalar ve yöntemler kullanılır. 

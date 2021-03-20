@@ -3,7 +3,7 @@
 
 
 
-## PASİF BİLGİ TOPLAMA
+## Pasif Bilgi Toplama
 Pasif bilgi toplama, bilgi topladığımız kişi veya kurumun haberi olmadan, sistemde log bırakmadan, internette açık olan bilgileri elde etmektir. Bu arama tipinde çeşitli uygulamalar ve yöntemler kullanılır. 
 
 ### theHarvester
@@ -284,7 +284,7 @@ Yukarıda gazi üniversitesinde bulunan e-mail,domain,location, ip adresleri gib
 
 ![image](https://user-images.githubusercontent.com/55113204/111270480-f6b4b900-8640-11eb-9fb8-59387b012b1e.png)
 
-## AKTİF BİLGİ TOPLAMA
+## Aktif Bilgi Toplama
 
 ### Netdiscover
 

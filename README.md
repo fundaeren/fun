@@ -1,2 +1,2 @@
-# ls4cfk.github.io
+# pentestgunlugum.github.io
 Pentest Günlüğüm

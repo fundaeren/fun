@@ -1,10 +1,17 @@
-# PASİF BİLGİ TOPLAMA
+# AKTİF-PASİF BİLGİ TOPLAMA
+
+## PASİF BİLGİ TOPLAMA
+
 Pasif bilgi toplama, bilgi topladığımız kişi veya kurumun haberi olmadan, sistemde log bırakmadan, internette açık olan bilgileri elde etmektir. Bu arama tipinde çeşitli uygulamalar ve yöntemler kullanılır. 
 
-![[https://www.hackthebox.eu/home/machines/profile/207](https://www.hackthebox.eu/home/machines/profile/207)](img/1__7jnFjA5aTcmtH7Vmp6dcXA.png)
-[https://www.hackthebox.eu/home/machines/profile/207](https://www.hackthebox.eu/home/machines/profile/207)
+### theHarvester
 
-This is a write-up on how I solved Bitlab from HacktheBox.
+Bu tarama aracı internet üzerindeki tüm sitelerde hedef domainde tarama işlemi yaparak önümüze listelemektedir. İstediğimiz siteleri üzerinde de yada belirlediğimiz miktarda sonuç elde edebiliriz.
+
+![image](https://user-images.githubusercontent.com/55113204/111266760-08e02880-863c-11eb-9f76-6166a9473ffd.png)
+
+![image](https://user-images.githubusercontent.com/55113204/111266769-0c73af80-863c-11eb-9483-af7f6025f7e6.png)
+
 
 [Hack the Box](http://hackthebox.eu/) is an online platform to test and advance your skills in penetration testing and cybersecurity.
 

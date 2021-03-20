@@ -2,121 +2,121 @@
 
 
 
-# KALİ LİNUX KOMUTLAR PARAMETRELER VE GENEL BİLGİLER
+## KALİ LİNUX KOMUTLAR PARAMETRELER VE GENEL BİLGİLER
 
 
-# ls Komutu
+## ls Komutu
 
 ls komutu aktif olarak girmek istediğimiz dosyanın veya dizinin listelenmesini sağlayan komuttur. Bu komut sayesinde klasörlerin veya dizinlerin içerisinde neler var görebilmekteyiz.
 
 
 
-# Parametreler
+## Parametreler
 
-## -l Parametresi
+### -l Parametresi
 
 Bu parametre ile dizinimizde bulunan dosya ve dizinlerin bilgilerini sırasıyla dikey ve ayrıntılı olarak öznitelikleri, sahibi, grubu, boyutu, update tarihi, ve dosya isimleri olarak bilgi verilmektedir. 
 
 ![image](https://user-images.githubusercontent.com/55113204/109417828-4905a100-79d6-11eb-9e68-57eb21a064b2.png)
 
 
-## -a Parametresi
+### -a Parametresi
 
 Bir dosya veya dizini yatay olarak listeleyen ve ayrıntılı bilgi veren parametredir. Ve gizli olan dosya ve dizinleri de göstermektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418294-bca8ad80-79d8-11eb-9ced-f12872a8b117.png)
 
-## -al Parametresi
+### -al Parametresi
 
 -al parametresi gizli olan ve sadece ls komutu ile gösterilmeyen dosyaların listelenmesini ve yatay ve dikey olarak ayrıntılı bir bilgi vermesini sağlamaktadır. Sırasıyla öznitelikleri, sahibi, grubu, boyutu, update tarihi ve dosya isimleri hakkında bilgi vermektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418090-90d8f800-79d7-11eb-852c-8d1726c12433.png)
 
-## -alrt Parametresi
+### -alrt Parametresi
 
 Değiştirilme zamanlarına göre listeleme yapan parametredir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418204-27a5b480-79d8-11eb-97c6-90e78c5c1ea1.png)
 
-## -l -h Parametresi
+### -l -h Parametresi
 
 Hem kb,mb,gb gibi boyut değerleri ile hemde dikey ve ayrıntılı şekilde dosya veya dizin hakkında bilgi vermektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418226-4d32be00-79d8-11eb-8bec-0f744e6cd565.png)
 
-## -o Parametresi
+### -o Parametresi
 
 -h parametresi gibi dosya ve dizini listeleyen fakat boyutlarını göstermeyen, aynı zamanda farklı kullanıcı grubu olduğunda onları göstermeyen parametredir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418370-1c06bd80-79d9-11eb-87df-882ac0a67210.png)
 
-## -l -t Parametresi
+### -l -t Parametresi
 
 Dosya ve dizinleri dikey olarak ve time olarak listelemektedir. Son eklenen dosya veya dizin en üst sıradadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418404-48223e80-79d9-11eb-8ab4-bc951d39950b.png)
 
-## -l -t -r Parametresi
+### -l -t -r Parametresi
 
 Burada zamana göre dikey ve ayrıntılı olarak listelenmektedir. Fakat reverse yani zamanı son eklenene göre değil ilk eklene göre listelenmektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418437-6f790b80-79d9-11eb-8140-73ca727224a6.png)
 
-## -l -r Parametresi
+### -l -r Parametresi
 
 Dosya ve dizini ayrıntılı olarak dikey olarak alfabetik olarak listeler ama reserve parametresi ile tersten sıralamaktadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418504-bc5ce200-79d9-11eb-869d-bb95e2880789.png)
 
-## -l -d Parametresi
+### -l -d Parametresi
 
 Sadece bulunduğumuz dizin hakkında ayrıntılı bilgi vermektedir. Biz burada belgeler dizinindeyiz içindeki dosyaları görememekteyiz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418533-e1e9eb80-79d9-11eb-8251-a4ba338c8479.png)
 
-## -l listelenmek_istenen1 listelenmek_istenen2 Parametresi
+### -l listelenmek_istenen1 listelenmek_istenen2 Parametresi
 
 İki veya daha fazla dizini aynı anda dikey ve ayrıntılı olarak listeleyebiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418551-fc23c980-79d9-11eb-8fa2-c6c331efdc5a.png)
 
-## -i Parametresi
+### -i Parametresi
 
 Dosyaların index bilgilerini küçükten büyüğe doğru sıralamaktadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418558-1198f380-79da-11eb-94eb-111687840458.png)
 
-## --sort=? Parametresi
+### --sort=? Parametresi
 
 Sıralama soru işareti yazılan yere gelen parametreye göre büyükten küçüğe göre yazılır. Extension, size, time, version veya none olarak değerler yazılabilir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418585-3e4d0b00-79da-11eb-9d27-478e2b42c7eb.png)
 
-## -I ? Parametresi
+### -I ? Parametresi
 
 Soru işareti ile belirtilen alana gösterilmesini istemediğimiz klasörü yazdığımızda ayıklayarak listeliyoruz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418611-60df2400-79da-11eb-8e9e-5c804ea93f0f.png)
 
-## -R Parametresi
+### -R Parametresi
 
 Alt dizinleri listelemektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418626-75bbb780-79da-11eb-9698-8d50179279f0.png)
 
-## -1 parametresi
+### -1 parametresi
 
 Her satıra 1 dosya yazılarak listeleyen komuttur.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418635-83713d00-79da-11eb-9f9d-144593f4b9ec.png)
 
-## - -v Parametresi
+### - -v Parametresi
 
 Version bilgilerini göstermektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109418647-9be15780-79da-11eb-8d2e-4880b0c986d4.png)
 
-## - -help Parametresi
+### - -help Parametresi
 
 ls komutu ile ilgili daha fazla bilgi edinmek için help komutu kullanılmaktadır.
 
@@ -124,13 +124,13 @@ ls komutu ile ilgili daha fazla bilgi edinmek için help komutu kullanılmaktad�
 
 
 
-# whoami Komutu
+## whoami Komutu
 
 Ben kimim komutudur. Who am i yani aktif user kim onu gösterir. Bu komut yerine id -un komutu da kullanılabilmektedir. Burada biz kullanıcının funda olduğunu görmekteyiz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109419299-c8e33980-79dd-11eb-9d5f-50dd83fcb4de.png)
 
-# tar Komutu
+## tar Komutu
 
 Arşivleme yapan komuttur. Burada -c parametresi ile tar arşivini create eder. -f ile de izin verir.
 
@@ -144,7 +144,7 @@ Arşivleme yapan komuttur. Burada -c parametresi ile tar arşivini create eder. 
 -z parametresigzip/gunzip kullanarak sıkıştırma yap
 -remove parametresi arşivle işin bitince sil
 
-# Gzip/guzip Komutu
+## Gzip/guzip Komutu
 
 Dosyaları gziple ve guziple arşivler.
 
@@ -155,35 +155,35 @@ Dosyaları gziple ve guziple arşivler.
 
 ![image](https://user-images.githubusercontent.com/55113204/109419347-09db4e00-79de-11eb-8440-06f3c9c1ca52.png)
 
-# apropos Komutu
+## apropos Komutu
 
 bBir komutun ne işlev yaptığını bilindiği ama komutun ne olduğunu unuttuğumuzda apropos komutu kullanılır. Misal sistemin ne olduğunu biliyorum ama ne işe yaradığını bilmiyorsam burada apropos komutu kullanabilirim.
 
 ![image](https://user-images.githubusercontent.com/55113204/109419373-2b3c3a00-79de-11eb-8178-62b50c192cce.png)
 
-# cat Komutu
+## cat Komutu
 
 Bir metin dosyasının içerisinde neler var onları görüntülemek için kullanılan komuttur.
 
-## -n Parametresi 
+### -n Parametresi 
 
 -n parametresi ile her satırı ekrana bastırır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109419417-6b032180-79de-11eb-902e-dda8ed623941.png)
 
-## -E Parametresi
+### -E Parametresi
 
 -E parametresi ile her satırın sonuna $ işareti koyar.
 
 ![image](https://user-images.githubusercontent.com/55113204/109419439-83733c00-79de-11eb-878e-5ecd03f29037.png)
 
-# mkdir Komutu
+## mkdir Komutu
 
 Dizin yani klasör oluşturma komutudur. Biz burada fundaa isimli bi dizin oluşturduk ve -ls komutu yardımı ile görüntüledik. 
 
 ![image](https://user-images.githubusercontent.com/55113204/109419463-9f76dd80-79de-11eb-9cdb-e0327c664722.png)
 
-# cp Komutu
+## cp Komutu
 
 Copy paste yani bir dosyayı yada klasörü kopyalamak istenildiğinde kullanılan komuttur. 
 -r parametresi ile kullanılır sebebi ise dizinin içindeki her şey gösterilen hedef dizine kopyalanır. funda_deneme isimli dizini bulunduğu konumdan belgelere kopyaladım.
@@ -196,7 +196,7 @@ Copy paste yani bir dosyayı yada klasörü kopyalamak istenildiğinde kullanıl
 -f parametresinde kullanıcıya hiçbir izin sorusu sorulmadan kabul edilmiş olarak düşünülerek varsa aynı dosyadan silinip tekrardan kopyalanmasını sağlayan değerdir.
 -i hedef adreste dosya mevcut ise kullanıcıya bilgi sorulur.
 -u parametresinde kopyalanacak dosyanın tarihi eski dosyadan daha yeni ise bir nevi güncel ise kopyalanmaktadır.
-# cat Komutu
+## cat Komutu
 
 Cat komutu ile dosya oluşturulup dosya içeriği okunabilmektedir. Text ve script dosyalarını okuyabilmemizi sağlamaktadır. Burada deneme adında bir dosya oluşturduk ve dosyanın içine Ankara ve Istanbul isminde iki bilgi girdik. Cat komutu ile hem dosyayı oluşturabildik hemde içeriği görüntüleyebildik.
 
@@ -224,7 +224,7 @@ Cat hakkında daha fazla bilgi almak için - - h parametresi kullanılır.
 ![image](https://user-images.githubusercontent.com/55113204/109419610-67bc6580-79df-11eb-8d94-805f67a70849.png)
 
 
-# Mv Komutu
+## Mv Komutu
 
 Mv komutu move yani taşıma yapmaktadır. Öncelikle taşınacak bir dosya oluşturuyoruz ki daha kolay anlayabilelim. Taşınacak yer adında bir dosya oluşturuyoruz. Dosyamızı buraya taşıyacağız sonra taşınıp taşınmadığını kontrol edelim.
 
@@ -238,13 +238,13 @@ Mv komutu ile bir dosyanın uzantısını değiştirebiliriz. Masaüstünde bulu
 
 ![image](https://user-images.githubusercontent.com/55113204/109420968-66426b80-79e6-11eb-89e2-c917a30c79a2.png)
 
-## -n Parametresi
+### -n Parametresi
 
 var olan dosyanın üzerine sorulmadan yazılmasını sağlamaktadır. Dosya taşındıktan sonra eski yerinden tamamen kaybolmuştur. Burada belgeleri masaüstüne taşıdık ve tekrar listelediğimizde taşındığını görmekteyiz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109420984-765a4b00-79e6-11eb-9dc7-cecd585207ed.png)
 
-# touch Komutu
+## touch Komutu
 
 touch komutu ile sıfır boyutlu dosya oluşturabiliriz. Burada kali isminde dosya oluşturduk.
 
@@ -254,13 +254,13 @@ Dosyaların isimlerini yan yana yazarak birden fazla dosya da oluşturabiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109421029-9c7feb00-79e6-11eb-948c-70c321398bff.png)
 
-# stat Komutu
+## stat Komutu
 
 Bu komut sadece dosya adı ile dosyanın bilgilerini görüntülenmesini sağlamaktadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109421044-ab669d80-79e6-11eb-8deb-29074c05d48d.png)
 
-# alias Komutu
+## alias Komutu
 
 Takma isim oluşturan komuttur. Isim = değer şeklinde syntax vardır.
 
@@ -286,7 +286,7 @@ Unzip komutu ile zip olan bir dosyayı çıkartabiliyoruz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109421091-ef59a280-79e6-11eb-9e30-0549a8824f35.png)
 
-# chmod Komutu
+## chmod Komutu
 
 Yetkilendirme izinleridir. Üç tip kullanıcı vardır u (user), g (group), o (other) olmak üzere bir de a (all) hepsini erişebilen bir kullanıcı vardır. Bunların yetkilendirilme tiplerine göre r (read), w (write) ve x (excute) olmak üzere 3 tür mevcuttur. Burada d dizinin de user rwx yani read,write,execute yetkisine, group xr (excute, read) yetkisine ve other x (excute) yetkisine sahiptir. ‘-’ tamamen yetkisiz olduğunu göstermektedir. D burada dizini temsil etmektedir. B özel blok sayfasını, c özel karakter dosyasını, l sembolik bağlantı dosyasını ve p ise özel isimlendirilmiş pipe dosyasını belirtmektedir. 
 
@@ -300,13 +300,13 @@ Yetkilendirme izin örneği verecek olursak masaüstü dizininde drwxr-xr-x şek
 
 ‘*’ parametresi ile dosyaya tüm kullanıcıların okuma erişimi sağlanmaktadır.
 
-# ssh Komutu
+## ssh Komutu
 
 Ssh ile bağlantı kurulurken önce kurulacak bilgisayarın rootu (whoami ile bulunuyor) daha sonra ip adresi (ifconfig ile bulunuyor) ssh root@ipadress komutu kullanılarak yazılır. Burada iki makinede ssh açık olmalıdır. Uzaktan bağlantı sağlamak için bağlanmak istediğimiz makinenin password girip connection sağlayabilmekteyiz. 
 
 ![image](https://user-images.githubusercontent.com/55113204/109421160-42335a00-79e7-11eb-9fd5-24a2d9fed1e7.png)
 
-# cksum Komutu
+## cksum Komutu
 
 Bir dosya veya veri akışı için sağlama toplamı değerini veren komuttur. İlk sayı sağlamada toplam değerdir, ikincisi ne kadar büyüklüğe sahip olduğu ve son kısım ise dosyanın adıdır.
 
@@ -316,7 +316,7 @@ Bir dosya veya veri akışı için sağlama toplamı değerini veren komuttur. �
 
 ![image](https://user-images.githubusercontent.com/55113204/109421201-6727cd00-79e7-11eb-90df-79c816cf71c1.png)
 
-# history Komutu
+## history Komutu
 
 Daha önce kullandığımız komutları görmek istediğimizde bu komut kullanılır.
 
@@ -330,7 +330,7 @@ Bir komutu tekrar yazıp çalıştırmak yerine history üzerinde işlenmiş say
 
 ![image](https://user-images.githubusercontent.com/55113204/109421455-6e9ba600-79e8-11eb-9e15-feb64370d693.png)
 
-# cut Komutu
+## cut Komutu
 
 Bu komut bir dosya veya dizinde belirli bir kısmı almak istediğimizde kullanılır. Ilk olarak -c kullanımı görelim. Burada 5. Biti ekrana bastırılır.
 
@@ -354,7 +354,7 @@ Satırlardaki istenilen değer kadar kesilip listelenebilir.
 
 -f parametresi uzunluğu çok fazla olan söz dizilimlerini kesmek için kullanılır.
 
-# date Komutu
+## date Komutu
 
 Tarih saat bilgisini ayarlamamızı, lokasyon değişikliğine göre güncellememizi yeniden yapılandırmamızı sağlayan komuttur.
 
@@ -364,44 +364,44 @@ Zone değişikliğinde lokasyonu setleyebiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422104-334ea680-79eb-11eb-9e09-ce19e607a6f8.png)
 
-# df Komutu
+## df Komutu
 
 Diskteki boş alanı, ne kadar boş alan olduğunu mount (bağlanma noktasını), doluluğunu, kullanılan alanın boş alana oranı, blok sayısını gösteren komuttur.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422130-45304980-79eb-11eb-9c4f-f0aa9262d959.png)
 
-## -a Parametresi
+### -a Parametresi
 
 -a paremetresi ile daha ayrıntılı bilgi almaktayız.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422135-4cefee00-79eb-11eb-9ba7-27db39bcdb03.png)
 
-## -h Parametresi
+### -h Parametresi
 
 Dosyanın boyutu hakkında bilgileri gb cinsinden görmek için -h parametresi,
 
 ![image](https://user-images.githubusercontent.com/55113204/109422147-5e38fa80-79eb-11eb-9ae8-661b3ffd98f3.png)
 
-## -i Parametresi
+### -i Parametresi
 
 Dosyanın inodesi hakkında bilgilere ulaşmak için -i paremetresi,
 
 ![image](https://user-images.githubusercontent.com/55113204/109422154-67c26280-79eb-11eb-82df-a6de0b032fed.png)
 
-## -T Parametresi
+### -T Parametresi
 
 Dosyanın tipleri hakkında bilgi edinmek istenilirse -T paremetresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422202-9cceb500-79eb-11eb-83fc-9123d4e61020.png)
 
-## -m Parametresi
+### -m Parametresi
 
 Dosyanın mb cinsinden bilgilerine ulaşılmak istenirse -m parametresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422217-ace69480-79eb-11eb-9050-b15ebbc505c8.png)
 
 
-# fdisk -l Komutu
+## fdisk -l Komutu
 
 Sistemdeki diskleri ve bölümlerini listelemek için kullanılan komuttur.
 
@@ -410,7 +410,7 @@ Sistemdeki diskleri ve bölümlerini listelemek için kullanılan komuttur.
 -d parametresi ile disk üzerinde bir bölümü silmek yada biçimlendirmek için kullanılır.
 -n parametresi yeni bir disk oluşturur.
 
-# diff Komutu
+## diff Komutu
 
 Difference yani faklılıkları karşılaştıran bir komuttur. -a parametresi ile birlikte kullanıldığında metin dosyası olarak karşılaştırma yapmaktadır.
 
@@ -419,45 +419,45 @@ Difference yani faklılıkları karşılaştıran bir komuttur. -a parametresi i
 6c2 burada 6. Satır ile 2. Satır eşleşmesi için değiştirilmesi gerekiyor.
 D ise birinci dosyadaki satır ikinci dosyadaki satırla eşleşecek şekilde silinmelidir. Burada hat 0 sekronize hale gelmesi için ilk dosyadan silinöesi gerek 2 satıra ihtiyaç vardır denilmektedir.
 
-## -r Parametresi
+### -r Parametresi
 
 -r parametresi ile varsa alt dizinleri karşılaştırır. 
 
-## -q Parametresi
+### -q Parametresi
 
 İki dosyanın birbirinden farklı olduğunu öğrenmek için -q parametresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422384-56c62100-79ec-11eb-822f-37f29dfa0cd8.png)
 
-## -s Parametresi
+### -s Parametresi
 
 -s parametresi ile aynı olan dosyaları öğrenmek istediğimiz de kullanırız.
 
-# du Komutu
+## du Komutu
 
 Du disk kullanımının ne kadar yer kapladığını gösterir. 
 
 ![image](https://user-images.githubusercontent.com/55113204/109422417-7b21fd80-79ec-11eb-9f6e-9d7ba204b6ec.png)
 
-## -a Parametresi
+### -a Parametresi
 
 -a parametresi içindeki dizinlerin ayrıntılı olarak yer kaplamasını gösterir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422430-85dc9280-79ec-11eb-93b2-81e4a2083ff2.png)
 
-## -c Parametresi
+### -c Parametresi
 
 -c parametresi toplam ne kadar disk kullandığını gösterir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422442-912fbe00-79ec-11eb-9a79-eddb368eda9f.png)
 
-## -BG Parametresi
+### -BG Parametresi
 
 -BG kullanıcıların daha açık bir şekilde anlaması için boyutu gösteren parametredir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422463-ab699c00-79ec-11eb-8843-cec7eabab476.png)
 
-## -ca Parametresi
+### -ca Parametresi
 
 -ca disk kullanımını ayrıntılı gösteren parametredir.
 
@@ -467,35 +467,35 @@ _du -sh .[!.]* * | sort -n parametreleri ile gizli olan dosyaları boyutları il
 
 ![image](https://user-images.githubusercontent.com/55113204/109422492-d0f6a580-79ec-11eb-9f16-d8a0395fcc7a.png)
 
-# less Komutu
+## less Komutu
 
 Bu komut dosyanın içeriğini görüntülememizi sağlamaktadır.
 Kullanımı less dosya şeklindedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422509-e66bcf80-79ec-11eb-8f3b-d944a0dd90fd.png)
 
-# more Komutu
+## more Komutu
 
 Sayfayı görüntülememizi sağlayan komuttur. Less komutu gibidir.
 More -p parametresi ile kullanıldığında önce sayfayı temizler daha sonra görüntüler.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422529-f388be80-79ec-11eb-913b-b042ecbd15a4.png)
 
-## -s Parametresi
+### -s Parametresi
 
 -s parametresi birden fazla boş satırı tek boş satır olacak şekilde sıkıştırma yapar.
 
 ![image](https://user-images.githubusercontent.com/55113204/109422535-ff748080-79ec-11eb-9f8c-e6ec85706802.png)
 
-## -n Parametresi
+### -n Parametresi
 
 -n parametresi ile dosyayı satır satır yazar.
 
-## -f Parametresi
+### -f Parametresi
 
 -f parametresi ile dosya ismini ve satır numarasını gösterir.
 
-# echo Komutu
+## echo Komutu
 
 Echo ile hangi kabukta olduğunu görmek istiyorsak echo $SHELL komutunu bastırırız.
 
@@ -521,57 +521,57 @@ Echo kullanarak matematiksel işlemleri ekrana bastırabiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109423181-99d5c380-79ef-11eb-85ee-703cc73265b4.png)
 
-# locate Komutu
+## locate Komutu
 
 Hızlı olarak arama komutudur. Bir dosyanın nerde olduğunu unuttuğumuzda locate komutu ile dosyanın adını yazarak arama yapmaktayız.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425871-8d576800-79fb-11eb-88ba-82335a0844b1.png)
  
- ## -i Parametresi
+### -i Parametresi
  
 -i parametresi ile kullanıldığında büyük küçük harfleri sorun etmeden arama yapmaktadır.
 
-# wc Komutu
+## wc Komutu
 
 Bu komut sırasıyla satır sayısı, kelime sayısı ve komut sayısını ekrana bastırmaktadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425877-934d4900-79fb-11eb-8ed6-f5831c3b70b2.png)
  
-## -c Parametresi
+### -c Parametresi
 
 Karakter sayısını ekrana bastırmak için -c parametresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425882-98aa9380-79fb-11eb-86d9-e5f6ea10aed2.png)
  
-## -w Parametresi
+### -w Parametresi
 
 Kelime sayısını göstermek için -w parametresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425889-9ea07480-79fb-11eb-9bbd-e1fa43e3eefa.png)
 
-## -l Parametresi
+### -l Parametresi
 
 Satır sayısını göstermek için -l parametresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425891-a3652880-79fb-11eb-84c5-2aa3b208246f.png)
 
-# env Komutu
+## env Komutu
 
 Environment komutu systemin propertiesi hakkında bilgi veren komuttur.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425900-a9f3a000-79fb-11eb-8057-f30c29496b98.png)
 
-# expand Komutu
+## expand Komutu
 
 Girdi de verilen tab değerini space değerine çevirme işlemi yapmaktadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425907-aeb85400-79fb-11eb-8275-bd4b80865462.png)
 
-# free Komutu
+## free Komutu
 
 Bir işletim sisteminde belleğin ne kadarının kullanıldığı ve ne kadarının boş olduğunu göstermeye yarayan komuttur.
 
-## -h Parametresi
+### -h Parametresi
 
 -h parametresi kullanarak çıktımızı daha anlamlı hale çevirebiliriz.
 
@@ -579,84 +579,84 @@ Bir işletim sisteminde belleğin ne kadarının kullanıldığı ve ne kadarın
 
 Burada takas ve memory kullanımını görebilmekteyiz. Ne kadarının paylaşıldığını ne kadarının meşgul olduğunu total de ne kadarlık belleğe sahip olduğumuzu görmekteyiz.
 
-# ps Komutu
+## ps Komutu
 
 Ps komutu o anda çalışan işlemleri gösteren komuttur.
 
-## -A Parametresi
+### -A Parametresi
 
 -A parametresi kullanarak çalışan tüm işlemler gösterilmektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425975-18386280-79fc-11eb-97f6-549a8e7ad866.png)
 
-## -ax Parametresi
+### -ax Parametresi
 
 -ax parametresi kullanılarak o anda çalıştırabilir tüm işlemler gösterilmektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425979-1c648000-79fc-11eb-94bf-d8934ca0192f.png)
 
-## -aux Parametresi
+### -aux Parametresi
 
 Ps aux parametresi kullanılarak daha simple şekilde gösterilmektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425983-24242480-79fc-11eb-8cdc-f58a6c9d34a7.png)
  
-## -L [istenilen_satır] Parametresi
+### -L [istenilen_satır] Parametresi
 
 Bu parametre ile istenilen satır hakkında detaylı bilgi edinilmektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425988-2a1a0580-79fc-11eb-8776-327b47444a68.png)
 
-## -C Parametresi
+### -C Parametresi
 
 -C bash parametresi çalıştırılan bash işlemleri hakkında bilgi vermektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425995-2e462300-79fc-11eb-9e84-3f2c94b92acc.png)
 
-## -U root -u root Parametresi
+### -U root -u root Parametresi
  
 Çalıştırılmış root işlemleri hakkında bilgi almak istediğimizde -U root -u root parametresini kullanmaktayız.
 
 ![image](https://user-images.githubusercontent.com/55113204/109425997-32724080-79fc-11eb-8210-cd3dd9fa4790.png)
 
-## -e Parametresi
+### -e Parametresi
  
 -e parametresi sistemde çalışan her süreç hakkında bilgi verir. 
 
-## -u Parametresi
+### -u Parametresi
 
 -u kullanıcı adına göre süreç bilgilerini verir.
 
-## -p Parametresi
+### -p Parametresi
 
 -p süreç numaralarına göre (PID) süreç bilgisi verir.
 
 
-# pstree Komutu 
+## pstree Komutu 
 
 Süreci hiyerarşik olarak görüntülemek istersek bu komutu kullanırız. Bir ağaç gibi bize ayrıntılı anlatmaktadır. 
  
  ![image](https://user-images.githubusercontent.com/55113204/109426000-3b631200-79fc-11eb-95fe-876592d1ba05.png)
 
-# top Komutu
+## top Komutu
 
 Bu süreci 3 saniyede bir yenilerek sistemin anlık sürecini bilgi verir. -d saniye parametresi şeklinde yazarak anlık güncellenen süreyi değiştirebiliriz. Q ile çıkış yaparız.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426004-3f8f2f80-79fc-11eb-86e4-ffe5fa7c19be.png)
 
-# head Komutu
+## head Komutu
 
 Head komutu listelenmiş dosyada default olarak ilk 10 komutu vermektedir. Biz istersek -n [değer]parametresi ile görmek istediğimiz kadar değeri listeleyebiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426386-94cc4080-79fe-11eb-93dc-e5ee4e79e7d6.png)
 
-# tail Komutu 
+## tail Komutu 
 
 Default olarak sondan 10 tane girdiyi bize çıktı olarak vermektedir. -n [değer] parametresi ile kaç değerin listelenmesini istersek çıktı olarak alabiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426391-9ac22180-79fe-11eb-8129-6e5cde87b86c.png)
 
-# hostname 
+## hostname 
 
 Hostname hakkında bilgi edinmek istenirse
 
@@ -666,32 +666,32 @@ Başka bir alternative olarak şu şekilde de hostname öğrenebiliriz.
  
 ![image](https://user-images.githubusercontent.com/55113204/109426408-b4636900-79fe-11eb-8d6e-de6e40f0c24e.png)
 
-# wget Komutu
+## wget Komutu
 
 Dosya indirme komutudur. Indirmek istenilen dosyanın url/dosyaadı şeklinde yazarak indirebiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426412-b7f6f000-79fe-11eb-9d9f-826f41d4518d.png)
 
-# curl Komutu
+## curl Komutu
 
 Veri transferi sağlayan ve url ile verilerin bağlanılımını kontrol ettiğimiz komuttur.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426419-bd543a80-79fe-11eb-9623-756480b987d1.png)
 
-## -C - Parametresi
+### -C - Parametresi
 
 -C - parametresi ile kesilen indirmeyi devam ettirmemiz sağlanır.
 Iki dosyanın indirim işlemi yapmak istediğimizde iki url kullarak kaydetmek istediğimiz alanı da belirterek uygulayabiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426428-c218ee80-79fe-11eb-8db8-0981fa0c92f7.png)
 
-# -I Parametresi 
+## -I Parametresi 
 
 Bir web sitenin HTTP başlıklarını sorgulamak için -I parametresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426545-4d927f80-79ff-11eb-8d2d-1cb615db8323.png)
 
-## curl ile bir domainin get isteğini alma
+### curl ile bir domainin get isteğini alma
 
 ![image](https://user-images.githubusercontent.com/55113204/109426548-52efca00-79ff-11eb-8960-6951488b9c44.png)
  
@@ -699,117 +699,117 @@ Bir web sitesine girdiğimizde hangi cookielerin indirildiğini görmek için bu
 
 ![image](https://user-images.githubusercontent.com/55113204/109426550-57b47e00-79ff-11eb-93f8-48136ed70b9e.png)
  
-## curl ile sunucuya bir post isteği atma
+### curl ile sunucuya bir post isteği atma
 
 ![image](https://user-images.githubusercontent.com/55113204/109426563-60a54f80-79ff-11eb-8d7a-b980478a1983.png)
  
-# id Komutu
+## id Komutu
 
 Kullanıcının id bilgilerini veren komuttur.
  
 ![image](https://user-images.githubusercontent.com/55113204/109426568-656a0380-79ff-11eb-8e1d-7e325223454d.png)
 
- ## -g Parametresi 
+### -g Parametresi 
  
 -g parametresi ile etkili kullanıcın id numarası bastırılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426570-6b5fe480-79ff-11eb-877e-bf1c455a063c.png)
 
-# passwd Komutu
+## passwd Komutu
 
 Password değişimi yapmak için kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426574-70249880-79ff-11eb-90c7-6260a5aed5ef.png)
 
-# kill Komutu
+## kill Komutu
 
 Cevap vermeyen processleri sinyaller ile öldürmek için kill komutu kullanılır. Pid ile birlikte kullanılır. Burada PID değerini bulup kill -l ile nasıl bir kill kullanacağımızı belirlemeliyiz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426582-7c105a80-79ff-11eb-9706-1df7f98afa18.png)
 
-# killal Komutu
+## killal Komutu
 
 Bu komut tüm ilişkili sistemi öldürmemizi sağlayan komuttur.
 Killal -9 apache örnek verilebilir.
 
-# man Komutu
+## man Komutu
 Bir konu hakkında detaylı bilgi almak istenildiğinde man komutu kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426583-816da500-79ff-11eb-8739-5ff7f396da27.png)
  
-# rm Komutu
+## rm Komutu
 Rm komutu bir dosya yada dizin silmek için kullanılan komuttur.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426591-8af70d00-79ff-11eb-8b84-684c27823cac.png)
 
-## -i Parametresi 
+### -i Parametresi 
 
 Onay isteyerek silmesini -i parametresi kullanılmaktadır. 
 
-## -r Parametresi 
+### -r Parametresi 
 
 Alt dizin yada dosyaların silinmesini -r parametresi sağlamaktadır. 
 
-## -v Parametresi 
+### -v Parametresi 
 Yapıalan silmeyle ilgili bilgilerin elde edilmesi için de -v parametresi kullanılmaktadır.
 
-# watch Komutu
+## watch Komutu
 
 Saat hakkında bilgi veren komuttur.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426607-964a3880-79ff-11eb-8a5d-088564e13549.png)
 
-# sort Komutu
+## sort Komutu
 
 Harf yada ilk bit sıralamasına göre dizen bir sıralama komutudur.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426612-9b0eec80-79ff-11eb-8a35-43d99af43be1.png)
 
-## -r Parametresi 
+### -r Parametresi 
 
 Tersten sıralama yapılmasını istiyorsak -r parametresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426623-a6621800-79ff-11eb-924e-df846ec18a33.png)
  
-# uname Komutu
+## uname Komutu
 
 Makine hakkında bilgiler verir. Ilk olarak kullanılan kernel adını(linux), bilgisayarın ağ üzerindeki host adını(kali), kernel ana dağıtım bilgisini (5.5.0-kali2-amd64), yayınlandığı tarihle birlikte kernelin dağıtıma özel sürüm bilgisi, kullanılan bilgisayarın donanım adı ve kullanılan işletim sisteminin adı sırasıyla verilmektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426651-c1348c80-79ff-11eb-9f4a-5911e3d68ee7.png)
 
-# split Komutu
+## split Komutu
 
 Boyutu çok büyük olan dosyaların daha küçük boyuttaki dosyalara bölünmesi için split komutu kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426659-d4475c80-79ff-11eb-9edb-4dc18dad23a2.png)
 
-## wc -l * Parametresi
+### wc -l * Parametresi
 
 Burada 13 satırlık funda2 dosyasını 5 satır şeklinde bölerek part1 isminin türevleri olan dosyalara atadım. Bu dosyaları wc -l * parametresi ile görüntülecek olursak şeklinde çıktı alırız.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426763-52a3fe80-7a00-11eb-8c72-cfa7181e5c12.png)
 
-# tee Komutu
+## tee Komutu
 
 Dosyalara standart girdiği ve çıktıyı kopyalan komuta denir.
 
-## -a Parametresi
+### -a Parametresi
 
 Listelediğimiz standart çıktı logunu birbirinin üzerine yazıp eski dosyayı silmesin diye -a parametresi ile filtrelemekteyiz.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426770-5cc5fd00-7a00-11eb-8dd4-b4157a0b9a22.png)
 
-## Birden fazla log dosyası oluşturmak için
+### Birden fazla log dosyası oluşturmak için
 
 Birden fazla log dosyası oluşturmak için de ls | tee file1 file2 … şeklinde yazabiliriz.
 
-# uptime Komutu
+## uptime Komutu
 
 Sistemin ne kadar süredir aktif olarak çalıştığını gösteren komuttur. Geçerli zaman, çalışma süresi, kullanıcı sayısı, ortalama yük olarak sıralanmaktadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109426781-694a5580-7a00-11eb-94fb-e09d2da2b248.png)
 
-# find Komutu
+## find Komutu
 
 Bulmak istediğimiz dosyarı find komutu ile erişebiliriz. 
 
@@ -824,7 +824,7 @@ Root olarak txt tipinde arama yapmak istediğimizde kullanılan komut sudo find 
 
 ![image](https://user-images.githubusercontent.com/55113204/109427010-7156c500-7a01-11eb-9513-eb13eb52bea8.png)
 
-## -i Parametresi 
+### -i Parametresi 
 
 Büyük küçük harflere karşı duyarsız olmasını istiyorsak -iname parametresi kullanılmaktadır.
 Belirli bir dizinde arama yapmak istenildiğinde ise;
@@ -845,7 +845,7 @@ Son 2 gün içinde değiştirilmiş dosyaları arıyorsak find / -type f -mtime 
 1-7 gün arasındaki değişiklikleri görmek istiyorsak find / -type f -mtime +1 -mtime -7
 30 dk içinde değiştirilmiş dosyaları görmek istediğimizde find / -type f -cmin -30 parametreleri kullanılır.
 
-# scp Komutu 
+## scp Komutu 
 
 Cp gibi kopyalama komutu olduğunu düşünebiliriz. Kopyalayacağımız dosyayı nereye kopyalayacağımızı gösteren komuttur.
 
@@ -862,7 +862,7 @@ Scp user@host:dosya_adı nereye_kopyalanacağı?
 
 ![image](https://user-images.githubusercontent.com/55113204/109427106-da3e3d00-7a01-11eb-9001-8214b79b131a.png)
 
-# grep Komutu
+## grep Komutu
 
 Find komutu gibi arama yapmak için kullanılır. Dosya içinde u harfi olanları ekrana bastırmaktayız. 
 
@@ -872,31 +872,31 @@ Büyük küçük harfe duyarlıdır bundan dolayı U araması yaptığımızda s
 
 ![image](https://user-images.githubusercontent.com/55113204/109427130-f80ba200-7a01-11eb-92f3-c794515c8b7a.png)
 
-## -I Parametresi
+### -I Parametresi
 
 Büyük küçük harf duyarlılığını kaldırmak için -I parametresi kullanılmalıdır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427164-27baaa00-7a02-11eb-8a93-09b9c24bf4c2.png)
 
-## -v Parametresi
+### -v Parametresi
 
 Bazı kelimeler dışında arama yapmak istediğimizde -v parametresi kullanarak arama yapabiliriz. Burada u harfi içeren satırlar gelmesin istedik.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427172-2d17f480-7a02-11eb-8836-ee93a5a95c96.png)
 
-## -r Parametresi
+### -r Parametresi
 
 Dizindeki tüm dosyalarda arama yapılmasını istiyorsak -r parametresi kullanmaktayız.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427191-4456e200-7a02-11eb-83e2-d1c4aa98b0c8.png)
 
-## -n Parametresi 
+### -n Parametresi 
 
 Satır numarası kullanarak çıktı almak istediğimizde kullanmamı gereken parametre -n dir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427201-50db3a80-7a02-11eb-88a8-d35b2e1d8a6c.png)
 
-# chown Komutu
+## chown Komutu
 
 Bu komut kulanıcı değiştirmektedir. Sudo olarak yetkiyi devretmekteyiz. 
 
@@ -967,7 +967,7 @@ Eğer sembolik linkinde sahipliğini değiştirmek istersek şu şekilde olur.
 -R parametresi ile de tüm dizin ve alt dizinlerin sahipliğini ve grubunu kesin olarak değiştirebiliriz.
 
 
-# awk Komutu
+## awk Komutu
 
 Awk programlama dili yazılımsal olarak ifade filtrelemektir. Burada -F alanı ayırmaya yarayan parametredir. Yani noktalı virgüle ayrılmış kısmı ayırmaktadır. $ ile belirtilen kısım hangi indeksleri istiyorsak o indeksleri bize verip ekrana bastırmaktadır. Biz burada 2. indeksteki değeri ekrana bastırmak istedik. 
 
@@ -985,7 +985,7 @@ Data.txt veri akışındaki veriyi 2. indeksteki değeri alır ve ekrana bastır
 
 ![image](https://user-images.githubusercontent.com/55113204/109427235-7b2cf800-7a02-11eb-828f-aef4bf16dd1c.png)
 
-# sed Komutu
+## sed Komutu
 
 Sed komutu bu komutu kullanarak dosyaların içinde değişiklikler yapabilmekteyiz. burada ; ile ayrılan kısımı , ile ayırma işlemi yaptık.
 
@@ -1007,37 +1007,37 @@ Belirli aralıktaki ifadeleri ekrana bastırabiliriz. Burada ise 1 ve 5. Satırl
  
  ![image](https://user-images.githubusercontent.com/55113204/109427276-a6afe280-7a02-11eb-9847-0e02ba43cb59.png)
 
-# axel Komutu
+## axel Komutu
 
 Dosya indirmeyi sağlayan komuttur. Axeli öncelikle sistemimize kurup daha sonra istenilen dosyanın link adresi verilmelidir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427283-add6f080-7a02-11eb-88ad-1ed6365a501a.png)
 
-# netcad Komutu
+## netcad Komutu
 
 nc komutu ağ trafiğini dinleme yapmaktadır. Burada google.com 80 portu üzerinden dinleme yaptık.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427291-b7f8ef00-7a02-11eb-88a2-4aed8200bfd1.png)
 
-## -nv Parametresi
+### -nv Parametresi
 
 Hangi portların açık yada kapalı olduğunu öğrenmek için -nv parametresini kullanırız.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427296-bb8c7600-7a02-11eb-8b10-bd2cca74f779.png)
 
-## -nvlp Parametresi 
+### -nvlp Parametresi 
 
 Dosya aktarımında kullanılan parametre -nvlp parametresi kullanılır. Biz burada web sitemize 443 porttan bağlandık.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427298-c0512a00-7a02-11eb-9ce1-0504673e7993.png)
 
-# exiftool Komutu
+## exiftool Komutu
 
 Bu komut bir resim dosyası hakkında ayrıntılı bilgi vermektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427301-ca732880-7a02-11eb-8264-3ea77fd63c1d.png)
 
-# socat Komutu
+## socat Komutu
 
 Zayıf güvenlik duvarlarına saldırmak için Tcp bağlantı noktası ileticisini çift yönlü bayt akışı oluşturarak kullanılır.
 
@@ -1045,82 +1045,82 @@ Zayıf güvenlik duvarlarına saldırmak için Tcp bağlantı noktası ileticisi
 
 
 
-# LİNUX DOSYA SİSTEM HİYERARŞİSİ NEDİR?
+## LİNUX DOSYA SİSTEM HİYERARŞİSİ NEDİR?
 
 Dosy Sistem Hiyerarşisi linux bir kök dizin yapısına sahiptir. Öncelikle root olan kök dizinden sırasıyla alt dizinlere doğru ayrılır. Bu ayrılma / ile gösterilmektedir. Kök dizinimiz bizi en yetkili kullanıcımız anlamına gelmektedir. Onun sistemde yaptığı değişiklikler yetkili olduğu için bir soruna sebep olmamaktadır. Sistemde bir dizin yada dosyada kalıcı değişiklikler yapılması için yetki yükseltilmesi yapılıp root olunması gerekmektedir. Alt dizinlere yarılan linux dağıtık bir sistemdir. Dağıtık sistem tek bir makinede tüm özelliklerin bulunmamasıdır. Ağ üzerinden iletişim halinde olan bir çok makine farklı sunucuları farklı makinelere kullanıp ağ üzerinden iletişime geçebilir. Bu şekilde tek bir makinenin yükü azalarak performansı artmaktadır.
 
-## /bin dizini
+### /bin dizini
 
 Temel komutlar bu dizinde çalışmaktadır. Sistemde herhangi bir sorun olduğunda bin dizini çalışmaya devam etmektedir. Komutlar çalışmaya devam ettiğinden dolayı sistemdeki sorun /bin dizini sayesinde düzelebilmektedir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109977832-470d4c00-7d0e-11eb-8ae8-3d99e03627a0.png)
 
-## /boot
+### /boot
 
 Sistemi boot etmek işletim sitemine ulaşarak bilgisayar açılırken öncelik verdiğimiz sistemin yüklenerek sisteme güç vermesi demektir. Sistemin boot öncelik ayarlarını değiştirebilmek için BIOS a girmemiz gerekir. BIOS donanım çalışırken işletim sistemi ile aradaki iletişimi kuran yazılım işletim sisteminin nereden yükleneceğini bileni donanımsal protokolleri belirleyen ve işletim sisteminin öncelikle hangi donanımı okumasını sağlayan yazılımdır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109978118-981d4000-7d0e-11eb-990f-8ed7cfc5cdb9.png)
 
-## /dev
+### /dev
 
 Linuxtaki herşey dosya şeklinde dizinlere ayrılmıştır bunların içine donanım aygıtları olan fare, modem gibi aygıtların bağlandığı portlar olan tty dizini, birincil ses kayıtlarının olduğu dsp aygıtlarını içerir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109978141-9d7a8a80-7d0e-11eb-8769-35b11f590d93.png)
 
-## /etc
+### /etc
 
 Sisteme dair tüm yapılandırmaları ve bilgisayara özel yapılandırmaları içermektedir. Çalıştırılabilir dosyalar bulunmamaktadır. 
 
 ![image](https://user-images.githubusercontent.com/55113204/109978161-a4a19880-7d0e-11eb-945c-700ca3777e41.png)
 
-## /home
+### /home
 
 Kişisel verilerinin depolandığı, başka programlara yaptığı değişiklikler burada depolanmaktadır. Ayrıca kullanıcının resim, müzik gibi dosyaları da burada tutulmaktadır.
  
 ![image](https://user-images.githubusercontent.com/55113204/109978190-ac613d00-7d0e-11eb-8832-bf02dcf182cd.png)
 
-## /initrd
+### /initrd
 
 Çekirdek yüklenmesinden sonra oluşan bellek diskin üzerinde root olarak açılmasını sağlamaktadır.
 
-## /lib
+### /lib
 
 Çekirdeğe ai tolan modüller ve kütüphane dosyaları burada tutulmaktadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109978208-b2571e00-7d0e-11eb-832b-b9fdfdb33d1e.png)
 
-## /mnt
+### /mnt
 
 Sabit disk ve tüm donanımsal aygıtların bağlanma noktasır. İşletim sisteminin kurulu olduğu disk buna değildir.
-## /opt
+### /opt
 
 İşletim sisteminden bağımsız, kurulumu zorunlu olmayan programların bulunduğu dizindir.
 
-## /proc
+### /proc
 
 Fiziksel dosyaların bulundurulmadığı donanımsal yapılandırmalar, süreç, bağlı aygıtların bulunduğu sanal bir dosya sistemidir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109978247-bd11b300-7d0e-11eb-8f6e-e79a56acd4ea.png)
 
-## /root
+### /root
 
 Yetkilendirme olarak en üst yetkiye sahip olan kulllanıcıdır. Sistemdeki tüm değişikliklere izini bulunmaktadır. Kullanıcı olarak yapılamayacak tüm işlemleri root olarak yapılandırılabilir. Kalıcı olarak root olmamıza sistem izin vermemektedir. Geçici olarak root olma yetkisi için sudo komutu kullanılır ve sistem root olmanız için makinenin parolasını istemektedir.
 
-## /sbin
+### /sbin
 
 Root tarafında kullanılacak yönetimsel ve bakımsal programlar bu dizin altında tutulmaktadır. Genellikle sistem yöneticisi tarafından kullanılmaktadır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109978271-c3a02a80-7d0e-11eb-904f-541e5cc0da79.png)
 
-## /user
+### /user
 
 Sadece kullanılan makineye özel local klasör olan usr komutlar, programlar, kütüphaneler gibi tüm kullanıcılara paylaşılan verileri içeren dizindir.
 
-## /var
+### /var
 
 Sisteme ait güvenlik duvarını ve sisteme düşen logları görüntülemek için ve e-posta, yazıcı kuyrukları bu dizin altında tutulmaktadır.
 
-## /tmp 
+### /tmp 
 
 ![image](https://user-images.githubusercontent.com/55113204/109978288-c864de80-7d0e-11eb-8f4b-4e63788a623e.png)
 
@@ -1128,15 +1128,15 @@ Geçici programların depolandığı dizindir. Belirli zaman aralıklarında tem
 
 
 
-# DİZİN İŞLEMLERİ
+## DİZİN İŞLEMLERİ
 
-# pwd Komutu
+## pwd Komutu
 
 Ben neredeyim? Bunu öğrenmek için kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427724-c0522980-7a04-11eb-881b-6151372927d8.png)
 
-# cd Komutu 
+## cd Komutu 
 
 Bir dizine girilmek istendiğinde kullanılır.
 
@@ -1156,13 +1156,13 @@ Cd - - en başa döneriz.
 
 Herhangi bir parametre kullanacak olursak kullanılan komuttan sonra -parametre şeklinde bir dizilim yaparız.
 
-# Full Path 
+## Full Path 
 
 / kullanarak çalışma dizine bağlı olmadan istediğimiz yere gidebilmemizi sağlayan araçtır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427751-dcee6180-7a04-11eb-92b9-775b03c41890.png)
 
-# Relative Path
+## Relative Path
 
 Nerede olduğumuza bağlı olarak yolumuzu belirterek istediğimiz yere o güzergahta gidebildiğimiz araçtır.
  
@@ -1171,7 +1171,7 @@ Nerede olduğumuza bağlı olarak yolumuzu belirterek istediğimiz yere o güzer
 O komutlar hakkında daha fazla bilgi edinmek için man, help ve info komutları kullanılmaktadır.
 Man ile ls komutu hakkında bilgi edinelim
 
-# Komut man help
+## Komut man help
 
 ![image](https://user-images.githubusercontent.com/55113204/109427777-fee7e400-7a04-11eb-9ed8-cfa69f2e4970.png)
  
@@ -1183,7 +1183,7 @@ Info kumutu ile bilgi edinme
 
 ![image](https://user-images.githubusercontent.com/55113204/109427785-0909e280-7a05-11eb-97ab-33f4e4497586.png)
 
-# mkdir Komutu
+## mkdir Komutu
 
 Dizin oluşturmak için kullanılır. 
 
@@ -1193,39 +1193,39 @@ Alt dizinlerde aynı anda oluşturulabilir.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427791-158e3b00-7a05-11eb-97ba-b086e4bfb3e5.png)
 
-# rmdir Komutu
+## rmdir Komutu
 
 İçi boş dizinleri silmek için rm komutu kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427794-1c1cb280-7a05-11eb-9e9d-182f0d50e6bf.png)
 
-# rm Komutu
+## rm Komutu
 
 İçi dolu dosyaları silmek için rm, dizinleri silmek için rm -r komutu kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427801-22ab2a00-7a05-11eb-8cf9-1cfd0f46bea9.png)
 
-## -i Parametresi
+### -i Parametresi
 
 -i parametresi silinsin mi silinmesin mi onu sorgular.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427809-2a6ace80-7a05-11eb-8861-5cdf6e0c3570.png)
 
-## -f Parametresi
+### -f Parametresi
 
 -f parametresi sormadan siler
 
-## -r Parametresi
+### -r Parametresi
 
 -r parametresi bulunduğu dizinin alt dizinlerini de siler.
 
-## -v Parametresi
+### -v Parametresi
 
 -v parametresi ne yapıldığı bilgisini alt kullanıcıya da döndürür. 
 
 ![image](https://user-images.githubusercontent.com/55113204/109427813-30f94600-7a05-11eb-9d1e-cc1c7ff58a16.png)
 
-# ln Komutu
+## ln Komutu
 
 Dosyalara link yapmak için kullanılır.
 
@@ -1235,7 +1235,7 @@ Dosyalara link yapmak için kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109427843-41112580-7a05-11eb-874b-d6766c7f283c.png)
   
-# file Komutu
+## file Komutu
 
 Dosya mı dizin mi ne olduğunu bilmediğimiz zaman bu komutu kullanarak öğrenebiliriz.
 
@@ -1254,7 +1254,7 @@ Yönlendirmedeki yönlendirme işaretinin çift olması “>>”,eğer yönlendi
 
 
 
-# KULLANICI İŞLEMLERİ
+## KULLANICI İŞLEMLERİ
 
 Kullanıcı değiştirme için su komutu kullanılır.
 
@@ -1269,44 +1269,44 @@ Kullanıcı şifresini değiştirmek için passwd parametresi kullanılır.
 
 ![image](https://user-images.githubusercontent.com/55113204/109428286-8171a300-7a07-11eb-852a-858365612785.png)
 
-## Kullanıcı silme
+### Kullanıcı silme
 
 ![image](https://user-images.githubusercontent.com/55113204/109428293-89314780-7a07-11eb-9a0f-97261ba10239.png)
  
 -r parametresi ile kullanıcıya ait her şeyi sileriz.
 
-## Grup oluşturma
+### Grup oluşturma
 
 ![image](https://user-images.githubusercontent.com/55113204/109428297-90f0ec00-7a07-11eb-9fdc-b89dab35c050.png)
  
-## Grup silme
+### Grup silme
  
 ![image](https://user-images.githubusercontent.com/55113204/109428300-964e3680-7a07-11eb-8793-cbebdee6aaf4.png)
 
-## Kullanıcının üye olduğu grupları gösterme
+### Kullanıcının üye olduğu grupları gösterme
 
 ![image](https://user-images.githubusercontent.com/55113204/109428305-9a7a5400-7a07-11eb-9b6d-8f3cdce388ac.png)
 
-## Kullanıcıyı yetkilendirme
+### Kullanıcıyı yetkilendirme
 
 ![image](https://user-images.githubusercontent.com/55113204/109428310-a0703500-7a07-11eb-89bd-4fe72f4c2cdc.png)
 
-## Kullanıcıyı kilitleme
+### Kullanıcıyı kilitleme
 
 ![image](https://user-images.githubusercontent.com/55113204/109428311-a49c5280-7a07-11eb-9fe9-05e5b50c9b7f.png)
 
-## Kullanıcının kilidini kaldırma
+### Kullanıcının kilidini kaldırma
 
 ![image](https://user-images.githubusercontent.com/55113204/109428315-a9610680-7a07-11eb-83a2-2a015f680623.png)
 
-## Kullanıcı sayısı alma
+### Kullanıcı sayısı alma
 
 ![image](https://user-images.githubusercontent.com/55113204/109428321-ac5bf700-7a07-11eb-9510-641ea684f96c.png)
 
 
-# GÜNCELLEME, KURMA VE KALDIRMA İŞLEMLERİ
+## GÜNCELLEME, KURMA VE KALDIRMA İŞLEMLERİ
 
-## GÜNCELLEME
+### GÜNCELLEME
 
 Bu komut depolarda olan yeni sürümleri günceller.
 
@@ -1334,19 +1334,19 @@ silinen uygulamadan geriye kalmış ve artık kullanılmayan paketleri siler.
 
 -y parametresi otomatik olarak yes olarak sistemi devam ettirir bizden cevap beklemeden yes diyerek sistem kesintisiz çalışır.
 
-## KURMA
+### KURMA
 
-## Depodan kurulum ile program kurmak
+### Depodan kurulum ile program kurmak
 
 Sistemimiz güncel ise ve program depoda varsa apt-get install program_adı şeklinde programlarımızı kurarız. 
 Programın depoda olup olmadığını kontrol etmek için apt-cache search program_adı komutu ile girer bakar kontrol ederiz. Tekrar konsola programın adını yazarak teyit edebiliriz.
 
-## Program kaldırma
+### Program kaldırma
 
 Kurulan program kaldırmak istiyorsak apt-get remove program_adı şeklinde girdiğimizde otomatik olarak kaldırırız. 
 Programın yapılandırma dosyalarını sistemden kaldırmak istiyorsak apt-get - -purge remove program_adı ile kaldırabiliriz.
 
-## Paket yönetim sistemi ile kurulum
+### Paket yönetim sistemi ile kurulum
 
 Debian paketleme sistemine sahip olduğu için kali uzantı olarak .deb olarak kurulum gerçekleştirebiliriz.
 Dpkg -i dosya_adı.deb ile program kurarız.
@@ -1378,7 +1378,7 @@ apt-get deselect-upgrade komutu ile yaparız.
 
 
 
-# JOKER KARAKTERLERİN KULLANIMI
+## JOKER KARAKTERLERİN KULLANIMI
 
 Tek seferde birden fazla dosyaya işlem yapan karakterlere joker karakterler denir. 
 Asterix işareti : ‘*’ rm funda* yaparsak funda ile ilgili her şeyi silmiş oluruz.
@@ -1403,7 +1403,7 @@ Istenilen değerler parantez içinde belirtilerek çağırılır.
 
 
 
-# AĞ BAĞLANTI KOMUTLARI
+## AĞ BAĞLANTI KOMUTLARI
 
 ## ifconfig Komutu
 
@@ -1456,7 +1456,7 @@ Direk olarak bağlantıları görüntülemek istersek ise -n parametresi kullan�
 
 ![image](https://user-images.githubusercontent.com/55113204/109428573-a87ca480-7a08-11eb-8349-522d4c55c4d4.png)
 
-# cron Komutu
+## cron Komutu
 
 Cron belirlenmiş zamanda belirlenmiş görevi yerine getiren komuttur.
 Öncelikle cron ayakta mı değil mi ona bakıyoruz. Evet cron şu anda aktif durumda.
@@ -1479,7 +1479,7 @@ Oluşturduğumuz tüm crontabları silmek istersek -r parametresini kullanırız
 
 
 
-# LOG DOSYALARI
+## LOG DOSYALARI
 
 Log dosyaları kayıt dosyalarıdır. Bu dosyalarının nereden kaynaklandığını syslog konfigürasyon dosyasından bakabiliriz. 
 

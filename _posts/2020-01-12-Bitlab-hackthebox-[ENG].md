@@ -1,5 +1,4 @@
-# Bitlab — HackTheBox
-
+# Fundaaaaaa
 This is a write-up on how I solved Bitlab from HacktheBox.
 
 ![[https://www.hackthebox.eu/home/machines/profile/207](https://www.hackthebox.eu/home/machines/profile/207)](img/1__7jnFjA5aTcmtH7Vmp6dcXA.png)

@@ -2,7 +2,7 @@
 
 
 
-## KALİ LİNUX KOMUTLAR PARAMETRELER VE GENEL BİLGİLER
+
 
 
 ## ls Komutu

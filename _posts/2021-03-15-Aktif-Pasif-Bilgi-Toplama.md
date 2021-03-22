@@ -7,11 +7,28 @@
 Pasif bilgi toplama, bilgi topladığımız kişi veya kurumun haberi olmadan, sistemde log bırakmadan, internette açık olan bilgileri elde etmektir. Bu arama tipinde çeşitli uygulamalar ve yöntemler kullanılır. 
 
 ### theHarvester
+
 Bu tarama aracı internet üzerindeki tüm sitelerde hedef domainde tarama işlemi yaparak önümüze listelemektedir. İstediğimiz siteleri üzerinde de yada belirlediğimiz miktarda sonuç elde edebiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/111266760-08e02880-863c-11eb-9f76-6166a9473ffd.png)
 
 ![image](https://user-images.githubusercontent.com/55113204/111266769-0c73af80-863c-11eb-9483-af7f6025f7e6.png)
+
+Burada oxford üniversitesi hakkında internetteki tüm bilgiler neymiş bakalım.
+
+![image](https://user-images.githubusercontent.com/55113204/111989397-c11d3d80-8b22-11eb-8e45-144b68e369a2.png)
+
+![image](https://user-images.githubusercontent.com/55113204/111989452-d3977700-8b22-11eb-8e17-09cddcf6df1c.png)
+
+Sanal host araması yapmak için, dns çözümlemeleri yapmak için -v parametresi ve üst alan adları için -t parametresi ile tarama yapılır. -l parametresi ile ne kadar sonuç listelemek istiyoruz onlar hakkında bilgi verir.
+
+![image](https://user-images.githubusercontent.com/55113204/111990264-3a696000-8b24-11eb-9858-7a142e590845.png)
+
+Ters DNS sorguları gerçekleştirerek tespit edilen IP aralıkları ile daha fazla sonuç elde edilir. 
+
+![ün](https://user-images.githubusercontent.com/55113204/111990797-ab107c80-8b24-11eb-9fda-f89b230bb8c6.PNG)
+
+
 
 ### Netcraft
 
@@ -217,13 +234,19 @@ Admin panelini açmak için google dork kullanılabilir.
 ### loc
 Loc parametresi belirli bir alan üzerinde arama yapan parametredir.
 
+![image](https://user-images.githubusercontent.com/55113204/111991479-6e915080-8b25-11eb-9539-872b2b12e700.png)
+
 ### daterange
 
 Daterange:belirli bir zaman aralığını veren tarama parametresidir.
 
+![image](https://user-images.githubusercontent.com/55113204/111991904-dfd10380-8b25-11eb-9703-e1cf86a03927.png)
+
 ### phonebook
 
 Phonebook ile telefon numaralarına ulaşılabilir.
+
+![image](https://user-images.githubusercontent.com/55113204/111992348-5a9a1e80-8b26-11eb-8f8a-74293ddf72c5.png)
 
 
 Arama sonuçlarında çok fazla sonuç elde ettiğimizde bunu istediğimiz şekilde filtreleyebiliriz. Örneğin blog olanları göstermek istediğimizde şu şekilde bir script yazarız.

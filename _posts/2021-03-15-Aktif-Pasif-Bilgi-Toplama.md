@@ -51,7 +51,7 @@ Bu web sitesi bize girdiğimiz domain veya ip adresine göre port taraması yapm
 
 ### SOA Kaydı
 
-SOA kaydı bir dns serverin o bölgeden sorumlu olduğunu gösteren ilk kayıttır.Yani belirli bir alandaki dns serverın parametrelerini tanımlamak için kullanılır. O bölgedeki zone server ismi, seri numarası olan serial değeri bu değer yapılan her değişiklikte kendini bir arttırması gerekir, refresh ayarlama yapılan dosyaların kendini ne kadar sürede bir yenileyeceğini, retry bu alanda ne kadar sürede bir aramının kendini tekrarlayacağı, ttl değeri  belirlenen süre kadar cache tutabileceği, expire değeri ise ne kadar süre sonra aramının durduracağını belirtir.
+SOA kaydı bir dns serverin o bölgeden sorumlu olduğunu gösteren ilk kayıttır.Yani belirli bir alandaki dns serverın parametrelerini tanımlamak için kullanılır. O bölgedeki zone server ismi, seri numarası olan serial değeri bu değer yapılan her değişiklikte kendini bir arttırması gerekir, refresh ayarlama yapılan dosyaların kendini ne kadar sürede bir yenileyeceğini, retry bu alanda ne kadar sürede bir aramanın kendini tekrarlayacağı, ttl değeri  belirlenen süre kadar cache tutabileceği, expire değeri ise ne kadar süre sonra aramanın durduracağını belirtir.
 
 ### MX Kaydı
 
@@ -69,7 +69,7 @@ Domain.com A 192.124.249.10
 2. ftp.domain.com Cname domain.com
 3. ssh.domain.com Cname domain.com 
 
-Gibi Cname kayıtları vasıtasıyla bu domaindeki özelleşmiş alt domainlerdir. A kaydı olmadan Cname kayıtları da olmaz. Cname kayıtlarınız yoksa bu tip adresleri kullarakta dns serverınıza bağlanamazsınız.
+Gibi Cname kayıtları vasıtasıyla bu domaindeki özelleşmiş alt domainlerdir. A kaydı olmadan Cname kayıtları da olmaz. Cname kayıtlarınız yoksa bu tip adresleri kullanarakta dns serverınıza bağlanamazsınız.
 
 ### TXT Kaydı
 

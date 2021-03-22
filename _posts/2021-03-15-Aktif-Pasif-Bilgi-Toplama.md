@@ -263,13 +263,56 @@ inanchor bu bir bağlantıda tam bir bağlantı metnini aradığımızda kullan�
 
 ### Shodan
 
-Shodan internete açık olan bilgileri tarayan ve nmap taramalarını görselleştiren bir arama motorudur.
+Shodan internete açık olan bilgileri tarayan ve nmap taramalarını görselleştiren bir arama motorudur. Free olarak kısıtlı sayıda arama yapıldığı için vpn kullanarak çeşitli ip adreslerinden arama miktarımızı arttırabiliriz.
 
 ![image](https://user-images.githubusercontent.com/55113204/111270046-6bd3be80-8640-11eb-95ba-93b34ca50999.png)
 
 ![image](https://user-images.githubusercontent.com/55113204/111270060-71310900-8640-11eb-8eea-a92da6db3ba6.png)
 
 ![image](https://user-images.githubusercontent.com/55113204/111270079-755d2680-8640-11eb-99ce-cc9c0cfedd67.png)
+
+Shodan ile apachenin 2.4 versiyonu hakkında ülke olarak Türkiye şehir olarak da İstanbuldaki SSLv2 sertifikasını desteklemeyenler olarak arama yapmak istediğimizde arama aşağıdaki şekilde olmalıdır.
+
+![image](https://user-images.githubusercontent.com/55113204/111969201-07ff3900-8b0b-11eb-803e-c983e0ea08ff.png)
+
+İşletim sistemine göre arama yapmak istediğimizde os:işletim_sistemi şeklinde dork yazabiliriz.
+
+![image](https://user-images.githubusercontent.com/55113204/111969663-8956cb80-8b0b-11eb-990d-87c00eb2f49e.png)
+
+Belirli bir port aralığına göre bilgi toplamak için aşağıdaki şekilde dork yazılabilir.
+
+![image](https://user-images.githubusercontent.com/55113204/111970123-02eeb980-8b0c-11eb-9bbe-12f8f5cc9823.png)
+
+Bulduğumuz bu ip hakkında daha fazla bilgi edinmek için ip adresine gidelim ve karşımıza çıkan şeyleri yorumlayalım.
+Sağ üst tarafta IP hakkında genel bilgiler vermektedir. Sol üstte ise açık olan portları listelemektedir. Sağ altta ise kullanılan servisler gösterilmiştir ve sol altta ise bizim bu IP mizde ki zaafiyetler gösterilmiştir. Yani Shodan port, servis, zaafiyet taraması ve exploit aramaları gerçekleştiren bir web sitesidir. 
+
+![image](https://user-images.githubusercontent.com/55113204/111970957-e99a3d00-8b0c-11eb-8ee9-8e30da12b3f4.png)
+
+Exploit taraması demişken hadi birlikte bu taramaları yapalım :)
+
+Burada platform parametresi kullanarak işletim sistemini hakkında bilgi edinmek ve type olarakta remote olarak çalışan exploitleri görmek istedik.
+
+![image](https://user-images.githubusercontent.com/55113204/111971992-fa977e00-8b0d-11eb-87ed-6f7daf327f49.png)
+
+İsime göre bir exploit taraması yapmak istediğimiz zaman author parametresini kullanırız.
+
+![image](https://user-images.githubusercontent.com/55113204/111972509-9923df00-8b0e-11eb-94e8-7b21630fd87d.png)
+
+Default olarak açık olan webcamlari de izleyebiliyoruz.
+
+![image](https://user-images.githubusercontent.com/55113204/111973282-6201fd80-8b0f-11eb-82c2-df74db131a29.png)
+
+Örneğin ABD de açık olan webcam kameralarını görüntülemek istediğimizde amerikanın alan adı uzantısını yazarak arama yapmalıyız.
+
+![image](https://user-images.githubusercontent.com/55113204/111973793-ebb1cb00-8b0f-11eb-846b-8ffc0ae0f684.png)
+
+Burada İsrail'de bulunan ve kali şirketinin microsoft kullanan cihazı bulduk.
+
+![image](https://user-images.githubusercontent.com/55113204/111975541-c625c100-8b11-11eb-8413-95726b31e217.png)
+
+
+
+
 
 ### Maltego
 

@@ -327,6 +327,25 @@ Yukarıda gazi üniversitesinde bulunan e-mail,domain,location, ip adresleri gib
 
 ![image](https://user-images.githubusercontent.com/55113204/111270480-f6b4b900-8640-11eb-9fb8-59387b012b1e.png)
 
+### Dnsrecorn
+
+Bu tarama aracı hedef domainin subdomainleri hakkında bilgi vermektedir. -f parametresi kullanarak ip adreslerine göre yani ns larına göre filtreleme gerçekleştirdik. Bunu bruto force taraması şeklinde yapar. -d burada hedef domaini belirtmek için girilen parametredir.
+
+![image](https://user-images.githubusercontent.com/55113204/111986059-7c8fa300-8b1e-11eb-9c84-ec96b858eb36.png)
+
+Burada type göre ve tld (top level domaine) göre subdomain taraması yapılmaktadır. Bunu yaparak hedef sitenin subdomainlerini ve onlara ait ip numaralarını göstermektedir.
+
+![image](https://user-images.githubusercontent.com/55113204/111986381-ef008300-8b1e-11eb-87dc-523c143c448f.png)
+
+Burada -y parametresini kullanarak geniş olarak subdomain kayıtlarını listelemektedir.
+
+![Uploading image.png…]()
+
+
+
+
+
+
 ## Aktif Bilgi Toplama
 
 ### Netdiscover

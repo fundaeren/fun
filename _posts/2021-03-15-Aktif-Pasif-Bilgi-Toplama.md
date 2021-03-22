@@ -339,8 +339,11 @@ Burada type göre ve tld (top level domaine) göre subdomain taraması yapılmak
 
 Burada -y parametresini kullanarak geniş olarak subdomain kayıtlarını listelemektedir.
 
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/55113204/111988308-66371680-8b21-11eb-8d33-62971ccf1402.png)
 
+İstersek ters dns sorgusuda yapabiliriz. Normalde domaine göre sorgu yaparken istersek ip göre sorgu yapabiliriz.
+
+![dnssorgusu](https://user-images.githubusercontent.com/55113204/111988525-a5656780-8b21-11eb-8308-0d34d65facca.PNG)
 
 
 

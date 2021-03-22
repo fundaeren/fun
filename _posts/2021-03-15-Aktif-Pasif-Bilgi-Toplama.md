@@ -51,7 +51,7 @@ Bu web sitesi bize girdiğimiz domain veya ip adresine göre port taraması yapm
 
 ### SOA Kaydı
 
-SOA kaydı bir dns serverin o bölgeden sorumlu olduğunu gösteren ilk kayıttır.yani belirli bir alandaki dns serverın parametrelerini tanımlamak için kullanılır. O bölgedeki zone server ismi, seri numarası olan serial değeri bu değer yapılan her değişiklikte kendini bir arttırması gerekir, refresh ayarlama yapılan dosyaların kendini ne kadar sürede bir yenileyeceğini, retry bu alanda ne kadar sürede bir aramının kendini tekrarlayacağı, ttl değeri  belirlenen süre kadar cache tutabileceği, expire değeri ise ne kadar süre sonra aramının durduracağını belirtir.
+SOA kaydı bir dns serverin o bölgeden sorumlu olduğunu gösteren ilk kayıttır.Yani belirli bir alandaki dns serverın parametrelerini tanımlamak için kullanılır. O bölgedeki zone server ismi, seri numarası olan serial değeri bu değer yapılan her değişiklikte kendini bir arttırması gerekir, refresh ayarlama yapılan dosyaların kendini ne kadar sürede bir yenileyeceğini, retry bu alanda ne kadar sürede bir aramının kendini tekrarlayacağı, ttl değeri  belirlenen süre kadar cache tutabileceği, expire değeri ise ne kadar süre sonra aramının durduracağını belirtir.
 
 ### MX Kaydı
 

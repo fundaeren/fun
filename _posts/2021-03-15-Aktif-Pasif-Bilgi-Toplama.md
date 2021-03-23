@@ -393,7 +393,7 @@ Netdiscover yerel ağdan veya yerel ağ dışından erişerek bir ağdaki aktif 
 
 ### Dmitry
 
-Dimitry aracı port taraması yapar. Dimitry domain şeklinde arama yapılabilir. Aynı zamanda domain ve ip bilgileri gibi önemli bilgilere de ulaşılabilir.
+Dmitry aracı port taraması yapar. Dimitry domain şeklinde arama yapılabilir. Aynı zamanda domain ve ip bilgileri gibi önemli bilgilere de ulaşılabilir.
 
 ![image](https://user-images.githubusercontent.com/55113204/111270900-7fcbf000-8641-11eb-81ef-d19558a0d3ac.png)
 

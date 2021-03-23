@@ -391,11 +391,25 @@ Netdiscover yerel ağdan veya yerel ağ dışından erişerek bir ağdaki aktif 
 
 ![image](https://user-images.githubusercontent.com/55113204/111270541-0b914c80-8641-11eb-9e67-52e498c0d18b.png)
 
-### Dimitry
+### Dmitry
 
 Dimitry aracı port taraması yapar. Dimitry domain şeklinde arama yapılabilir. Aynı zamanda domain ve ip bilgileri gibi önemli bilgilere de ulaşılabilir.
 
 ![image](https://user-images.githubusercontent.com/55113204/111270900-7fcbf000-8641-11eb-81ef-d19558a0d3ac.png)
+
+Dmitry ile açık kapalı port taraması yapabiliriz.
+
+![image](https://user-images.githubusercontent.com/55113204/112141842-e4112580-8be6-11eb-8c50-af36b8e50141.png)
+
+Dmitry ile tüm bilgileri alabiliriz.
+
+![image](https://user-images.githubusercontent.com/55113204/112142011-20448600-8be7-11eb-980d-e39fc256288c.png)
+
+![image](https://user-images.githubusercontent.com/55113204/112142074-32262900-8be7-11eb-9ea3-ded69ac53862.png)
+
+![image](https://user-images.githubusercontent.com/55113204/112142597-d7d99800-8be7-11eb-8d4b-6ba2b6587675.png)
+
+
 
 ### Fierce
 Fierce hedef web sitesindeki dns suncularının bulunmasını ve zone transfer yapılmasını sağlamaktadır. Belirtilen aralık içinde geriye doğru arama yapmaktadır. Dahili ve harici olan ip aralıklarını da taramaktadır.

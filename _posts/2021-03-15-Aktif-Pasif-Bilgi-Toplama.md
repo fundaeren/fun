@@ -133,6 +133,15 @@ Wayback machine sitesi araştırılan bir web sitesi hakkında eskiden web sayfa
 
 ![image](https://user-images.githubusercontent.com/55113204/111268228-10a0cc80-863e-11eb-99fd-32ec62c0a6d4.png)
 
+![wayback1](https://user-images.githubusercontent.com/55113204/112141057-e030d380-8be5-11eb-87f4-4b68be30ceed.PNG)
+
+![wayback2](https://user-images.githubusercontent.com/55113204/112141070-e626b480-8be5-11eb-9c62-2482e543cb10.PNG)
+
+![wayback3](https://user-images.githubusercontent.com/55113204/112141090-ee7eef80-8be5-11eb-9519-c981e3a6a644.PNG)
+
+![wayback4](https://user-images.githubusercontent.com/55113204/112141129-f9d21b00-8be5-11eb-941f-73d33b26c52e.PNG)
+
+
 ### Dnsdumpster
 
 Dnsdumpster sitesi domain bilgilerini ve bu domane bağlantılı serverların listesini ve bilgilerini göstermektedir.

@@ -1510,3 +1510,7 @@ Syslog ağ üzerinden gelen TCP UDP portlarını dinleyenilen bir C kütüphanes
 Ryslog ise ip bazlı kısaltmalar ile herhangi bir bilgiyi log dosyasını istediğimiz bir log dosyasına yönlendirebiliriz. 
 
 
+**¯\\\_(ツ)\_/¯**
+
+
+

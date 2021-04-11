@@ -515,3 +515,7 @@ Nslookup etkileşimsiz mod olarak ise domain adından önce kullanmamız gereken
 Tüm dns kayıtları hakkında bilgi edinmek istiyorsak şu şekilde bir arama yapmaktayız.
 
 ![image](https://user-images.githubusercontent.com/55113204/111273768-45645200-8645-11eb-832d-6ae9f9fb6c67.png)
+
+
+**¯\\\_(ツ)\_/¯**
+

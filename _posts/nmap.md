@@ -1,1 +1,1 @@
-HOST KEŞFİ
+#HOST KEŞFİ

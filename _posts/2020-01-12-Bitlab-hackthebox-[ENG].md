@@ -1,44 +1,25 @@
-# Bitlab — HackTheBox
+# NMAP
 
-This is a write-up on how I solved Bitlab from HacktheBox.
 
-![[https://www.hackthebox.eu/home/machines/profile/207](https://www.hackthebox.eu/home/machines/profile/207)](img/1__7jnFjA5aTcmtH7Vmp6dcXA.png)
-[https://www.hackthebox.eu/home/machines/profile/207](https://www.hackthebox.eu/home/machines/profile/207)
+## HOST KEŞFİ
 
-This is a write-up on how I solved Bitlab from HacktheBox.
+Host keşfi geniş ağ aralığında bir ağ adres aralığını aramak yerine belirli host üzerine indirgerek tarama yapılmasıdır. 
 
-[Hack the Box](http://hackthebox.eu/) is an online platform to test and advance your skills in penetration testing and cybersecurity.
 
-### about this box:
+### -sL Parametresi
 
-Bitlab is a medium difficulty box. Bitlab was such a good and fun box because it demonstrated real-life setups and vulnerabilities not because of old versions but because of how boxes are setup (over permission-binaries, reconfigured or over-exposed network services, people sticking keys in places they really should not be, etc).
+Bu parametre ile hedef hosta herhangi bir paket göndermeden her anı bilgisayar listeleyerek tarama yapar. Burada girdiğimiz host ve belirlediğimiz subnetmask aralığı sayesinde bize ters DNS çözümlemesi de yapar ve ip adreslerini göstererek listeleme yapmaktadır. İlk olarak hedefe böyle bir tarama ile başlamak bizi IDS in ağına hemen düşmekten kurtarabilir. Dikkat çekmeyen bir tarama yöntemi olan liste taraması hangi makinelerin hedef makine olarak belirlememiz de önemli bir araçtır. 
 
-### Recon:
+![image](https://user-images.githubusercontent.com/55113204/114320933-13012400-9b21-11eb-9f10-e98e9d5f8842.png)
 
-Use `Nmap` to scan the target ports:
 
-![](img/1__kR5RRWiqYyD4MDfahQMiqQ.png)
+## -sn Parametresi
 
-> **_nmap_** _Network exploration tool and security / port scanner_**_\-sV_** _(Version detection)   
-> _**_\-sC_** _Performs a script scan using the default set of scripts._**_\-o_** _Output file._
 
-Only two ports are opened **22** and **80**. We have **SSH** on port **22** and `Gitlab` on port **80**.
+Nmap port taraması yapmadan ana keşif taraması yapmasını ve dönen çıktıyı göstermesini söyler. Bu tarama türüne ping taraması da denir. Liste taramasıyla aynı amaç için kullanılır ve bir ağı dikkat çekmeden keşfe çıkar. Saldırganların ağda kaç hostun olduğunu bilmesi, liste taraması ile elde edilen bilgisayar adı ve IP listesinden daha değerlidir. Bir çok sunucu broadcast sorgularına yanıt vermediğinden dolayı broadcast adreslerine ping atmaktan daha güvenlidir. –T4 (Timing Templates) parametresi burada hızlı bir şekilde güvenilir ağların taranmasını sağlamaktadır.
 
-Without directory enumeration with the `Gobuster` we already know that there is `robots.txt` which has some disallowed entries.
 
-![[https://gist.github.com/ls4cfk/6108e728798f1d82cf588578bd7f859f#file-robots-txt](https://gist.github.com/ls4cfk/6108e728798f1d82cf588578bd7f859f#file-robots-txt)](img/1__Gv87TTiK5NLs66bbNrc3gA.png)
-[https://gist.github.com/ls4cfk/6108e728798f1d82cf588578bd7f859f#file-robots-txt](https://gist.github.com/ls4cfk/6108e728798f1d82cf588578bd7f859f#file-robots-txt)
-
-If we look at the `/help/` entry we will see `bookmarks.html`
-
-![](img/1__6d0FQUazeytbrbOfiV7N0A.png)
-
-Which contains some elements, One of them contains obfuscated data
-
-![[https://gist.github.com/ls4cfk/6108e728798f1d82cf588578bd7f859f#file-bookmarks-html](https://gist.github.com/ls4cfk/6108e728798f1d82cf588578bd7f859f#file-bookmarks-html)](img/1____ifw7ZYAnnT331O7uDQR2w.png)
-[https://gist.github.com/ls4cfk/6108e728798f1d82cf588578bd7f859f#file-bookmarks-html](https://gist.github.com/ls4cfk/6108e728798f1d82cf588578bd7f859f#file-bookmarks-html)
-
-After deobfuscation, we have a Username and Password.
+![image](https://user-images.githubusercontent.com/55113204/114320958-3c21b480-9b21-11eb-99b9-4920132556a4.png)
 
 > `clave:11des0081x`
 

@@ -266,11 +266,11 @@ Bu saldırıda, bilgisayar korsanı ilk olarak switch portlara bağlanır ve ço
 MAC adres tablosu dolduğunda, switch arıza açma moduna girer ve bir ağ hub'ı gibi davranarak bütün switch portlara tüm paketleri yayınlar.
 Saldırgan ise, hassas bilgileri olan paketleri yakalamak için bir paket analizcisi kullanabilir.
 
-https://iq.opengenus.org/mac-flooding-attack/
 
+## Bilgisayarlara Statik ARP Kaydı Girme Nasıl OLur ?
+Statik bir ARP girişi, bir Cisco cihazından veya bir Windows iş istasyonundan yönetilebilir. Nadiren çağrılsa da, önbelleğinizden bir girdi ekleyebilir veya silebilirsiniz.
 
-Bilgisayarlara Statik ARP Kaydı Girme Nasıl OLur ?
-https://www.dummies.com/programming/networking/cisco/cisco-networking-static-arp-entry-managment/
+Statik ARP girdileri eklemek istemenizin bir nedeni, gün boyunca sürekli olarak birbiriyle iletişim kuran iki ana makinenizin olmasıdır; Her iki sistem için de birbirinin ARP önbelleğine statik ARP girişleri ekleyerek, ARP istekleri ve ARP yanıtları biçiminde bazı ağ ek yüklerini azaltırsınız. Statik ARP girişleri genellikle dinamik girişler gibi bir arayüze tanımlanmaz.
 
 ## Statik ARP Kayıt Korumasını Aşma Nasıl Yapılır ?
 Statik ARP'ı bloke edilen hedef cihaz üzerinde ayarlayarak ARP zehirlenmesinin baypas edilmesini önlemek için, ağ geçidi gibi iletişim hedefinden üretilen cevap paketini kontrol etmek için çift yönlü zehirleme işlevi sağlanır ve statik ARP ayarı NAC üzerinden bloke edilebilir.

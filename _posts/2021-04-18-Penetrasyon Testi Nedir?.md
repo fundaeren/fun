@@ -34,25 +34,25 @@ Bir sistemdeki belirli bir alanı test etmeye kapsam denmektedir. Her sızma anl
 # Pentest Süreçleri Nelerdir ?
 Pentest süreci sisteme adım atıldıkça sistemler üzerinde saldırı aktiviteleri nelerdir sorusunun cevabıdır. Bir sızma testi sürecinde sırasıyla adımlardan bahsedelim.
 
-•	`Bilgi Toplama`: Hedef sistem hakkında pasif & aktif yöntemler ile bilgi toplama faaliyeti gerçekleştirilir.
-•	`Tarama`: Hedef sistem hakkında teknik araçlar kullanılarak genel bir tarama yapılmaktadır.Bu tarama da servislerinin versiyonları, portlarında hangi servislerinin olduğu gibi bilgiler elde edilerek güvenlik açıkları tespit edilmektedir.
-•	`Erişim Kazanmak`: Bilgi toplama ve tarama aşamalarında toplanan veriler kullanılarak, hedeflenen sistemden yararlanmak için bulunan güvenlik açığının sömürülmesi ve sisteme erişim kazanmak için  gerekli araştırma ve planlama yapılır. Exploit, payload vb. hazırlanır.
-•	`Erişimi Sürdürmek`: Hedef sisteme girildiğinde mümkün olduğunca çok veri elde edilerek sürekli hedefte erişimde kalmaya çalışılır.
-•	`Saldırı /Penetraston /Yetki Yükseltme`: Hazırlanan payload veya exploitler doğrultusunda sisteme saldırılar, sızmalar gerçekleştirilir. Çalıştırılan exploit’in sistemdeki işlevi ve diğer sistemlere etkisi incelenir. Gereken yetki yükseltme veya benzeri hareketler gerçekleştirilir.
-•	`Zafiyet Taraması`: Sistemdeki zafiyetler ortaya çıkarılır. Bulunan her bir zafiyet için tekrar bu adımlar gerçekleştirilir.
-•	`İzleri Temizlemek`: Çalıştırılan exploit ve payload’ları sistemde herhangi bir değişiklik yaptıysa eskiye döndürülür ve oluşturulan kullanıcılar, dosyalar silinir. Sanki sisteme girilmemiş gibi olması sağlanır.
+*	`Bilgi Toplama`: Hedef sistem hakkında pasif & aktif yöntemler ile bilgi toplama faaliyeti gerçekleştirilir.
+*	`Tarama`: Hedef sistem hakkında teknik araçlar kullanılarak genel bir tarama yapılmaktadır.Bu tarama da servislerinin versiyonları, portlarında hangi servislerinin olduğu gibi bilgiler elde edilerek güvenlik açıkları tespit edilmektedir.
+*	`Erişim Kazanmak`: Bilgi toplama ve tarama aşamalarında toplanan veriler kullanılarak, hedeflenen sistemden yararlanmak için bulunan güvenlik açığının sömürülmesi ve sisteme erişim kazanmak için  gerekli araştırma ve planlama yapılır. Exploit, payload vb. hazırlanır.
+*	`Erişimi Sürdürmek`: Hedef sisteme girildiğinde mümkün olduğunca çok veri elde edilerek sürekli hedefte erişimde kalmaya çalışılır.
+*	`Saldırı /Penetraston /Yetki Yükseltme`: Hazırlanan payload veya exploitler doğrultusunda sisteme saldırılar, sızmalar gerçekleştirilir. Çalıştırılan exploit’in sistemdeki işlevi ve diğer sistemlere etkisi incelenir. Gereken yetki yükseltme veya benzeri hareketler gerçekleştirilir.
+*	`Zafiyet Taraması`: Sistemdeki zafiyetler ortaya çıkarılır. Bulunan her bir zafiyet için tekrar bu adımlar gerçekleştirilir.
+*	`İzleri Temizlemek`: Çalıştırılan exploit ve payload’ları sistemde herhangi bir değişiklik yaptıysa eskiye döndürülür ve oluşturulan kullanıcılar, dosyalar silinir. Sanki sisteme girilmemiş gibi olması sağlanır.
 
 
 # Pentest Raporu Nedir? Nasıl olmalıdır?
 
 Pentestten sonra bir rapor sunulur. Bu rapor pentest sonuçlarını en iyi şekilde açıklayacak araçtır ve iki farklı bölümden oluşan raporlama mevcuttur. Birinci bölümdeki raporlama penetrasyon testi stratejinizi iş açısından açıklayan ve risk derecelendirmesine göre sonuçları belirleyen bir yönetici özetidir. Bu bölüm kısa olmalıdır. İş ekibi neyi düzelteceğine karar verecektir ve hangi sorunlar kabul edilebilir bir risk düzeyini temsil eder. Diğeri kısım ise genel veya belirsiz ifadelerden kaçınarak, açıklayıcı ve spesifik olması gereken teknik ayrıntıdır. Teknik ekip, raporun bu bölümünü harekete geçmek ve sızma testi sırasında keşfedilen güvenlik sorunlarını düzeltmek için kullanacaktır.
-•	Sızma testinde kullanılan standartlar,
-•	Sızma testinde kullanılan tüm araçlar ve işlemlerin detaylı olarak raporda bahsedilmesi,
-•	Sızma testi sırasında keşfedilen kritik seviye güvenlik açıklıklarının anında bildirilmesi. Bu açıklıkların detaylı olarak raporda bahsedilmesi,
-•	Raporların okunabilir ve anlaşılır olması. Teknik kelimelerin detaylı olarak bölümde bahsedilmesi,
-•	Sızma testi raporunda; testi gerçekleştiren sızma testi uzmanı, rapor oluşturan kişi ve kurum hakkında kısaca bilgilere yer vermek,
-•	Raporun şifreli ve gizli bir şekilde iletilmesi,
-•	Yöneticilere ve teknik çalışanlara özel açıklamalar veya farklı raporlar sunulması gerekmektedir.
+**	Sızma testinde kullanılan standartlar,
+**	Sızma testinde kullanılan tüm araçlar ve işlemlerin detaylı olarak raporda bahsedilmesi,
+**	Sızma testi sırasında keşfedilen kritik seviye güvenlik açıklıklarının anında bildirilmesi. Bu açıklıkların detaylı olarak raporda bahsedilmesi,
+**	Raporların okunabilir ve anlaşılır olması. Teknik kelimelerin detaylı olarak bölümde bahsedilmesi,
+**	Sızma testi raporunda; testi gerçekleştiren sızma testi uzmanı, rapor oluşturan kişi ve kurum hakkında kısaca bilgilere yer vermek,
+**	Raporun şifreli ve gizli bir şekilde iletilmesi,
+**	Yöneticilere ve teknik çalışanlara özel açıklamalar veya farklı raporlar sunulması gerekmektedir.
 
 Sıma Testi Metadolojisi Nedir ?
 • Ağ Sızma Testi 

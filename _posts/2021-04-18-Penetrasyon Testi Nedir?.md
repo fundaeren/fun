@@ -230,8 +230,10 @@ Nemesis Özellikleri
 Windows için yapılmış bir tooldur.
 
 ### Ettercap
-
-![image](https://user-images.githubusercontent.com/55113204/115157794-d63eab00-a093-11eb-8350-6de08feb29e7.png)
+Ettercap kullanarak host taraması yaptığımızda elde edilen veriler bize host listesini görmemizi sağlamaktadır.
+![image](https://user-images.githubusercontent.com/55113204/115299445-7a455680-a167-11eb-9a7d-1a9c79b5d208.png)
+Ettercap kullanarak DCHP spoofing yapabiliyoruz. 
+![image](https://user-images.githubusercontent.com/55113204/115303722-a6170b00-a16c-11eb-908f-abf1a0281951.png)
 
 ## Arp Spoof Sonrası Gerçekleştirilen Saldırılar Nelerdir ?
 Saldırganların MITM saldırılarında başarılı olabilmesi için, kurbanı gerçek sunucu yerine proxy sunucusuna yönlendirmesi gerekir. Bunun içinde aşağıdaki senaryolar uygulanır;

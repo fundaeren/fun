@@ -207,7 +207,14 @@ ARP Spoofing, bir diğer adıyla ARP sahtekarlığı, kötü niyetli bir kişini
 Ağ trafiğini ana bilgisayarına yönlendirmek (route etmek) için kullandığı ARP zehir yönlendirmesini içeren bir yöntemdir. Bu içindeki birden fazla aynı yayın alanındaki ana bilgisayarın IP trafiğini ele geçirerek anahtarlı bir ağı koklamasını sağlamasıdır.
 
 ### Arpspoof
-1.	Saldırgan, sahte ARP yanıtları göndermek için Arpspoof veya Driftnet gibi bir sahtekarlık aracı kullanır. 
+
+Saldırgan, sahte ARP yanıtları göndermek için Arpspoof veya Driftnet gibi bir sahtekarlık aracı kullanır. 
+ 
+![image](https://user-images.githubusercontent.com/55113204/115244603-bdce9f00-a12c-11eb-9c20-9116a8a1c233.png)
+ 
+![image](https://user-images.githubusercontent.com/55113204/115244646-ccb55180-a12c-11eb-9b5b-15980eb3b4b5.png)
+
+
  
 ### Nemesis
 Nemesis Projesi, UNIX benzeri ve Windows sistemleri için komut satırı tabanlı, taşınabilir bir insan IP yığını olacak şekilde tasarlanmıştır. Paket protokole göre ayrılmıştır ve basit kabuk komut dosyalarından enjekte edilen paketlerin yararlı komut dosyası oluşturulmasına izin vermelidir.

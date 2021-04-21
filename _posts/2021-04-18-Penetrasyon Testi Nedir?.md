@@ -27,6 +27,9 @@ Kurumunun herhangi bir bilgiyi pentest yapacak kişi veya kurumu vermediği ve k
 ### Tandem 
 Sızma testi yapılacak kuruluşun personelleri ile birlikte gerçekleştirilen yaklaşımdır. Burada personelle birlikte testler adım adım birlikte yürütülmektedir. Bu yaklaşım kendini siber güvenlik alanında geliştirmek isteyen kurum ve kuruluşların genellikle tercih ettiği bir yaklaşımdır.
 
+![blackbox-greybox-whitebox](https://user-images.githubusercontent.com/55113204/115557416-5cd4d180-a2ba-11eb-9563-4226f7879661.png)
+
+
 ## Penetrasyon Testi Kapsam Formu Nedir? Ne işe yarar?
 
 Bir sistemdeki belirli bir alanı test etmeye kapsam denmektedir. Her sızma anlaşmasının bir kapsamı veya neyin test edilip neyin test edilmemesi gerektiğine dair bazı sınırlamaları vardır. Sızma testi yapanların saldırması gereken ağlar, uygulamalar, veritabanları, hesaplar, kişiler, fiziksel güvenlik kontrolleri ve diğer varlıkların hepsine kapsam denmektedir. Kapsamın doğru olması, maksimum iş değeri elde edilmesini sağlamaktadır. Yanlış kapsamın tanımlanması yapılan testin yararlılığını ciddi anlamda zarar vermektedir. Kapsamlı bir angajman, güvenlik ekiplerinin bazı belirli öğelere odaklanması için zaman ve enerji sağlar. Kuruluşlar, kapsamı iyi belirlenmiş görevlerden en yüksek değeri elde edebilir.
@@ -56,17 +59,55 @@ Pentestten sonra bir rapor sunulur. Bu rapor pentest sonuçlarını en iyi şeki
 
 Sıma Testi Metadolojisi Nedir ?
 * Ağ Sızma Testi 
+Ağ sızma testi, ağın güvenlik yanıtlarını test etmek için kasıtlı olarak kötü amaçlı teknikler kullanarak ağlar, sistemler, ana bilgisayarlar ve cihazlardaki güvenlik açıklarını belirleyen bir güvenlik hizmetidir.
+
+![chart-new-rt-net-768x311](https://user-images.githubusercontent.com/55113204/115563684-79740800-a2c0-11eb-9761-2e8b945a38d0.png)
+
 * Web Uygulama Sızma Testi 
+Bir web penetrasyonu, son kullanıcının bir bilgisayar korsanının internetten verilere erişme, e-posta sunucularının güvenliğini bulma ve ayrıca web barındırma sitesinin ve sunucusunun ne kadar güvenli olduğunu öğrenme olasılığını bulmasına yardımcı olur.
+Netsparker ve Kiuwan gibi araçlarla gibi web güvenlik açıklarınızı tarayabilirsiniz.
+
+![Web-Application-Penetration-Testing-Steps-And-Methods](https://user-images.githubusercontent.com/55113204/115564906-95c47480-a2c1-11eb-8232-1dfbe0c06cd2.png)
+
 * Mobil Uygulama Sızma Testi 
+Mobil sızma testi, hem web uygulaması güvenlik açıkları hem de mobil cihazlara özgü güvenlik açıkları, araçları ve teknikleri hakkında bilgi gerektirir.
+
+![mobile-pentest](https://user-images.githubusercontent.com/55113204/115566317-d07adc80-a2c2-11eb-89f0-b95b318bbbae.png)
+
 * SCADA Sızma Testi 
+Tüm ekipmanların kontrolünden üretim planlamasına, çevresel kontrolden üretim planlamasına kadar otomatik kontrol, sonuçların izlenmesi ve raporlanması dahil olmak üzere tüm her şey göz önünde bulundurulması ile testlerin yapılmasıdır.
+
+![scada](https://user-images.githubusercontent.com/55113204/115569266-b8588c80-a2c5-11eb-8cc9-0a591b2f501a.png)
+
 * Red Team Sızma Testi 
+Red Team sızma testi, güvenlik programlarının henüz ilk aşamalarında olan ve güvenli olmayan iş süreçlerini, zayıf güvenlik ayarlarını veya bir bilgisayar korsanının kolayca yararlanabileceği diğer zayıflıkları belirlemeye çalışan kuruluşlar için uygun olan sızma testidir.
+
+![red-team-versus-pentest](https://user-images.githubusercontent.com/55113204/115569725-2d2bc680-a2c6-11eb-8950-e860a4111a91.png)
+
 * Sosyal Mühendislik Testi 
+Pentestlerin, güvenlik duruşunu ve güvenlik açıklarının nerede olduğunu ve bunları bir siber saldırgan bakış açısıyla nasıl keşfedileceğini anlamak için bir kuruluşun çalışanları üzerindeki sosyal mühendislik taktiklerini test etmek için kullanılan bir tekniktir. 
+
 * Servis Dışı Bırakma Testi
+Saldırganın siteyi kapatma ihtimali göz önüne alınarak, planlanmış bir test sırasında sitenizin DoS saldırısına duyarlı olduğunu bulmak için yapılan pentest çalışmalarıdır.
+
 * APT Saldırı Simülasyonu
+Hedefin APT saldırılarına hazırlıklı olması için gerçek bir saldırı senaryosunu simüle ederek kuruluştaki güvenlik açıklarının belirlenmesini içerir.
+
+![apt-simülasyonu](https://user-images.githubusercontent.com/55113204/115577302-fad19780-a2cc-11eb-99f6-93015e096667.jpg)
+
 * Mail Gateway Güvenlik Testi 
+Kampaya, gerçek kullanıcıları taklit ederek veya bilgi güncellemesi gibi mail yollayak kişileri kandıran saldırı tipine Phishing, spamlarla, kullanıcı klavyesinin bastığı her bir tuşu algılayan yazılım programı veya donanım cihazları olan keyloggerlarla veya fidye yazılımlarla elde edilebilir saldırıları tespit etmek için gerçekleştirilen güvenlik testleridir.  
+
 * Fiziksel Sızma Testi 
+Kişinin fiziksel olarak bilgi toplamaya çalıştığı güvenlik testleridir. 
+
 * Yük & Stress Testi 
+Yük durumunun üstesinden gelme kapasitesini ve bir sistemin sağlamlığını kontrol etmek için yapılan testtir. Aşağıda bu testler hakkında bilgi verilmiştir.
+
+![Load-vs-stress](https://user-images.githubusercontent.com/55113204/115580869-2a35d380-a2d0-11eb-942e-240303847507.png)
+
 * BDDK Uyumlu Sızma Testi
+Bankalar ve finans sektörlerinde bilgi sistemleri üzerinde güvenlik açıklarını bulmaya yönelik sızma testidir.
 
 ## Sızma Testi ve Güvenlik Denetimleri İçin Başlıca Standartlar ve Bölümleri Nelerdir?
 Çeşitli topluluklar, ilgili kurum ve kuruluşlar tarafından güvenlik denetim testlerinin daha sağlıklı ve tekrar edilebilir sonuçlar üretilmesi için oluşturulmuş ve genel kabul görülmüş standartlardır.
@@ -119,13 +160,17 @@ Düğümden düğüme veri aktarımı sağlar ve ayrıca fiziksel katmandan hata
 ### 1-	Physical (Fiziksel Katman): 
 Sinyallerin hareket ettiği katman burasıdır. Ağ uzmanları bir ağda sorun meydana geldiğinde tüm kabloların doğru şekilde bağlandığını ve güç fişinin yönlendiriciden, anahtardan veya bilgisayardan çekilmediğini kontrol etmek için doğrudan fiziksel katmana bakarlar. verilerin bağlı iki cihaz arasında nasıl aktığını da tanımlar. Olası çeşitli iletim modları şunlardır: Tek yönlü, yarı çift yönlü ve tam çift yönlü.  farklı cihazların / düğümlerin bir ağda düzenlenme şeklini belirtir, yani veriyolu, yıldız veya ağ topolojisi. Fiziksel katman ayrıca aktarım hızını, yani saniyede gönderilen bit sayısını da tanımlar ve  bit seviyesinde senkronizasyon sağlar. Hub, Tekrarlayıcı, Modem, Kablolar Fiziksel Katmanlı cihazlardır.
 
-Application, Presentation, Session katmanları yazılım katmanı iken Network, Data Link, Physical katmanları ise donanım katmanlarını oluşturmaktadır. 
+Application, Presentation, Session katmanları yazılım katmanı iken Network, Data Link, Physical katmanları ise donanım katmanlarını oluşturmaktadır. Sonuç olarak şöyle bir çıktı alabiliriz.
+
+![osi katmanı](https://user-images.githubusercontent.com/55113204/115546324-8e936b80-a2ad-11eb-8854-885e19836403.jpg)
+
 
 ## TCP/IP standardı ve OSI ilişkisi?
 
 OSI modelinde tanımlanan protokollerin çoğu TCP / IP modelinde kullanılır. OSI Modeli 7 farklı katmandan oluşurken TCP / IP modeli modern platformlarda daha uzmanlaşmış ve daha gelişmiş olan sadece 4 kattan oluşmaktadır.
 OSI modeli bir ağ sisteminin işlevlerini tanımlamak için kullanılan kavramsal bir çerçevedir. OSI modeli, farklı ürün ve yazılımlar arasında birlikte çalışabilirliği desteklemek için bilgi işlem işlevlerini evrensel bir kurallar ve gereksinimler kümesi olarak nitelendirir. OSI modeli 7 katmandan oluşmaktadır. Fiziksel, Veri Bağlantı, Ağ, Taşıma, Oturum, Sunum ve Uygulama. OSI modelinde taşıma katmanı, paketlerin teslimini garanti eder.
 TCP / IP modeli, İnternet'in etrafında geliştirdiği standart protokollere dayanmaktadır. Ana bilgisayarların bir ağ üzerinden bağlanmasına izin veren bir iletişim protokolüdür. TCP / IP modelinde taşıma katmanı paketlerin teslimini garanti etmez. Yine de TCP / IP modeli daha güvenilirdir. TCP / IP modeli, bir bakıma OSI modelinin uygulamasıdır. TCP / IP'de protokolü değiştirmek kolay değildir. TCP / IP modeli, hem mevcut İnternet mimarisini modellemek hem de ağ üzerinden tüm aktarım biçimlerinin izlediği bir dizi kural sağlamak için kullanılır. Application, Transport, Internet, Network Access üzere 4 katmandan oluşur.
+
 
 ### Uygulama katmanı
 
@@ -143,13 +188,20 @@ Ana makineden ana makineye aktarım yapan katman olarak da bilinen taşıma katm
 
 Ağ erişim katmanı, TCP / IP paketlerini ağ ortamına yerleştirmekten ve ağ ortamından TCP / IP paketlerini almaktan sorumlu olan katmandır.
 
+![tcp-ıp](https://user-images.githubusercontent.com/55113204/115597400-e6e46080-a2e1-11eb-97c0-ce71af86fe87.png)
+
+
 ## Address Resolution Protocol (ARP)
 
 Bir bilgisayar sisteminde bir verinin alınıp verilmesi mantıksal adres olan IP adresi kullanılarak yapıldığı düşünülür ancak bu iletişimin sağlanmasını fiziksel adres olan MAC üzerinden yani 2. Katmanda gerçekleşir. ARP görevi mantıksal adresi yani IP fiziksel adrese yani MAC’ e çevirmektedir. ARP adres çözümleme protokolü anlamına gelmektedir. ARP bir makinenin IP adresinden MAC adresini bulur. Bir ARP isteği bir Broadcast’tir ve bir ARP yanıtı bir Unicast'tır.
 
+
+
+
 ## Yeni Nesil ARP Protokolü - NDP (IPv6)
 
 IPv6, IPv4’ün tükenmesinden dolayı daha geniş bir alana sahip bir protokol olan IPv6 internetin 6. Revizyonudur. İnternet özellikli cihazların iletişim kurması için gereken benzersiz IP adreslerini sağlaması açısından IPv4'e benzer şekilde çalışır. Bununla birlikte, önemli bir farkı vardır: 128 bitlik bir IP adresi kullanır. IPv4’e göre avantajları ise daha basitleştirilmiş ve daha verimli yönlendirme sağlamaktadır. Private adres çakışmaları artık yoktur. NAT burada yoktur. Otomatik yapılandırma kolaylığı sağlamaktadır. Çok fazla noktaya broadcast yapabilme imkanı sağlamaktadır. DHCP yapılandırılması burada yoktur. Daha basit head biçimi vardır. Gizlilik desteği ve yerleşik kimlik doğrulama imkanı vermektedir. 
+
 ### NDP 
 #IPv6 da komşu düğümler arasında iletişimi sağlamak ve yönetmek için Komşu Keşif Protokolüdür (Neighbor Discovery Protocol). Komşu keşif işleminde ise local (yerel) bağlantıdaki bir komşunun erişebilirliğini öğrenmek, bağlantı katmanı adresini belirlemek ve komşu cihazları izlemek için ICMP mesajlarını istenen düğümlere çok sayıda broadcast yayın yapalır. Komşu düğüm dediğimiz aynı bağlantı üzerinde bulunan IPv6 düğümleridir. NDP ile mesajlar broadcast yaparak bir düğümdeki komşunun bağlantı yerel adresini öğrenebilmektedir. Bir düğümün, kullanmak istediği bir adresin o anda kullanımda olup olmadığını belirlemesini sağlar. Bir komşunun artık erişilebilir olup olmadığını belirlemek için düğümlere yardımcı olur. Hem yönlendiriciler hem de ana bilgisayarlar için adres çözümlemesi tekrar edilebilir.  Bir paket alıcısının IP adresini yerel bağlantının ötesinde bir atlama olarak belirlemek için bir algoritma kullanır. Sonraki atlama, bir yönlendirici veya hedef düğüm olabilir. Yalnızca hedeflerin IP adresi verildiğinde, düğümlerin bir komşunun yerel bağlantı adresini belirlemesine yardımcı olur. Düğümler, yerel bağlantıdaki hedefleri yalnızca bir yönlendirici aracılığıyla erişilebilen hedeflerden ayırt etmek için önekler kullanır. Bir komşunun artık erişilebilir olup olmadığını belirlemek için düğümlere yardımcı olur. Hem yönlendiriciler hem de ana bilgisayarlar için adres çözümlemesi tekrar edilebilir.
 
@@ -167,6 +219,9 @@ IPv6, IPv4’ün tükenmesinden dolayı daha geniş bir alana sahip bir protokol
 
 Veri paketleri, belirli bir ana makineye yönelik bir gatewaye gelir. Gateway veya bir ağdaki verilerin bir ağdan diğerine akmasına izin veren köprü, ARP programından IP adresiyle eşleşen bir MAC adresi bulmasını ister. ARP önbelleği, her IP adresinin ve eşleşen MAC adresinin kaydını tutar. ARP önbelleği dinamiktir, ancak bir ağdaki kullanıcılar IP adreslerini ve MAC adreslerini içeren statik bir ARP tablosu da yapılandırabilir. Bir cihaz LAN'a bağlı başka bir cihaza veri göndermek için bir MAC adresi talep ettiğinde, cihaz IP-MAC adresi bağlantısının hemen tamamlanıp tamamlanmadığını görmek için ARP önbelleğini doğrular. Varsa, yeni bir istek gereksizdir. Ancak, çeviri henüz yapılmadıysa, ağ adresleri için istek gönderilir ve ARP gerçekleştirilir. 
 
+![address-resolution-protocol-1-638](https://user-images.githubusercontent.com/55113204/115597517-04b1c580-a2e2-11eb-838c-b27984a296ad.jpg)
+
+
 ## ARP Paket Çeşitleri
 
 4 çeşit ARP paketi vardır.
@@ -180,6 +235,9 @@ Gratious ARP paketi ise ağa yeni bağlanmış bir makinenin tüm ağdaki makine
 ARP İstek paketi farklı bir ağdaki bir ana bilgisayara gönderilirse, iki ağı birbirine bağlayan cihaz bu pakete yanıt verebilir. Bu işleve proxy ARP adı verilir.
 Proxy ARP, herhangi bir ana bilgisayarda herhangi bir değişiklik yapılmadan ARP alt ağ geçidinde uygulanır. Proxy ARP, fiziksel ağların topolojilerini koruyabilir, böylece farklı fiziksel ağlardaki ana bilgisayarlar iletişim kurmak için aynı ağ kimliğini kullanabilir. Proxy ARP, aynı ağ bölgesinde ancak farklı fiziksel ağlarda bulunan ana bilgisayarların iletişim kurmasını sağlar. Proxy ARP, yalnızca ana bilgisayarlardaki ARP önbelleklerini etkiler ancak ağ geçidindeki ARP önbelleğini veya yönlendirme tablosunu etkilemez. Proxy ARP özelliği etkinleştirildikten sonra, geçersiz ARP girişlerinin mümkün olan en kısa sürede silinebilmesi için ana bilgisayarlardaki ARP girişlerinin eskime süresi kısaltılmalıdır. Yani kısacası;
 Proxy ARP makineler aynı veri bağlantı katmanı ağında olmadıkları zaman ama aynı IP ağ aralığında olduklarında sanki aynı yerel ağdaymış gibi birbirlerine veri iletmeye çalışırlar. Ancak Routerlar MAC katmanında geçmedikleri için verileri iletemezler. Bu nedenle adresler çözümlenemez. Proxy ARP default olarak etkindir, bu nedenle yerel ağlar arasında bulunan "proxy router", broadcastin adreslendiği router gibi MAC adresiyle yanıt verir. Gönderen makine, proxy routerından MAC adresini aldığında, datagramı cevap olarak tekrar Proxy routerına götürür.
+
+![proxy_arp](https://user-images.githubusercontent.com/55113204/115547666-3198b500-a2af-11eb-9460-bfe57c9f944d.PNG)
+
 
 ## Güvenlik Açısından ARP’ın Ne Gibi Bir Önemi Vardır?
 ARP olmadan, bir ana bilgisayar başka bir ana bilgisayarın donanım adresini bulamaz. Adresler önbellekte yalnızca birkaç dakika kalma eğilimindedir. Yer açmak için düzenli olarak temizlenir. Bu şekilde tasarlanmasının sebebi siber saldırganlar tarafından çalınmasını ve sahteciliği önlemek amacıyla gizlilik ve güvenlik için tasarlanmıştır. Temizleme sürecinde, ağa bağlı olmayan veya açık bile olmayan bilgisayarlarla iletişim kurmaya yönelik başarısız girişimlerle ilgili her türlü veri ve kullanılmayan adresler silinir.
@@ -234,18 +292,37 @@ Ettercap kullanarak host taraması yaptığımızda elde edilen veriler bize hos
 ![image](https://user-images.githubusercontent.com/55113204/115299445-7a455680-a167-11eb-9a7d-1a9c79b5d208.png)
 Ettercap kullanarak DCHP spoofing yapabiliyoruz. 
 ![image](https://user-images.githubusercontent.com/55113204/115303722-a6170b00-a16c-11eb-908f-abf1a0281951.png)
+![fşsşfs](https://user-images.githubusercontent.com/55113204/115631615-d4345080-a30e-11eb-862f-c4c02e660843.PNG)
+
 
 ## Arp Spoof Sonrası Gerçekleştirilen Saldırılar Nelerdir ?
 Saldırganların MITM saldırılarında başarılı olabilmesi için, kurbanı gerçek sunucu yerine proxy sunucusuna yönlendirmesi gerekir. Bunun içinde aşağıdaki senaryolar uygulanır;
 ## LOCAL AREA NETWORK(Yerel Alan Ağı):
 ### ARP poisoning
 arp poisoning ise bu datanın dinlenmesini yapan bir saldırı türüdür nasıl yapıldığına gelecek olursak saldırgan arp işlemi gerçekleştirirken istemci ve sunucunun kafasını karıştırarak dataları kendisine yönlendirir bu sayede istemci aslında sunucuya ulaşmadan önce saldırgan tarafından geçmektedir.
+
+### MAC spoofing
+Bir MAC adresini maskelemek yada değiştirme yöntemine denir. MAC adresinin maskelenme sebebi her cihazın belirli bir MAC adresi vardır ve bu kişinin kim olduğu hakkında hemen bir sonuca varılmasını sağlamaktadır. MAC spoofing ile kimlikler gizlenerek saldırganlar yasadışı işler yapabilmektedir.
+
+![mac](https://user-images.githubusercontent.com/55113204/115617141-b3adcb80-a2f9-11eb-8f64-49070ca629d4.jpg)
+### VLAN hopping
+Farklı VLANlar kurarak routerlar üzerinden atlayıp geçerek iletişim kuran bunu dynamic auto, trunk mode, dynamic desirable interface konfigürasyonundayken switch gibi davranarak kendi cihazından DTP mesajları ile trunk bir bağlantıyla hedef adres ile bağlantı kurmasıdır.
+
+![1_8ntNBhnO5cfjrilEqCiLeA](https://user-images.githubusercontent.com/55113204/115619663-d68daf00-a2fc-11eb-902d-99173d87e1b3.png)
+
 ### DNS spoofing
 DNS Spoofing : Dns zehirlenmesi yada diğer adıyla DNS önbellek zehirlenmesi en basit tanımı ile bir bilgisayar saldırısıdır. Alan adı sunucusunun önbellek veritabanına eklenen verilerle yada oradaki verilerin sabote edilmesi ile birlikte sizin bilgisayarınızın yani istemcinin saldırganın belirlediği ip adresine yönlenmesi sağlanmaktadır ve bu sayede siz istediğiniz siteye giriş yaptığınızı zannederken aslında saldırganın ip adresine yönlendirilmiş olursunuz. Örnek verilecek olursa www.gazi.edu.tr adresine gitmek istiyorsunuz siz bu durumda istemcisiniz ve bu adrese istek yollarsınız. Bu istek çeşitli katmanlardan geçerek gazinin sunucusuna ulaşır. Buradaki sunucu ele geçirilmiş olsun o zaman siz ve diğer bu sunucuya ulaşmak isteyen istemciler request attıklarında bütün bu istemcileri kendi sunucularına yönlendirebilirler.
+
+![DNS Spoofing Attack](https://user-images.githubusercontent.com/55113204/115555502-4299f400-a2b8-11eb-9e4f-a6849713b551.png)
+
+
 ### STP mangling
 STP bir ağ topolojisinde paketler ve cihazlar arasında iletişimin sonsuz bir döngüye girmesine engel olan bir standarttır. STP Mangling ise bu engellemeyi kaldıran ve sürekli topoloji değişim isteği yollayan saldırı türüne denir.
 ### Port Stealing 
 Hedef sunucunun MAC adresini source adres olarak kullanması için sahte ARP çerçevesi oluşturur. Switch, hedef bilgisayarın bir saldırganın bağlı olduğu porta bağlı olduğunu sanar. Bu yüzden hedef bilgisayar için gönderilen tüm veriler saldırganın switch portuna düşer.
+
+![port stealing](https://user-images.githubusercontent.com/55113204/115593711-86532480-a2dd-11eb-946c-2d628112ce84.jpg)
+
 ## LOCAL TO REMOTE (Uzakta Bulunan Yerel Alan Ağı):
 ### ARP poisoning
 ### DNS spoofing
@@ -314,13 +391,15 @@ Bir  Saldırı Önleme Sistemi  (IPS) ağı inceler, ağ trafiğindeki güvenlik
 İstatistiksel anormallik algılama özelliği ile ağ trafiğinin örneklerini rastgele alır ve bunları önceden hesaplanmış bir temel performans düzeyiyle karşılaştırır. Ağ trafiği etkinliği örneği, olması gerekenden farklı olduğunda, IPS durumu ele almak için harekete geçer.
 Tespit etme özelliği IPS, açıkları bulmak için bir dizi algılama yöntemine sahiptir, ancak imza tabanlı algılama ve istatistiksel anormallik tabanlı algılama iki baskın mekanizmadır.
 İmza tabanlı algılama özellipi, her bir istismarın kodundaki benzersiz şekilde tanımlanabilen modellerin veya imzaların durumuna dayanır. Bir istismar keşfedildiğinde, imzası kaydedilir ve sürekli büyüyen bir imzalar sözlüğünde saklanır. IPS için imza algılama iki türe ayrılır:
-1.	1. İstismara açık imzalar, bireysel istismarlardır. IPS, trafik akışında istismara yönelik bir imza ile bir eşleşme bularak belirli istismarları belirleyebilir.
-2.	2. Güvenlik açığıyla karşılaşan imzalar, hedeflenen sistemdeki temelde yatan güvenlik açığını hedefleyen daha geniş imzalardır. 
+1. İstismara açık imzalar, bireysel istismarlardır. IPS, trafik akışında istismara yönelik bir imza ile bir eşleşme bularak belirli istismarları belirleyebilir.
+2. Güvenlik açığıyla karşılaşan imzalar, hedeflenen sistemdeki temelde yatan güvenlik açığını hedefleyen daha geniş imzalardır. 
 Önleme özelliği,IPS genellikle doğrudan güvenlik duvarının arkasında bulunur ve tehlikeli içeriği olumsuz olarak seçen tamamlayıcı bir analiz katmanı sağlar. Özellikleri ise bağlanrının sıfırlanmasını sağlar. Kötü amaçlı paketleri düşürür. Yöneticiye alarm gönderir ayrıca bu özellik IDS’te de var. Source adresten genel trafiği engeller.
 Hat içi bir güvenlik bileşeni olarak IPS, ağ performansının düşmesini önlemek için verimli bir şekilde çalışmalıdır. Ayrıca hızlı çalışmalıdır çünkü istismarlar neredeyse gerçek zamanlı olarak gerçekleşebilir. IPS ayrıca tehditleri ve yanlış paketleri ortadan kaldırmak için doğru şekilde algılamalı ve yanıt vermelidir.
 
 ## Saldırı tespit sistemi (IDS) nedir?
 Herhangi bir kötü amaçlı trafik veya ihlal genellikle bir yöneticiye bildirilir veya bir güvenlik bilgileri ve olay yönetimi (SIEM) sistemi kullanılarak merkezi olarak toplanır. İzinsiz giriş tespit sistemi (IDS), kötü niyetli etkinlik ve politika ihlallerine karşı bir ağı veya sistemi izleyen bir cihaz veya yazılım uygulamasıdır. 
+
+![Intrusion-Detection-IDS-VS-Intrusion-Prevention-IPS-What’s-The-Difference](https://user-images.githubusercontent.com/55113204/115600105-f87b3780-a2e4-11eb-9332-303e68490ac2.png)
 
 ## Saldırı tespit sistemi (IDS) nasıl çalışır?
 IDS'nin izinsiz girişleri izlemek için kullandığı üç yaygın algılama çeşidi vardır: 
@@ -405,6 +484,8 @@ Bu, bilgisayarınıza kötü amaçlı yazılım bulaştırmayı, hassas verileri
 ## IP sahtekarlığı nasıl çalışır?
 IP sahtekarlığı saldırganın bir paket başlığının kaynak IP adresini sahte veya sahte bir IP adresiyle değiştirmesiyle yani hedefine göndermeden önce bir IP paketini yakalayıp değiştirerek yapar. Bu sistemde sanki güvenilir bir kaynaktan IP gelmiş gibi görünür. Böyle yaparak saldırgan kendi kimliğini gizlemiş olur. Böylelikle firewalllarda aşılabilir. IP adresini taklit ederek, gerçekte bir siber suçluyla etkileşim halindeyken, yakın bir arkadaş gibi güvenilir bir web sitesi veya kişiyle etkileşime girdiğinizi düşünmeniz için sizi kandırabilir. Böylelikle saldırgan kendi kimliğini güvenlik uzamanlarından saklayabilir. Hedef cihaz ve ağlar güvenliklerinin ihlal edildiğinin her zaman farkında değildir, bu nedenle herhangi bir uyarı gönderemezler. Ve güvenilir kaynaklardan gelmiş gibi göründüklerinden, güvenlik duvarlarını ve aksi takdirde onları kötü amaçlı bir kaynak olarak kara listeye alabilecek diğer güvenlik kontrollerini atlayabilirler.
 
+![IP-Spoofing-Infographic1](https://user-images.githubusercontent.com/55113204/115599316-21e79380-a2e4-11eb-851f-7a4a6b5a188e.jpg)
+
 ## IP Spoofing Mantığı Nedir?
 Örnek verecek olursak, planın nasıl geliştiğini gösteren bir IP sahtekarlığı saldırılarının gerçek dünyadan bir örneği var. 2018'de GitHub olarak bilinen bir kod barındırma platformunun başına gelenler.
 GitHub, GitHub'ın IP adresini aldatarak ve birkaç sunucuya veri göndererek gerçekleştirilen büyük bir DDoS saldırısıyla vuruldu. Bu sunucular daha sonra GitHub'a geri dönen veriyi 50 kat artırdı. Bu artan trafik aşırıya kaçtı ve sonunda GitHub'ın web sitesini 10 dakika süreyle kapattı.
@@ -413,13 +494,17 @@ GitHub, GitHub'ın IP adresini aldatarak ve birkaç sunucuya veri göndererek ge
 IP parçalama saldırıları, failin datagram parçalama mekanizmalarını kullanarak bir ağa aşırı yüklendiği yaygın bir hizmet reddi saldırısı biçimidir  .
 IP datagramlarının küçük paketlere bölündüğü, bir ağ üzerinden iletildiği ve ardından orijinal datagrama yeniden birleştirildiği bir iletişim prosedürü olan IP parçalama sürecinine fagmentation denir.
 Veri aktarımı için parçalama gereklidir, çünkü her ağın işleyebileceği verikatarlarının boyutu için benzersiz bir sınır vardır. Bu sınır, maksimum iletim birimi (MTU) olarak bilinir. Alıcı sunucunun MTU'sundan daha büyük bir datagram gönderiliyorsa, tamamen iletilebilmesi için parçalanması gerekir.
+
+![800px-IPv4_Fragmentation_example_-en svg](https://user-images.githubusercontent.com/55113204/115599451-50fe0500-a2e4-11eb-9b40-5f75bd346d8b.png)
+
+
 ## Saldırı türleri
 IP parçalama saldırıları birkaç şekilde olabilir. Hepsi, hedef ağları aşmak için datagramların dökümünden yararlanırken, farklı saldırı vektörlerinin nasıl yürütüldüğü konusunda bazı önemli farklılıklar vardır.
 •	UDP ve ICMP parçalama saldırıları  - Bu saldırılar, ağın MTU'sundan (genellikle ~ 1500 bayt) daha büyük olan sahte UDP veya ICMP paketlerinin iletimini içerir. Bu paketler sahte olduğundan ve yeniden birleştirilemediğinden, hedef sunucunun kaynakları hızla tüketilir ve bu da sunucunun kullanılamamasına neden olur.
 •	TCP parçalanma saldırıları (diğer adıyla Teardrop)  - Gözyaşı saldırıları olarak da bilinen bu saldırılar, TCP / IP yeniden birleştirme mekanizmalarını hedef alarak parçalanmış veri paketlerini bir araya getirmelerini engeller. Sonuç olarak, veri paketleri üst üste gelir ve kurbanın sunucularını hızlı bir şekilde ezip başarısız olmasına neden olur. 
 ## Imperva DDoS Korumasının IP Parçalama 
 Her verikatarındaki IP başlığı, parçalanmanın gerçekleşmesine izin verilip verilmediğini detaylandıran bayraklar içerir. IP başlığına bir "parçalama" bayrağının eklendiği durumlarda, paket bırakılır ve sunucu, ICMP datagramının iletilemeyecek kadar büyük olduğunu belirten bir mesaj gönderir. Offset, alıcı cihaza parçaların yeniden montaj için yerleştirilmesi gereken tam sırayı açıklar.
-Fagmentation İşlemine karşı Nasıl Önlem Alınır ?
+
 ## Parçalanma Nasıl Önlenir?
 IP parçalanmasını önlemek için, ağ üzerinden gönderilecek IP paketlerinin boyutunu belirlemeniz gerekir. Genel olarak kullanılan iki yaklaşım vardır; yol MTU keşfi ve maksimum segment boyutunu (MSS) ayarlama.
 Yol MTU Keşfi - Bu teknik, paket parçalanmasını önlemek için MTU uçtan uca tanımlamak için kullanılır. Parçalama (DF) bit ayarı açıkken istenen hedefe bir internet kontrol mesajı protokolü (ICMP) paketi gönderir. Parçalanma gerektiren bir ağa gönderildiğinde, Layer3 cihazı paketi atacak ve parçalanmayı önlemek için gereken MTU (maksimum iletim) değerini içeren bir ICMP mesajını geri gönderecektir. Paket daha sonra bu MTU değerinde yeniden gönderilecek ve parçalanmayacaktır. Güvenlik duvarlarında ve paket filtreleme cihazlarında ICMP engellenirse bu yöntem işe yaramaz.

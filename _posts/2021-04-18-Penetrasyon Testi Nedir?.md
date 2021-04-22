@@ -334,8 +334,12 @@ Hedef sunucunun MAC adresini source adres olarak kullanması için sahte ARP çe
 ### DNS spoofing
 ### DHCPspoofing
 Bir yerel ağ üzerinde sahte bir DHCP server kurup DHCP’e request yapan istemcilerin default gateway olarak kendisine ait olan DHCP cevabı vermektedir. İstemci ise gateway olarak bu sahte adresi kullanır ve yerel ağ dışındaki bir yere request yaptığı zaman paketler ilk olarak atak yapan kişinin makinesine yönlenir. Saldırgan bu paketleri gitmeleri gereken doğru adreslere kendi üzerinden gönderirken tüm paketleri izleme olanağına sahip olur. Yada fake DHCP server kuran saldırgan istemcinin gitmek istediği internet adresi yerine kendisinin istediği bir adrese yönlendirebilir. İstemci güvenliğini ve gizliliğini tehdit eden bu durumu engellemek için Cisco cihazlar üzerinde DHCP araya girme (DHCP Snooping) özelliği geliştirilmiştir.
+
+![dhcp](https://user-images.githubusercontent.com/55113204/115792044-3c983600-a3d2-11eb-8e43-23cbd68f3877.PNG)
+
 ### ICMP redirection
 Trafiği üzerine alarak yayınlanan ICMP Redirection mesajlarını saldırganlar tarafından saldırılmasıdır.
+
 ### IRDP spoofing 
 Ana makinenin aktif yönlendiricilerin IP adresini keşfetmesini sağlar. Sahte networkteki IRDP routerları reklam mesajlarını alt ağdaki ana makinelere göndererek default routerın değiştirmesine sebep olmasıdır.
 route mangling Saldırgan en iyi route olduğunu gatewaye sahte paketler aracılığı ile ağa duyuyarak ağdaki cihazları kandırır. Paketler istemcilere direk geçer. 

@@ -268,10 +268,7 @@ Ağ trafiğini ana bilgisayarına yönlendirmek (route etmek) için kullandığ�
 
 Saldırgan, sahte ARP yanıtları göndermek için Arpspoof veya Driftnet gibi bir sahtekarlık aracı kullanır. 
  
-![image](https://user-images.githubusercontent.com/55113204/115244603-bdce9f00-a12c-11eb-9c20-9116a8a1c233.png)
- 
-![image](https://user-images.githubusercontent.com/55113204/115244646-ccb55180-a12c-11eb-9b5b-15980eb3b4b5.png)
-
+![arpspoof](https://user-images.githubusercontent.com/55113204/115670061-aae8e400-a351-11eb-851b-93d7e36360f4.PNG)
 
  
 ### Nemesis
@@ -301,10 +298,14 @@ Saldırganların MITM saldırılarında başarılı olabilmesi için, kurbanı g
 ### ARP poisoning
 arp poisoning ise bu datanın dinlenmesini yapan bir saldırı türüdür nasıl yapıldığına gelecek olursak saldırgan arp işlemi gerçekleştirirken istemci ve sunucunun kafasını karıştırarak dataları kendisine yönlendirir bu sayede istemci aslında sunucuya ulaşmadan önce saldırgan tarafından geçmektedir.
 
+![didfdi4](https://user-images.githubusercontent.com/55113204/115667926-154c5500-a34f-11eb-92db-0b6ddfb8c6a7.PNG)
+
+
 ### MAC spoofing
 Bir MAC adresini maskelemek yada değiştirme yöntemine denir. MAC adresinin maskelenme sebebi her cihazın belirli bir MAC adresi vardır ve bu kişinin kim olduğu hakkında hemen bir sonuca varılmasını sağlamaktadır. MAC spoofing ile kimlikler gizlenerek saldırganlar yasadışı işler yapabilmektedir.
 
 ![mac](https://user-images.githubusercontent.com/55113204/115617141-b3adcb80-a2f9-11eb-8f64-49070ca629d4.jpg)
+
 ### VLAN hopping
 Farklı VLANlar kurarak routerlar üzerinden atlayıp geçerek iletişim kuran bunu dynamic auto, trunk mode, dynamic desirable interface konfigürasyonundayken switch gibi davranarak kendi cihazından DTP mesajları ile trunk bir bağlantıyla hedef adres ile bağlantı kurmasıdır.
 
@@ -318,6 +319,7 @@ DNS Spoofing : Dns zehirlenmesi yada diğer adıyla DNS önbellek zehirlenmesi e
 
 ### STP mangling
 STP bir ağ topolojisinde paketler ve cihazlar arasında iletişimin sonsuz bir döngüye girmesine engel olan bir standarttır. STP Mangling ise bu engellemeyi kaldıran ve sürekli topoloji değişim isteği yollayan saldırı türüne denir.
+
 ### Port Stealing 
 Hedef sunucunun MAC adresini source adres olarak kullanması için sahte ARP çerçevesi oluşturur. Switch, hedef bilgisayarın bir saldırganın bağlı olduğu porta bağlı olduğunu sanar. Bu yüzden hedef bilgisayar için gönderilen tüm veriler saldırganın switch portuna düşer.
 
@@ -337,6 +339,7 @@ route mangling Saldırgan en iyi route olduğunu gatewaye sahte paketler aracıl
 ### DNS poisoning
 ### Traffic tunneling
 Bir tünel oluşturarak saldırganın kendisini ağın içine yerleştirmesini sağlayan saldırıdır.
+
 ### Route mangling
 
 ## ARP Saldırılarından Korunma Yöntemleri Nelerdir?

@@ -316,6 +316,10 @@ DNS Spoofing : Dns zehirlenmesi yada diğer adıyla DNS önbellek zehirlenmesi e
 
 ![DNS Spoofing Attack](https://user-images.githubusercontent.com/55113204/115555502-4299f400-a2b8-11eb-9e4f-a6849713b551.png)
 
+### CAM Tavle Flooding Attack
+Cisco yönlendirme kararlarını verebilmek için bir switch tarafından kullanılan bir belleği vardır. Bu bellek tablosu CAM (Content Addressable Memory)'dir. Swicth porttan öğrenilen bellek adreslerini buraya girer ve herhangi bir MAC adresi buradan sorgulanır. Eğer hedef MAC adresi bu tabloda varsa gösterilen portla bağlantı kurulur. Bir yerden sonra CAM o kadar çok MAC adresi öğrenir ki switchin CAM tablosu taşar. Bu şekilde artık tabloya kayıt yapılamaz olur ve bir sürü öğrenilememiş MAC adresleri oluşur. Bu saldırı hem ağ performansının düşmesine hatta bağlantının çökmesine sebep olabilmektedir.
+
+![cam1](https://user-images.githubusercontent.com/55113204/115694155-45a0ed00-a369-11eb-9880-dbacdbfb0a48.png)
 
 ### STP mangling
 STP bir ağ topolojisinde paketler ve cihazlar arasında iletişimin sonsuz bir döngüye girmesine engel olan bir standarttır. STP Mangling ise bu engellemeyi kaldıran ve sürekli topoloji değişim isteği yollayan saldırı türüne denir.

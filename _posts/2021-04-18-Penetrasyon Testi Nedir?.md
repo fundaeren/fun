@@ -104,7 +104,8 @@ Kişinin fiziksel olarak bilgi toplamaya çalıştığı güvenlik testleridir.
 * Yük & Stress Testi 
 Yük durumunun üstesinden gelme kapasitesini ve bir sistemin sağlamlığını kontrol etmek için yapılan testtir. Aşağıda bu testler hakkında bilgi verilmiştir.
 
-![Load-vs-stress](https://user-images.githubusercontent.com/55113204/115580869-2a35d380-a2d0-11eb-942e-240303847507.png)
+![Load-Testing-vs-Stress-Testing](https://user-images.githubusercontent.com/55113204/116059051-210a8500-a689-11eb-85d9-d170ceee5973.jpg)
+
 
 * BDDK Uyumlu Sızma Testi
 Bankalar ve finans sektörlerinde bilgi sistemleri üzerinde güvenlik açıklarını bulmaya yönelik sızma testidir.

@@ -265,11 +265,11 @@ Arp önbellek zehirlenmesi, saldırganı iki bilgisayar arasındaki iletişimi e
 ARP Spoofing, bir diğer adıyla ARP sahtekarlığı, kötü niyetli bir kişinin yerel bir alan ağı üzerinden sahte ARP (Adres Çözümleme Protokolü) mesajları gönderdiği bir saldırı türüdür. Bu, bir saldırganın MAC adresinin ağdaki meşru bir bilgisayarın veya sunucunun IP adresiyle bağlantı kurdurulması ile sonuçlanır. Saldırganın MAC adresi gerçek bir IP adresine bağlandığında, saldırgan o IP adresi için tasarlanmış tüm verileri almaya başlayacaktır. ARP sahtekarlığı, kötü niyetli kişilerin geçiş halindeki verilere müdahale etmesini, değiştirmesini ve hatta durdurmasını sağlayabilir. ARP sahtekarlığı saldırıları yalnızca Adres Çözümleme Protokolünü kullanan yerel alan ağlarında gerçekleşebilir.
 
 ## ARP Poison Routing Nedir?
-Ağ trafiğini ana bilgisayarına yönlendirmek (route etmek) için kullandığı ARP zehir yönlendirmesini içeren bir yöntemdir. Bu içindeki birden fazla aynı yayın alanındaki ana bilgisayarın IP trafiğini ele geçirerek anahtarlı bir ağı koklamasını sağlamasıdır.
+Ağ trafiğini ana bilgisayarına yönlendirmek (route etmek) için kullandığı ARP zehir yönlendirmesini içeren bir yöntemdir. Bu içindeki birden fazla aynı yayın alanındaki ana bilgisayarın IP trafiğini ele geçirerek anahtarlı bir ağı koklamasını sağlamasıdır. 
 
 ### Arpspoof
 
-Saldırgan, sahte ARP yanıtları göndermek için Arpspoof veya Driftnet gibi bir sahtekarlık aracı kullanır. 
+Saldırgan, sahte ARP yanıtları göndermek için Arpspoof veya Driftnet gibi bir sahtekarlık aracı kullanır. Burada giden paketlerin arpspoof olduğunu anlamamızın sebebi sürekli olarak ARP REPLY paketleri hedefe gönderilmektedir.Bu paketler gönderilerek ağ cihazı ile hedef bilgisayar arasına girilmiş olur. Bu şekilde hedefin arp tablosu zehirlenir ve saldırgan hedef makine ile ağ cihazının iletişiminin arasına girerek trafiği dinleyebilir, yada değiştirebilir. 
  
 ![arpspoof](https://user-images.githubusercontent.com/55113204/115670061-aae8e400-a351-11eb-851b-93d7e36360f4.PNG)
 

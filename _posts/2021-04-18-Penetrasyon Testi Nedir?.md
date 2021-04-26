@@ -266,6 +266,20 @@ ARP Spoofing, bir diğer adıyla ARP sahtekarlığı, kötü niyetli bir kişini
 
 ## ARP Poison Routing Nedir?
 Ağ trafiğini ana bilgisayarına yönlendirmek (route etmek) için kullandığı ARP zehir yönlendirmesini içeren bir yöntemdir. Bu içindeki birden fazla aynı yayın alanındaki ana bilgisayarın IP trafiğini ele geçirerek anahtarlı bir ağı koklamasını sağlamasıdır. 
+Burada routeları bakıldı ve bu routelara ip forward yapılıp yapılmadığını kontrol edilerek ve değerinin 0 olduğu anlaşılınca bir tane gönderildi.
+
+![flaşfşafşa](https://user-images.githubusercontent.com/55113204/116050504-39c26d00-a680-11eb-9618-4d291ef30fe5.PNG)
+
+Daha sonra ettercap çalıştırılarak arp poison yapılması istendi. Ve saldırının yapılmasını istenilen host seçildi.
+
+![sşfşsöfs](https://user-images.githubusercontent.com/55113204/116051506-590dca00-a681-11eb-91f7-6e7f023bc671.PNG)
+
+Daha sonra hattı dinlemek için urlsnarf kullanılarak eth0 snifflendi. Burada dinlenen makinenin hangi web sitelerini ziyaret ettiğini görebilirsiniz.
+
+![şföşasşf](https://user-images.githubusercontent.com/55113204/116051668-80649700-a681-11eb-8539-34effc6b8b80.PNG)
+
+
+
 
 ### Arpspoof
 

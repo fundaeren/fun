@@ -341,6 +341,9 @@ Cisco yönlendirme kararlarını verebilmek için bir switch tarafından kullan�
 ### STP mangling
 STP bir ağ topolojisinde paketler ve cihazlar arasında iletişimin sonsuz bir döngüye girmesine engel olan bir standarttır. STP Mangling ise bu engellemeyi kaldıran ve sürekli topoloji değişim isteği yollayan saldırı türüne denir.
 
+![unnamed](https://user-images.githubusercontent.com/55113204/116056699-bfe1b200-a686-11eb-8d99-ffaa68b86ba3.jpg)
+
+
 ### Port Stealing 
 Hedef sunucunun MAC adresini source adres olarak kullanması için sahte ARP çerçevesi oluşturur. Switch, hedef bilgisayarın bir saldırganın bağlı olduğu porta bağlı olduğunu sanar. Bu yüzden hedef bilgisayar için gönderilen tüm veriler saldırganın switch portuna düşer.
 

@@ -242,9 +242,7 @@ Burada da sadece benim işaretlediklerim seçilmektedir.
 ![wire75](https://user-images.githubusercontent.com/55113204/117577119-2805ae80-b0f1-11eb-88ea-d8b95c343bb6.PNG)
 
 
-
-
-
+**¯\\\_(ツ)\_/¯**
 
 
 

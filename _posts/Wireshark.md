@@ -6,7 +6,7 @@ anlık paketleri yakalayıp görünütleyebilen ve çeşitli istatistikler oluş
 ## WinPcap
 Anlık olarak ağ trafiğini yakalayıp wireshark aracına gönderen kısımdır. 
 
-Standart olarak açılan pencere terminale de yazılarak açılabilmektedir. 
+### Standart olarak açılan pencere terminale de yazılarak açılabilmektedir. 
 
 ![wire1](https://user-images.githubusercontent.com/55113204/117575551-07d2f100-b0eb-11eb-8ddc-566e2ac5f692.PNG)
 

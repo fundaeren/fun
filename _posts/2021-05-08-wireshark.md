@@ -1,3 +1,7 @@
+## Network Forensics 
+Bilgisayar ağlarında Adli Bilişim yani Network Forensics ağ trafiğinin temel yapıda analizlenmesini sağlamaktadır. Herhangi bir olay yada vaka sonrasında analiz için firewall, 
+ids/ips, honeypot gibi cihazların ağ trafik kayıt sistemlerinin kayıtlarına ihtiyaç duyulmaktadır. Bu kayıtların analizi için de kullanılan en önemli araçlardan biri ise Wiresharktır.
+
 # Wireshark
 Linux, Windows ve MacOS işletim sistemlerinde desteklenen birçok kriter çevresinde paket filtreleme sağlayan ve çeşitli formatlarda kayıt edilmesine imkan sunan,
 anlık paketleri yakalayıp görünütleyebilen ve çeşitli istatistikler oluşturabilen, ağ trafiğini canlı izlenebilme ve protokol hataları, ağ içeresindeki hataları tespit edip
@@ -171,6 +175,7 @@ Burada da sadece benim işaretlediklerim seçilmektedir.
 ![wire39](https://user-images.githubusercontent.com/55113204/117576281-ffc88080-b0ed-11eb-99f7-894f049808ca.PNG)
 
 ## HTTP İçin Kullanılabilecek Filtreler
+Bu parametreleri kullanarak http bağlantıların verileri de ayıklamış oluruz.
 ![wire48](https://user-images.githubusercontent.com/55113204/117576404-8aa97b00-b0ee-11eb-9700-161acadc849f.PNG)
 
 ![wire49](https://user-images.githubusercontent.com/55113204/117576406-8aa97b00-b0ee-11eb-9fc4-8c13b700fc71.PNG)
@@ -241,8 +246,127 @@ Burada da sadece benim işaretlediklerim seçilmektedir.
 
 ![wire75](https://user-images.githubusercontent.com/55113204/117577119-2805ae80-b0f1-11eb-88ea-d8b95c343bb6.PNG)
 
+## Wireshark Kullanarak Firewall Kuralı Nasıl Yazılır?
+
+İlk önce bir paket seçilir daha sonra tool kısmından Firewall ACL Rules alanı seçilir. 
+
+![dev1](https://user-images.githubusercontent.com/55113204/117588843-ca905280-b12e-11eb-8e55-8232c14e9eb0.PNG)
+
+Çıkan sayfadan istenilen şekilde bir kural oluşturulabilir.
+
+![dev2](https://user-images.githubusercontent.com/55113204/117588919-412d5000-b12f-11eb-9e96-a3ec36767a15.PNG)
+
+## Wireshark ile HTTP/HTTPS Analizi
+
+İlk önce HTTP analizini yapalım. Tcpdump ile ağ paketlerimizi bir dosyaya atabiliriz. Daha sonra güvenli olmayan bir siteye girip Wiresharkı başlatalım. Ve siteye giriş yapıp parolamızı ve kullanıcı adının nasıl ağı dinleyen biri tarafından izlenildiğine şahit olmak için aşağıyadaki örneğe bakabiliriz.
+
+Tcpdump ile ağı koklayıp kayıt ediyoruz. 
+
+![http5](https://user-images.githubusercontent.com/55113204/117656630-432ff700-b1a1-11eb-9e56-249631aa8e23.PNG)
+
+HTTP bağlantılı bir siteye giriyoruz.
+
+![http3](https://user-images.githubusercontent.com/55113204/117656740-5fcc2f00-b1a1-11eb-9d85-582485558829.PNG)
+
+Wiresharkı açıp ağ trafiğini izliyoruz. 
+
+![http](https://user-images.githubusercontent.com/55113204/117656855-85f1cf00-b1a1-11eb-97ec-632eaf2cd9d3.PNG)
+
+Ve herhangi bir paketin içeriğine bakalım. Gördüğünüz gibi admin ve parola gösterilmektedir.
+
+![http4](https://user-images.githubusercontent.com/55113204/117656954-a752bb00-b1a1-11eb-9401-2d63920f6aa6.PNG)
+
+Hex kısmında da görülmektedir.
+
+![http2](https://user-images.githubusercontent.com/55113204/117656981-b33e7d00-b1a1-11eb-92b2-c91348071f09.PNG)
+
+Ama HTTPS de gösterilmemektedir. Bunun sebebi ise SSL Dijital Sertifika gerektirdiğinden dolayı güvenli olmasıdır.
+
+![https](https://user-images.githubusercontent.com/55113204/117657201-f4cf2800-b1a1-11eb-8601-e821de840a02.PNG)
+
+## HTTPs Trafiği Çözümleme İşlemi Nedir?
+Pentest testleri esnasında elde edilen PCAP dosyaları analiz edilmek kritik bilgilere ulaşılabilir. Bunu ngrep aracı ile inceleyebiliriz.
+
+UDP trafiğine ulaşmak istersek eğer şu şekilde bir araba gerçekleştirebiliriz.
+
+![^ngrep](https://user-images.githubusercontent.com/55113204/117664473-7aef6c80-b1aa-11eb-9da4-3a20e0f702fc.PNG)
+
+TCP trafiğine ulaşmak istersek ise aşağıdaki gibi bir arama gerçekleştirebiliriz.
+
+![ngre](https://user-images.githubusercontent.com/55113204/117664742-cd308d80-b1aa-11eb-9e22-7435fe1af66a.PNG)
+
+Şimdi de Wireshark kullanarak şifrelenen .pcap dosyasının trafiğine de bakabiliriz. 
+
+
+
+
+
+
+
 
 **¯\\\_(ツ)\_/¯**
+
+## Wireshark ile Tshark Arasındaki Farklar Nelerdir ?
+Wiresharkın terminal üzerinde çalışan haline tshark diyebiliriz.
+Wiresharkta program üzerinde ağ analizlenebilirken tshark ile parametreler kullanılarak ağ analizlemesi yapılmaktadır.
+Tshark Wiresharka göre performansı daha iyidir.
+Tshark komut satırı esnekliği de sağlamaktadır.
+
+## Tcpdump ile Tshark Arasındaki Farklar Nelerdir ?
+Tshark Tcpdumptan çok daha fazla paket ayırıştırıcıya sahiptir.
+Tcpdump sınırlı protokole sahiptir. Bundan dolayı sınırlı kod çözer ve çoğu NIX plartformunda mevcuttur.
+Tshark Wiresharkın komut satırındaki versiyonudur.
+Tcpdump’dan farklı olarak statefull çalışan tshark canlı trafik hakkında yada daha önceden yakalanmış trafik hakkında istatistiki bilgileri elde etmemize yarayan parametreleri de vardır.
+
+## WEP/WPA Şifreli Trafik Çözümleme İşlemleri Nasıl Yapılır ?
+WEP (Wired Equivalent Privacy), dünyada en çok kullanılan Wi-fi güvenlik algoritması olan ve ağın güvenliğini sağlamak için ortaya çıkan şifreleme yönteminlerinden biridir. Bunun nedeni ise birçok routerın rol alması ve geriye uyumluluğudur.
+
+
+Bunun için şu şekilde adımları izleriz. Edit -> Preferences -> Protocol -> IEEE 802.11 -> Edit ve burada anahtarlarımızı girerek şifreyi çözümleriz.
+
+![wire1](https://user-images.githubusercontent.com/55113204/117675139-fce49300-b1b4-11eb-9013-a5e307bf4fa1.PNG)
+
+![wire2](https://user-images.githubusercontent.com/55113204/117675176-02da7400-b1b5-11eb-838e-0ca63f45ce23.PNG)
+
+## Network Forensics Çalışmalarında Tshark Kullanımı
+İlk önce ağ trafiğindeki paketlerimizi yakalayıp bir dosyanın içine atıyoruz.
+
+![yakalan1](https://user-images.githubusercontent.com/55113204/117681487-d295d400-b1ba-11eb-862c-863f53e9c300.PNG)
+
+Daha sonra yakalananları wiresharktaki filtreleme işleminde ki bir http POST dönenleri getiriyoruz.
+
+![yakalan](https://user-images.githubusercontent.com/55113204/117681588-efcaa280-b1ba-11eb-9169-471c9320eec7.PNG)
+
+Başka bir örnek verecek olursak yakalanan paketlerin tüm hostlarını getirebiliriz.
+
+![yakalan2](https://user-images.githubusercontent.com/55113204/117681923-40da9680-b1bb-11eb-8ab4-3cb05078736f.PNG)
+
+Yada belirli bir dns server kullanmış verileri getirmektedir.
+
+![yakalan3](https://user-images.githubusercontent.com/55113204/117682446-ba728480-b1bb-11eb-97e1-8c97c83f676a.PNG)
+
+Başka bir adım ise hostları ziyaret sayısına göre ve ilk 10 tanesini ve farklı olanları getirelim.
+
+![yakalan4](https://user-images.githubusercontent.com/55113204/117684257-7ed8ba00-b1bd-11eb-95e1-ae08e0666fa6.PNG)
+
+User Agentlerı aşağıdaki komutla getirebiliriz.
+
+![yakalan5](https://user-images.githubusercontent.com/55113204/117684989-3241ae80-b1be-11eb-963d-a23583b5bf4b.PNG)
+
+HTTP GET isteği atmak istersek eğer aşağıdaki gibi bir syntax yazabiliriz.
+
+![yakalan7](https://user-images.githubusercontent.com/55113204/117685776-e80cfd00-b1be-11eb-8d1b-8864c464638e.PNG)
+
+![yakalan6](https://user-images.githubusercontent.com/55113204/117685788-ec391a80-b1be-11eb-8f5f-13805ca3195b.PNG)
+
+Ve başka bir adım olarak ise web sayfalarına ne çeşit istekler yapıldığını, kaç kere yapıldığını uri ları ile birlikte çıktı alabiliriz.
+
+![yakalan8](https://user-images.githubusercontent.com/55113204/117686516-9f097880-b1bf-11eb-8f72-a1f8ab7bbde1.PNG)
+
+Server taraflı gönderilen HTTP ve HTTPS paketlerin analizlenmesini de yapabiliriz.
+
+![yakalan9](https://user-images.githubusercontent.com/55113204/117687229-41c1f700-b1c0-11eb-8758-b1f86bb9d23a.PNG)
+
 
 
 

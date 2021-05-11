@@ -1,6 +1,3 @@
-## Network Forensics 
-Bilgisayar ağlarında Adli Bilişim yani Network Forensics ağ trafiğinin temel yapıda analizlenmesini sağlamaktadır. Herhangi bir olay yada vaka sonrasında analiz için firewall, 
-ids/ips, honeypot gibi cihazların ağ trafik kayıt sistemlerinin kayıtlarına ihtiyaç duyulmaktadır. Bu kayıtların analizi için de kullanılan en önemli araçlardan biri ise Wiresharktır.
 
 # Wireshark
 Linux, Windows ve MacOS işletim sistemlerinde desteklenen birçok kriter çevresinde paket filtreleme sağlayan ve çeşitli formatlarda kayıt edilmesine imkan sunan,
@@ -366,6 +363,75 @@ Ve başka bir adım olarak ise web sayfalarına ne çeşit istekler yapıldığ�
 Server taraflı gönderilen HTTP ve HTTPS paketlerin analizlenmesini de yapabiliriz.
 
 ![yakalan9](https://user-images.githubusercontent.com/55113204/117687229-41c1f700-b1c0-11eb-8758-b1f86bb9d23a.PNG)
+
+
+## Network Forensics 
+Bilgisayar ağlarında Adli Bilişim yani Network Forensics ağ trafiğinin temel yapıda analizlenmesini sağlamaktadır. Herhangi bir olay yada vaka sonrasında analiz için firewall, 
+ids/ips, honeypot gibi cihazların ağ trafik kayıt sistemlerinin kayıtlarına ihtiyaç duyulmaktadır. Bu kayıtların analizi için de kullanılan en önemli araçlardan biri ise Wiresharktır.
+
+## Network Forensics Bileşenleri Nelerdir ?
+Verileri yakalama, kaydetme, keşfetme ve analiz etme ile birlikte 4 Bileşenden oluşur.
+~ Capturing ve Recording Data: Herhangi bir tane veriyi düşürmeden birden çok terebayt uzunluğundaki verileri yakalar ve depolar bu yüzden çok verimlidir. Her Network Forensics'in sürdürülebilir iş hacmi, saniye başına paket sayısı, veri yönetimi ve arama fonksiyonları gibi sınırlamaları vardır. Bu sınırlamalar pratik lab sonuçlarına göre belirlenip raporlanmalıdır. 
+~ Discovering Data : Kaydedilen verilere çözüm işlemlerinin uygulanmasıdır. Bu IP adresine, içeriğine, uygulamasına filtreleme gibi özelliklerle yapılabilir.
+~ Analyzing Data : Keşif işleminde yakalanan paketlerin anormal durumlarını incelemek için hangi durumların kaydedildiğini belirlemenizde yardımcı olur.
+
+## Ağ Trafiğinden Veri Ayıklama Nasıl Olur Ne işimize yarar ?
+Ağ trafiğini izleyebilen uygulamalar sayesinde gelen giden paketlerin takibi yapılarak ağda istenilen paketlerin çıkarılıp incelenmesi için çeşitli parametler yada toollar kullanarak veriler ayıklanabilir. Bu ayıklamanın yapılma amacı paketlerin bütünlüğünde herhangi bir aksaklık olup olmadığını anlamak, verilerin güvenli bir şekilde taşınıp taşınmadığını anlamak ve verilerin hedefe ulaşıp ulaşmadığını anlamak gibi çeşitli nedenlerle yapılarak ağ hakkında detaylı bilgi sahibi olup korumamızı sağlamaktadır.
+
+## Tünelleme Kullanan kullanıcılar Ngrep ile Nasıl Belirlenir ?
+Ngrep'i diğer ağ dinleme araçlardan ayıran en temel özellik yakalanan verilerde genişletilmiş düzenli ifadeleri arayabilmemizdir. Bu tekniği öğrenmek, yalnızca portları değil verileri de filtreleyerek, istediğiniz verileri görmenizi inanılmaz derecede kolaylaştırır.
+Ngrep ile ssh bağlantısı kurmadan tünnelleme ile ssh bağlantısı kurmuş bir cihazı aşağıdaki komut ile buluruz. Burada SSH portu 22'yi kullanmadan SSH bağlantısı kurmaya çalışan bir cihaz arıyoruz.
+
+![yakalan9 PNG10](https://user-images.githubusercontent.com/55113204/117711580-1947f600-b1dc-11eb-9242-3d2eeed2916e.PNG)
+
+## ChaosReader Nedir?
+
+TCP / UDP oturumlarını izlemek ve uygulama verilerini snoop veya tcpdump günlüklerinden almak için ücretsiz bir araç olan ve telnet oturumlarını, FTP dosyalarını, HTTP aktarımlarını (HTML, GIF, JPEG), SMTP e-postalarını vb. ağ trafik günlüklerini içinde yakalanan verilerden alacağı için bir tür snarf programıdır. Günlük dosyalarını oluşturmak için tcpdump veya snoop'u (varsa) çağırır ve ardından bunları işler. Telnet, rlogin, IRC, X11 ve VNC oturumları için gerçek zamanlı yeniden oynatma programları dahil olmak üzere tüm oturum ayrıntılarına bağlanan bir html dizin dosyası oluşturulur; ve resim raporları ve HTTP GET / POST içerik raporları gibi raporlar. Chaosreader bağımsız modda da çalışabilir.
+
+Aşağıda bir HTTPs dosyasını okuma sonucunu vermektedir.
+
+![yakala1](https://user-images.githubusercontent.com/55113204/117716671-8a8aa780-b1e2-11eb-872a-8cad139502b8.PNG)
+
+![yakalan10](https://user-images.githubusercontent.com/55113204/117716719-9bd3b400-b1e2-11eb-83bb-6110a0719537.PNG)
+
+![yakala2](https://user-images.githubusercontent.com/55113204/117716748-a55d1c00-b1e2-11eb-9953-863c18ff3bd8.PNG)
+
+## Tcpxtract Nedir?
+
+Dosya türü üstbilgilerine ve altbilgilerine dayalı olarak dosya ayıklamak, eski bir veri kurtarma tekniğidir. En başta gibi araçlardosyaları rastgele veri akışlarından kurtarmak için bu tekniği kullanır. Tcpxtract, bu tekniği özellikle bir ağ üzerinden iletilen dosyaları yakalama uygulaması için kullanır. Yani dosya imzalarına dayalı olarak ağ trafiğinden dosya ayıklamak için kullanılan bir araçtır. Libcap kütüphanesini kullanır. Canlı bir ağa veya tcpdump formatlı bir yakalama dosyasına karşı kullanılabilir.
+
+Öncelikle wireshark ile paketleri yakalayıp kayıt ediyoruz.
+
+![yakala1](https://user-images.githubusercontent.com/55113204/117730917-db57cb80-b1f5-11eb-99db-e713a06f04e9.PNG)
+
+Daha sonra yakaladığımız bu paketleri tcpxtract ile görüntülenebilir dosya haline getirip tekrar bir dosyaya atıyoruz.
+
+![yakala](https://user-images.githubusercontent.com/55113204/117731213-689b2000-b1f6-11eb-971c-e7b457b332e3.PNG)
+
+## Tcpflow Nedir?
+
+TCP paketlerini yakalayan verileri protokol analizi ve hata ayıklama için uygun bir şekilde depolayan bir programdır. Tcpdump paketlerini de işleyebilen bu araç Her TCP akışı kendi dosyasında saklamasını sağlar.
+
+Tüm ağı dinlemek için sadece tcpflowu çalıştırabiliriz.
+
+![yakala2](https://user-images.githubusercontent.com/55113204/117732791-26271280-b1f9-11eb-9c5b-5596557c915c.PNG)
+
+Bir ağı dinleyip bunu paketleri kayıt edip paketleri okuyabiliriz.
+
+![yakala3](https://user-images.githubusercontent.com/55113204/117736831-3a6f0d80-b201-11eb-9a0d-4e7dc536e235.PNG)
+
+![yakala5](https://user-images.githubusercontent.com/55113204/117736839-41961b80-b201-11eb-995d-efedf544fc12.PNG)
+
+![yakala4](https://user-images.githubusercontent.com/55113204/117736845-48249300-b201-11eb-889e-aa45722839f4.PNG)
+
+## NetworkMiner Nedir?
+
+Network Forensic aracı, HTTP ve HTTP2 trafiğinden e-postaları, şifre karmalarını, FTP aktarımlarını ve yapıları ayıklamak için kullanan bir tooldur.
+
+
+
+
+
 
 
 

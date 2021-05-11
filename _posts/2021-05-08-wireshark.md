@@ -426,14 +426,69 @@ Bir ağı dinleyip bunu paketleri kayıt edip paketleri okuyabiliriz.
 
 ## NetworkMiner Nedir?
 
-Network Forensic aracı, HTTP ve HTTP2 trafiğinden e-postaları, şifre karmalarını, FTP aktarımlarını ve yapıları ayıklamak için kullanan bir tooldur.
+Network Forensic aracı, HTTP ve HTTP2 trafiğinden e-postaları, şifre karmalarını, FTP aktarımlarını ve yapıları ayıklamak için kullanan bir tooldur. Wireshark gibi bir ağ dinleme aracıyla elde ettiğimiz ağın giden gelen paket trafiğini Networkminera import ediyoruz. Daha sonra arayüzü sayesinde istediğimiz verileri kolayca görebiliyoruz.
 
+İlk olarak hostlarına ayrılmış paketlerin detaylı bilgilerine ulaşabiliriz ona bir bakalım. Burada host bilgilerinin getirmiş olduğu bilgiler doğrultusunda pektlerin hangi hosttan IP ve MAC adresleri bilgilerinden paketin TTL süresi gibi bilgilerine erişilmektedir.
 
+![yeni1](https://user-images.githubusercontent.com/55113204/117843008-20780e00-b287-11eb-8084-db688e22d335.PNG)
 
+Files kısmında dosyalara ulaşabilmekteyiz. Dosyaların source adresten hedef kaynağına kadar giderken kullanılan ptorokoller de dahil olmak üzere bilgi almaktayız.
 
+![yeni2](https://user-images.githubusercontent.com/55113204/117843570-9a0ffc00-b287-11eb-90e3-c0931b969869.PNG)
 
+Cihazlar arasındaki anlaşmayı sağlayan sessionda bu cihazların bilgilerini vermektedir.
 
+![yeni3](https://user-images.githubusercontent.com/55113204/117843716-bdd34200-b287-11eb-8006-55e43ca267f9.PNG)
 
+Kullanılan DNSlerde gösterilmektedir.
+
+![yeni4](https://user-images.githubusercontent.com/55113204/117843834-d7748980-b287-11eb-9cb0-3b7bea3287d5.PNG)
+
+Parametreler ve değerleri, Source Adresler, Destination Adresler ve bunların portları da dahil olmak üzere analizlememizi sağlayan onlarca bilgi edinmemizi sağlamaktadır.
+
+![yeni5](https://user-images.githubusercontent.com/55113204/117844129-1b678e80-b288-11eb-828d-8f86512c1c68.PNG)
+
+Ayrıntılı bir Client Server bilgisine ulaşılmak istendiğinde de Credentials (kimlik bilgileri) kısmına bakabiliriz.
+
+![yeni6](https://user-images.githubusercontent.com/55113204/117844688-90d35f00-b288-11eb-87b9-3c94051d22be.PNG)
+
+Varsa Imageleri görüntüleyebiliriz.
+
+![yeni7](https://user-images.githubusercontent.com/55113204/117844838-af395a80-b288-11eb-9fc6-64fecfeb5fb9.PNG)
+
+## SSL Kullanılan Ortamlarda Network forensics İşlemleri Nasıl olur ?
+Bunun için birinci yol ngrep komutu ile olur. Bunun nasıl yapıldığını yukarıda açıkladım. İkinci yol ise Wireshark kullanarak bir TLS protokolünüze key import edip onun ssl şifrelerinizi çözmenizi sağlayarak yapıyorsunuz.
+
+![yeni8](https://user-images.githubusercontent.com/55113204/117879335-85475e80-b2af-11eb-8ab7-9f9b84347191.PNG)
+
+## Network Forensics Çalışmalarını Atlatma İşlemleri Nasıl Yapılır ?
+* Dışa doğru herhangi bir TCP portu açıksa;
+•OpenVPN kullanarak doğrudan VPN kurulabilir
+•Açık port üzerinden SSH tünelleme yapılarak tüm trafik kolayca tünellenebilir
+•Dışarıdaki bir kullanıcı iç ağa sokulabilir.
+* UDP üzerinden de tünelleme yöntemi yapılabilir.
+•Genellikle UDP 53(dns), UDP 500(IKE) portu dışa doğru açık unutulur.
+•Herhangi bir UDP portu açıksa OpenVPN kullanarak tüm trafik sınırsız bir şekilde tünel içerisinden dışarı çıkarılabilir.
+•Kullanmak için admin hakları gerektirir.
+•Dışarıda bir adet openvpn sunucu ihtiyacı vardır–Ücretsiz openvpn hizmeti sunan yerle
+* ICMP Üzerinden Tünelleme Yöntemleri
+•ICMP genellikle sorun giderme amaçlı kullanılır. Ping, traceroute vs.
+•Özellikle otel vs gibi ücretli internet hizmeti sunan yerlerde dışa doğru ICMP echo request paketlerine yetkisiz izin verilir
+•ICMP tünelleme kullanılarak tüm trafik bu protokol üzerinden tünellebilir
+•Dışarıda bir sunucu gerektirir
+* Proxy ile HTTPS’i Kontrol Etmek
+•Kullanıcı browser’ina ayar girilerek tüm HTTP/HTTPS trafiği proxy üzerinden çıkarılabilir
+•OpenVPN 443/TCP portunda
+•SSH Socks proxy kullanımı
+* Ultrasurf kullanımı tünnelleme yazılımlarının en ünlüsü
+* DNS Tünelleme
+•Amaç sadece yerel ağ dns sunucusuna erişimi olan iç ağ kullanıcısının bu DNS sunucuyu aracı olarak kullanarak internete paket gönderip alabilmesi.
+* SSH Tünelleme
+•En basit kullanıma sahip tünelleme yöntemlerindendir. Putty 443 portdan çalışan bir SSH sunucusu tüm erişim düzenleyicileri aşabilir.
+* WebTunnel
+•Aradaki engelleme cihazlarına normal HTTP istekleri gibi gözükeceği için yakalanma riski düşüktür
+
+## Bilgisayar Ağlarında Şifreleme İşlemleri ve Avantajları ve Dezavantajları 
 
 
 

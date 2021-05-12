@@ -621,3 +621,18 @@ Bu açıklığa göre istemci, ithal RSA anahtarı içeren şifre paketleri ile 
 İthal şifre paketlerinin kullanmaktadır. Ancak Logjam, hem saldırı senaryosu hem de Diffie-Hellman’ı hedef almasından ötürü kritik bir saldırıdır.
 ### • DROWN
 DROWN saldırısı genel hâli ile Bleichenbacher saldırısının geliştirilmiş hâli kullanılarak ve birtakım protokol açıklıkları kullanılarak gerçekleştirilen bir saldırıdır. 2048-bit uzunluğundaki bir RSA TLS şifreli metnini çözebilmek için saldırganın, 1000 adet TLS el sıkışmasını ele geçirmesi, 40000 adet SSLv2 bağlantısı gerçeklemesi ve toplamda 2 üssü 50 çevrim dışı işlem yapması gerekir.
+
+## sslsniff Nedir?
+
+sslsniff , SSL / TLS bağlantıları için ortadaki adam (MITM) saldırıları oluşturmak için tasarlanmıştır ve anında erişilen etki alanları için dinamik olarak sertifikalar oluşturur. Yeni sertifikalar, sağlanan herhangi bir sertifika ile imzalanan bir sertifika zincirinde oluşturulur.
+sslsniff ayrıca, mümkün olduğunda bağlantıların sessiz müdahalesini sağlamak için boş önek veya OCSP saldırıları gibi diğer saldırıları da destekler.
+
+
+
+
+
+
+
+
+
+

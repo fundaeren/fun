@@ -536,6 +536,10 @@ Clientların serverlarını internet üzerinden kontrol etmeyi sağlayan protoko
 
 ![ssh](https://user-images.githubusercontent.com/55113204/117978552-aa34e380-b33a-11eb-97bb-d80e8f9d2d93.PNG)
 
+![image](https://user-images.githubusercontent.com/55113204/109421160-42335a00-79e7-11eb-9fd5-24a2d9fed1e7.png)
+
+
+
 
 
 

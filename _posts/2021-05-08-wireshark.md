@@ -490,6 +490,52 @@ Bunun için birinci yol ngrep komutu ile olur. Bunun nasıl yapıldığını yuk
 
 ## Bilgisayar Ağlarında Şifreleme İşlemleri ve Avantajları ve Dezavantajları 
 
+• WEB (Wired Equivalent Privacy)
+Her türlü harici saldırıdan kablosuz haberleşmeyi korumak için kullanılan algoritmaya WEB algoritması denir. WEP’in ikinci fonksiyonu ise kablosuz ağa yetkisiz erişimleri engellemektir. WEB'te güvenliği sağlamak için kimlik doğrulama, gizlilik, bilgi değiştirme kontrolü olmak üzere 3 adımdan oluşmaktadır.
+• WPA (WI-FI PROTECTED ACCESS)
+WPA ise WEP’ten sonra ortaya atılan ve WEP’in dezavantajlarının bertaraf edilmeye çalışıldığı bir diğer şifreleme yöntemidir. WPA ile kimlik denetimi zorunlu olmuştur ve iki aşamadan oluşmuştur. Birincisi açık sistem kimlik denetiminin kullanılması ve kablosuz istemcinin veri paketi göndermek için kablosuz erişim noktasına sinyal göndermesidir. İkincisi ise 802.1X standardının kullanıcı seviye kimlik denetimini gerçekleştirmesidir.
+
+• Şifreleme yöntemleri içerisinde en zayıf ve güvenilirliği en düşük olan yöntem WEP şifrelemesidir. Günümüzde WEP şifrelemeleri her türlü saldırıya açık durumdadır. Bunun sebebi olarak WEP’te IV değerinin çok düşük olması, veri bütünlüğünün zayıf olması, rekeying korumasının olmaması, tekrar koruma işleminin yapılmaması sayılabilir. Bu dezavantajlar WEP’te yapılan bazı düzenlemeler ve sürümler ile giderilmeye çalışılmışsa da tam anlamıyla güvenlik sağlanamamıştır. WEP’ten daha sonra ortaya çıkarılan WPA ve WPA2  şifreleme yöntemleri ile güvenlik daha da artırılmış ve gönderilen verilerin bütünlüğü korunmuştur. Bu amaçla WEP’te 24 bit olan IV değeri 48 bite çıkarılmış, Mikael ve CBC-MAC gibi algoritmalar ile ekstra şifreleme işlemleri yapılmış, ayrıca güvenlik seviyesinin artırılması için değişik özelliklerde ve çok sayıda şifreleme anahtarı kullanılmıştır. Tüm bu incelemelerin ışığında kablosuz ağ için en güvenilir şifreleme metodu olarak WPA 2 görülmektedir. Ancak WPA2 için çok önemli bir dezavantaj söz konusudur ki bu da şu an için WPA 2 uyumlu donanım cihazlarının yeteri kadar bulunmaması ve mevcut olan cihazların maliyetinin yüksek olmasıdır. Bununla birlikte WPA 2 uyumlu cihazların WEP ve WPA ile de uyumlu olduğu söylenebilir. 
+ 
+
+## Şifreleme protokolleri Nelerdir? 
+• 3-D Secure
+ İnternet'ten yapılan kredi ve banka kartı işlemleri için ek bir güvenlik katmanı olarak tasarlanmış XML tabanlı bir protokoldur. Bu protokolün temel konsepti çevrimiçi onaylama ile finansal onaylamanın birleştirilmesidir. Bu ilave güvenlik onayı 3 boyutlu model üzerine kurulmuştur. 
+• HTTPS 
+HTTPS için temel motivasyon, erişilen web sitesinin kimlik doğrulaması ve aktarılan verilerin alışverişi sırasında gizliliğin ve bütünlüğünün korunmasıdır.
+• DKIM (Alan adı Anahtarlarıyla Tanımlanmış E-Posta)
+E-posta alıcısının, belirli bir alandan geldiği iddia edilen bir e-postanın gerçekten bu alanın sahibi tarafından yetkilendirildiğini kontrol etmesini sağlar. Bu yöntemle e-postalarda sahte gönderici adresleriyle yemleme ve yığın e-posta gibi saldırıları önlemek amaçlanmıştır.
+• SAE (Eşzamanlı Eşit Kimlik Doğrulama)
+Anahtar kilit eşleri birbirlerini keşfettiğinde ve güvenlik devrede ise SAE değişiminde yer alırlar. SAE başarılı bir şekilde tamamlanırsa, her bir taraf diğer tarafın mesh parolasına sahip olduğunu bilir ve SAE değişiminin bir yan ürünü olarak, iki eş kriptografik olarak güçlü bir anahtar oluşturur. 
+• Zero-knowledge proof (Sıfır bilgi ispatı)
+Bilginizi ispat etme yönteminiz genel olarak ideal bir kriptografik fonksiyonunun varsayımlarıdır.
+• Signal Protokolü (TextSecure Protokolü) 
+Sesli aramalar, video görüşmeleri [1] ve anlık mesajlaşma konuşmaları için uçtan-uca şifreleme sağlamak için kullanılabilen federe olmayan kriptografik protokoldür
+• SPEKE 
+Parola doğrulamalı anahtar anlaşması için kullanılan kriptografik bir yöntemdir. Ek olarak saldırgan aynı zamanda parolayı bilen bir taraf ile her bir etkileşiminde parola için yalnızca ve en fazla bir tahminde bulunabilir.
+• WPA
+Kablosuz bilgisayar ağlarını güvenceye almak için geliştirilen, güvenlik protokol ve sertifika programlarıdır.
+• X.509
+Bir X.509 sertifikası bir açık anahtar ve bir kimlik içerir ve bir sertifika yetkilisi tarafından imzalanır veya kendinden imzalı olarak imzalanır. Sertifika güvenilir bir sertifika yetkilisi tarafından imzalandığında veya başka yollarla doğrulandığında, bu sertifikayı tutan biri, başka bir tarafla güvenli iletişim kurmak için sertifikanın içerdiği açık anahtara güvenebilir veya ilgili özel anahtar ile dijital olarak imzalanmış belgeleri doğrulayabilir.
+• ZRTP
+Bu protokolde, Voice over Internet Protocol (VoIP) protokolüne dayanan iki uç nokta arasında şifreleme yapabilmek için anahtarlar üzerinde anlaşma yapılmaktadır.
+
+
+## SSL Nedir?
+Bir SSL sertifikası kişilerin web sitelerine girdiklerinde onların bilgilerini korur. bu verilere müdahale etmeye çalışan herhangi birinin yalnızca şifresini çözmesi neredeyse imkansız olan bozuk karakter karışımını göreceği anlamına gelir. SSL, her iki cihazın da gerçekten iddia ettikleri kişi olmasını sağlamak için iki iletişim cihazı arasında el sıkışma adı verilen bir kimlik doğrulama sürecini başlatır. SSL ayrıca veri bütünlüğünü sağlamak için verileri dijital olarak imzalar ve verilerin amaçlanan alıcıya ulaşmadan önce değiştirilmediğini doğrular.
+
+![ssl](https://user-images.githubusercontent.com/55113204/117897018-820d9c00-b2ca-11eb-9089-b30ad0b09415.png)
+
+## TLS Nedir?
+İnternette iletişim sağlanırken güvenliği sağlayan bir şifreleme protokolüdür. TLS şifrelemesini kullanan bir iletişim oturumunu başlatan işlemdir. Bir TLS el sıkışması sırasında, iletişim kuran iki taraf birbirlerini tanımak, birbirlerini doğrulamak, kullanacakları şifreleme algoritmalarını oluşturmak ve oturum anahtarları üzerinde anlaşmak için mesaj alışverişinde bulunur. 
+
+![tls](https://user-images.githubusercontent.com/55113204/117898408-956e3680-b2cd-11eb-9633-a1d96d5fbfaa.PNG)
+
+## SSH Nedir?
+Clientların serverlarını internet üzerinden kontrol etmeyi sağlayan protokoldür. Telnetin şifrelenmiş hali olarak oluşturuldu. Uzaktaki servera giden yada gelen paketlerin şifrelenmiş olarak gidiğ geldiğini bilir ve bu özellikte onun güvenli olduğunu göstermektedir. 
+
+![ssh](https://user-images.githubusercontent.com/55113204/117978552-aa34e380-b33a-11eb-97bb-d80e8f9d2d93.PNG)
+
 
 
 

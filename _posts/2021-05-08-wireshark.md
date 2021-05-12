@@ -488,34 +488,34 @@ Bunun için birinci yol ngrep komutu ile olur. Bunun nasıl yapıldığını yuk
 
 ## Bilgisayar Ağlarında Şifreleme İşlemleri ve Avantajları ve Dezavantajları 
 
-• WEB (Wired Equivalent Privacy)
+• * WEB (Wired Equivalent Privacy)
 Her türlü harici saldırıdan kablosuz haberleşmeyi korumak için kullanılan algoritmaya WEB algoritması denir. WEP’in ikinci fonksiyonu ise kablosuz ağa yetkisiz erişimleri engellemektir. WEB'te güvenliği sağlamak için kimlik doğrulama, gizlilik, bilgi değiştirme kontrolü olmak üzere 3 adımdan oluşmaktadır.
-• WPA (WI-FI PROTECTED ACCESS)
+• * WPA (WI-FI PROTECTED ACCESS)
 WPA ise WEP’ten sonra ortaya atılan ve WEP’in dezavantajlarının bertaraf edilmeye çalışıldığı bir diğer şifreleme yöntemidir. WPA ile kimlik denetimi zorunlu olmuştur ve iki aşamadan oluşmuştur. Birincisi açık sistem kimlik denetiminin kullanılması ve kablosuz istemcinin veri paketi göndermek için kablosuz erişim noktasına sinyal göndermesidir. İkincisi ise 802.1X standardının kullanıcı seviye kimlik denetimini gerçekleştirmesidir.
 
-• Şifreleme yöntemleri içerisinde en zayıf ve güvenilirliği en düşük olan yöntem WEP şifrelemesidir. Günümüzde WEP şifrelemeleri her türlü saldırıya açık durumdadır. Bunun sebebi olarak WEP’te IV değerinin çok düşük olması, veri bütünlüğünün zayıf olması, rekeying korumasının olmaması, tekrar koruma işleminin yapılmaması sayılabilir. Bu dezavantajlar WEP’te yapılan bazı düzenlemeler ve sürümler ile giderilmeye çalışılmışsa da tam anlamıyla güvenlik sağlanamamıştır. WEP’ten daha sonra ortaya çıkarılan WPA ve WPA2  şifreleme yöntemleri ile güvenlik daha da artırılmış ve gönderilen verilerin bütünlüğü korunmuştur. Bu amaçla WEP’te 24 bit olan IV değeri 48 bite çıkarılmış, Mikael ve CBC-MAC gibi algoritmalar ile ekstra şifreleme işlemleri yapılmış, ayrıca güvenlik seviyesinin artırılması için değişik özelliklerde ve çok sayıda şifreleme anahtarı kullanılmıştır. Tüm bu incelemelerin ışığında kablosuz ağ için en güvenilir şifreleme metodu olarak WPA 2 görülmektedir. Ancak WPA2 için çok önemli bir dezavantaj söz konusudur ki bu da şu an için WPA 2 uyumlu donanım cihazlarının yeteri kadar bulunmaması ve mevcut olan cihazların maliyetinin yüksek olmasıdır. Bununla birlikte WPA 2 uyumlu cihazların WEP ve WPA ile de uyumlu olduğu söylenebilir. 
+• * Şifreleme yöntemleri içerisinde en zayıf ve güvenilirliği en düşük olan yöntem WEP şifrelemesidir. Günümüzde WEP şifrelemeleri her türlü saldırıya açık durumdadır. Bunun sebebi olarak WEP’te IV değerinin çok düşük olması, veri bütünlüğünün zayıf olması, rekeying korumasının olmaması, tekrar koruma işleminin yapılmaması sayılabilir. Bu dezavantajlar WEP’te yapılan bazı düzenlemeler ve sürümler ile giderilmeye çalışılmışsa da tam anlamıyla güvenlik sağlanamamıştır. WEP’ten daha sonra ortaya çıkarılan WPA ve WPA2  şifreleme yöntemleri ile güvenlik daha da artırılmış ve gönderilen verilerin bütünlüğü korunmuştur. Bu amaçla WEP’te 24 bit olan IV değeri 48 bite çıkarılmış, Mikael ve CBC-MAC gibi algoritmalar ile ekstra şifreleme işlemleri yapılmış, ayrıca güvenlik seviyesinin artırılması için değişik özelliklerde ve çok sayıda şifreleme anahtarı kullanılmıştır. Tüm bu incelemelerin ışığında kablosuz ağ için en güvenilir şifreleme metodu olarak WPA 2 görülmektedir. Ancak WPA2 için çok önemli bir dezavantaj söz konusudur ki bu da şu an için WPA 2 uyumlu donanım cihazlarının yeteri kadar bulunmaması ve mevcut olan cihazların maliyetinin yüksek olmasıdır. Bununla birlikte WPA 2 uyumlu cihazların WEP ve WPA ile de uyumlu olduğu söylenebilir. 
  
 
 ## Şifreleme protokolleri Nelerdir? 
-• 3-D Secure
+### • 3-D Secure
  İnternet'ten yapılan kredi ve banka kartı işlemleri için ek bir güvenlik katmanı olarak tasarlanmış XML tabanlı bir protokoldur. Bu protokolün temel konsepti çevrimiçi onaylama ile finansal onaylamanın birleştirilmesidir. Bu ilave güvenlik onayı 3 boyutlu model üzerine kurulmuştur. 
-• HTTPS 
+### • HTTPS 
 HTTPS için temel motivasyon, erişilen web sitesinin kimlik doğrulaması ve aktarılan verilerin alışverişi sırasında gizliliğin ve bütünlüğünün korunmasıdır.
-• DKIM (Alan adı Anahtarlarıyla Tanımlanmış E-Posta)
+### • DKIM (Alan adı Anahtarlarıyla Tanımlanmış E-Posta)
 E-posta alıcısının, belirli bir alandan geldiği iddia edilen bir e-postanın gerçekten bu alanın sahibi tarafından yetkilendirildiğini kontrol etmesini sağlar. Bu yöntemle e-postalarda sahte gönderici adresleriyle yemleme ve yığın e-posta gibi saldırıları önlemek amaçlanmıştır.
-• SAE (Eşzamanlı Eşit Kimlik Doğrulama)
+### • SAE (Eşzamanlı Eşit Kimlik Doğrulama)
 Anahtar kilit eşleri birbirlerini keşfettiğinde ve güvenlik devrede ise SAE değişiminde yer alırlar. SAE başarılı bir şekilde tamamlanırsa, her bir taraf diğer tarafın mesh parolasına sahip olduğunu bilir ve SAE değişiminin bir yan ürünü olarak, iki eş kriptografik olarak güçlü bir anahtar oluşturur. 
-• Zero-knowledge proof (Sıfır bilgi ispatı)
+### • Zero-knowledge proof (Sıfır bilgi ispatı)
 Bilginizi ispat etme yönteminiz genel olarak ideal bir kriptografik fonksiyonunun varsayımlarıdır.
-• Signal Protokolü (TextSecure Protokolü) 
+### • Signal Protokolü (TextSecure Protokolü) 
 Sesli aramalar, video görüşmeleri [1] ve anlık mesajlaşma konuşmaları için uçtan-uca şifreleme sağlamak için kullanılabilen federe olmayan kriptografik protokoldür
-• SPEKE 
+### • SPEKE 
 Parola doğrulamalı anahtar anlaşması için kullanılan kriptografik bir yöntemdir. Ek olarak saldırgan aynı zamanda parolayı bilen bir taraf ile her bir etkileşiminde parola için yalnızca ve en fazla bir tahminde bulunabilir.
-• WPA
+### • WPA
 Kablosuz bilgisayar ağlarını güvenceye almak için geliştirilen, güvenlik protokol ve sertifika programlarıdır.
-• X.509
+### • X.509
 Bir X.509 sertifikası bir açık anahtar ve bir kimlik içerir ve bir sertifika yetkilisi tarafından imzalanır veya kendinden imzalı olarak imzalanır. Sertifika güvenilir bir sertifika yetkilisi tarafından imzalandığında veya başka yollarla doğrulandığında, bu sertifikayı tutan biri, başka bir tarafla güvenli iletişim kurmak için sertifikanın içerdiği açık anahtara güvenebilir veya ilgili özel anahtar ile dijital olarak imzalanmış belgeleri doğrulayabilir.
-• ZRTP
+### • ZRTP
 Bu protokolde, Voice over Internet Protocol (VoIP) protokolüne dayanan iki uç nokta arasında şifreleme yapabilmek için anahtarlar üzerinde anlaşma yapılmaktadır.
 
 
@@ -572,25 +572,25 @@ SSL, TLS'in daha ilkel halidir. TLS, SSL'in yeni sürümü olarak ortaya çıkm�
 •• Bununla birlikte, SSL/TLS'nin aktardığı şey, aslında çift yönlü bir bayt akışı olan "application data" dır. SSL/TLS kullanan uygulamalar, onu gerçekten bir taşıma protokolü olarak kullanır. Daha sonra bu "application data" içinde kendi veri temsillerini ve mesajlarını ve ve mesajların anlamlarını kullanırlar. Bu sebeple, SSL / TLS, OSI modelinde 4. katmanda bulunur.
 
 ## SSL/TLS’e Yönelik Gerçekleştirilmiş Saldırılar Nelerdir ?
-• Şifre Paketi Düşürme Saldırısı
+### • Şifre Paketi Düşürme Saldırısı
 Saldırganlar istemcide gönderilen “Client Hello” mesajından bulunan şifre paketlerini silip yerine “Null” (şifreleme yapmama anlamına gelir) şifrelerle değiştirip sunucuya gönderirler. Sunucunun iletişimi güvenli hâle getirmek için yapabileceği  bir şey kalmaz. Ya bağlantıyı sonlandırır ya da “Null” şifrelemeyi kabul eder.
-• Bleichenbacher Saldırısı
+### • Bleichenbacher Saldırısı
 Saldırının gerçekleşebilmesi için saldırganın sunucuya istediği mesajı şifrelemesi ve şifreli mesaja da ulaşabilmesi gerekmektedir. Sonrasında saldırgan tahminlerde bulunarak hedefini daraltır ve daha önce seçmiş olduğu şifreli bir mesajın açık hâline erişir. Açık hâli elde edilen şifreli paketin istemcinin sunucuya gönderdiği ve ön ana giz değerini içeren Client Key Exchange mesajı olması durumunda, saldırgan oturum anahtarını hesaplayabilir ve tüm oturum verilerine erişebilir.
-• Beast 
+### • Beast 
 Saldırı, el sıkışma gerçekleştikten ve simetrik anahtar ile gizli iletişim başladıktan sonra gerçekleşir. Taraflar simetrik şifreleme için AES ve şifreleme yöntemi için CBC modu seçilmiş ise, saldırıya açık hâle gelirler. SSL/TLS Haberleşme Protokolüne Yönelik Saldırılar BEAST saldırısını kritik yapan unsur, saldırıların nasıl gelişebildiğini göstermesidir.
-• CRIME
+### • CRIME
 Taraflar arasında ortak oturum anahtarı oluşturulduktan sonra, çerezler de bu oturum anahtarı ile şifrelenirler. CRIME saldırısı da şifrelenmiş çerez içerisindeki gizli değeri ele geçirebilir.
-• TIME
+### • TIME
 Bu saldırının başarılı olabilmesi için saldırganın ağ paketlerini dinleyebilir olması kısıtlaması vardır. TIME saldırısı, sıkıştırılmış verilerin büyüklüğünü giriş ve çıkış zaman farklılıklarından ölçerek gerçekleştirilmektedir.
-• Lucky 13
+### • Lucky 13
 Bu saldırı, araya giren saldırganın oturum anahtarı oluşturulurken Şifre-Bloku Zincirleme (Cipher Block Chaining – CBC) kipi kullanılması hâlinde şifreli metinlerden açık metinleri ortaya çıkarabilmektedir. CBC kipi içeren bir şifre paketi ile oluşan oturumda şifre çözme işlemi yapılırken küçük zaman farklılıkları oluşur. Lucky13 saldırısında tam olarak da bu zaman farklılıkları kullanılarak gerçekleştirilmekteydi.
-• POODLE
+### • POODLE
 TLS versiyonları ile el sıkışma başarısız olursa, taraflar SSLv3 ile konuşmaya çalışabilir. Bu durum ağ kesintilerinden kaynaklı olabileceği gibi, bir saldırgan tarafından da zorlanmış olabilir. Bu saldırı sonucunda SSLv3’ün kesin olarak güvensiz olduğunu ortaya çıkmıştır.
-• Heartbleed
+### • Heartbleed
 Bağlantı kuran iki cihaz arasında dikkatli bir şekilde belirlenmiş veri paketi kadar veri gönderilmediği taktirde arta kalan veriyi dekendi hafızasından (RAM) gönderirse saldırgan sunucunun hafızasında bulunan kritik verilere (diğer kullanıcıların anahtarları, şifreleri vs.) erişimi gerçekleşir. Bu bilginin uzunluğunun sunucu tarafından kontrol edilmemesi, heartbleed açıklığının temelidir. Heartbeat eklentisi ise; birbiri ile bağlantı kuran cihazların, birbirleri ile iletişimlerinin aktif olup olmadığını kontrol etmek için gönderilen periyodik sinyallerden oluşan bir protokoldür. 
-• FREAK
+### • FREAK
 Bu açıklığa göre istemci, ithal RSA anahtarı içeren şifre paketleri ile el sıkışmayı kabul etmektedir. İstemci başlangıçta bu şifre paketlerini önermemiş olsa dahi sunucunun isteği ile tercih etmektedir. 
-• Logjam
+### • Logjam
 İthal şifre paketlerinin kullanmaktadır. Ancak Logjam, hem saldırı senaryosu hem de Diffie-Hellman’ı hedef almasından ötürü kritik bir saldırıdır.
-• DROWN
+### • DROWN
 DROWN saldırısı genel hâli ile Bleichenbacher saldırısının geliştirilmiş hâli kullanılarak ve birtakım protokol açıklıkları kullanılarak gerçekleştirilen bir saldırıdır. 2048-bit uzunluğundaki bir RSA TLS şifreli metnini çözebilmek için saldırganın, 1000 adet TLS el sıkışmasını ele geçirmesi, 40000 adet SSLv2 bağlantısı gerçeklemesi ve toplamda 2 üssü 50 çevrim dışı işlem yapması gerekir.

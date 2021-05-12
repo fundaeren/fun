@@ -461,36 +461,53 @@ Bunun için birinci yol ngrep komutu ile olur. Bunun nasıl yapıldığını yuk
 
 ## Network Forensics Çalışmalarını Atlatma İşlemleri Nasıl Yapılır ?
 * Dışa doğru herhangi bir TCP portu açıksa;
+
 •OpenVPN kullanarak doğrudan VPN kurulabilir.
+
 •Açık port üzerinden SSH tünelleme yapılarak tüm trafik kolayca tünellenebilir
+
 •Dışarıdaki bir kullanıcı iç ağa sokulabilir.
 
 * UDP üzerinden de tünelleme yöntemi yapılabilir.
+
 •Genellikle UDP 53(dns), UDP 500(IKE) portu dışa doğru açık unutulur.
+
 •Herhangi bir UDP portu açıksa OpenVPN kullanarak tüm trafik sınırsız bir şekilde tünel içerisinden dışarı çıkarılabilir.
+
 •Kullanmak için admin hakları gerektirir.
+
 •Dışarıda bir adet openvpn sunucu ihtiyacı vardır–Ücretsiz openvpn hizmeti sunan yerle
 
 * ICMP Üzerinden Tünelleme Yöntemleri
+
 •ICMP genellikle sorun giderme amaçlı kullanılır. Ping, traceroute vs.
+
 •Özellikle otel vs gibi ücretli internet hizmeti sunan yerlerde dışa doğru ICMP echo request paketlerine yetkisiz izin verilir
+
 •ICMP tünelleme kullanılarak tüm trafik bu protokol üzerinden tünellebilir
+
 •Dışarıda bir sunucu gerektirir
 
 * Proxy ile HTTPS’i Kontrol Etmek
+
 •Kullanıcı browser’ina ayar girilerek tüm HTTP/HTTPS trafiği proxy üzerinden çıkarılabilir
+
 •OpenVPN 443/TCP portunda
+
 •SSH Socks proxy kullanımı
 
 * Ultrasurf kullanımı tünnelleme yazılımlarının en ünlüsü
 
 * DNS Tünelleme
+
 •Amaç sadece yerel ağ dns sunucusuna erişimi olan iç ağ kullanıcısının bu DNS sunucuyu aracı olarak kullanarak internete paket gönderip alabilmesi.
 
 * SSH Tünelleme
+
 •En basit kullanıma sahip tünelleme yöntemlerindendir. Putty 443 portdan çalışan bir SSH sunucusu tüm erişim düzenleyicileri aşabilir.
 
 * WebTunnel
+
 •Aradaki engelleme cihazlarına normal HTTP istekleri gibi gözükeceği için yakalanma riski düşüktür
 
 ## Bilgisayar Ağlarında Şifreleme İşlemleri ve Avantajları ve Dezavantajları 

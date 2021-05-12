@@ -299,8 +299,6 @@ TCP trafiğine ulaşmak istersek ise aşağıdaki gibi bir arama gerçekleştire
 
 
 
-
-
 **¯\\\_(ツ)\_/¯**
 
 ## Wireshark ile Tshark Arasındaki Farklar Nelerdir ?
@@ -539,13 +537,60 @@ Clientların serverlarını internet üzerinden kontrol etmeyi sağlayan protoko
 ![image](https://user-images.githubusercontent.com/55113204/109421160-42335a00-79e7-11eb-9fd5-24a2d9fed1e7.png)
 
 
+## SSL/TLS Protokol Analizi
 
+Şifrelenmiş olan bu protokol için şifresini çözmek için bir key gereklidir. Biz burada bir örnek olsun diye şifrelenmiş bir trafik ve onun keylenmiş halini göstereceğiz.
 
+İlk önce şifrelenmiş pcap paketini wiresharka import edelim.
 
+![şifresiz](https://user-images.githubusercontent.com/55113204/117986631-78c01600-b342-11eb-8d17-a2cacc835340.PNG)
 
+Dahas sonra keyi de Edit -> Preferences -> Protocol -> TLS -> Edit şeklinde bir yol izleyerek import edelim.
 
+![şifreleniyor](https://user-images.githubusercontent.com/55113204/117986869-ac9b3b80-b342-11eb-8865-cc911552868b.PNG)
 
+Şifresinin çözülmüş halini görelim.
 
+![tls key1](https://user-images.githubusercontent.com/55113204/117986993-ca68a080-b342-11eb-8ba2-c18f95da1f7f.PNG)
 
+Ve File -> Export Objects Alanında http trafiğinde takılan paketlerin içini görebilmekteyiz.
 
+![tls key2](https://user-images.githubusercontent.com/55113204/117987220-f2580400-b342-11eb-9634-0922520649c2.PNG)
 
+Kaydettiğimiz bir http paketinin içeriğini görüntüleriz ve neler olduğunu inceleyebiliriz.
+
+![son](https://user-images.githubusercontent.com/55113204/117987599-4bc03300-b343-11eb-8b71-06abb8eb2226.PNG)
+
+## SSL/TLS Arasındaki Farkları Avantajları Dezavantajları Nelerdir ?
+
+SSL, TLS'in daha ilkel halidir. TLS, SSL'in yeni sürümü olarak ortaya çıkmıştır çünkü gün geçtikçe kusurları ortaya çaıkmıştır. SSL tam olarak açık kaynak vermediğinden bir süre sonra güvenlik açıkları olduğu ortaya çıkmıştır. TLS'nin SSL'ye göre avantajı, güvenli kabul edilmesidir ve dezavantajı, yalnızca SSLv3'ü destekleyen istemcilerin hizmetlere bağlanamamasıdır. SSL'nin avantajı, eski tarayıcılarla çalışmasıdır. Dezavantajı, yeni tarayıcıların güvenlik uyarıları vermesidir.
+
+## OSI Katmanında TLS’in Yeri ve Önemi
+
+​​ SSL/TLS, çift yönlü bayt akışı sağlayan temel bir aktarım ortamı kullanır. Bu onu 4. tabakanın üzerinde olduğunu gösterir.
+​​ SSL/TLS, verileri özellikle üçlü el sıkışma mesajları içerebilen kayıtlar olarak düzenler. El sıkışma mesajları 5. (Session) katmana benzer. Bu, SSL/TLS'yi 6. veya 7. katmana koyar.
+​​ Bununla birlikte, SSL/TLS'nin aktardığı şey, aslında çift yönlü bir bayt akışı olan "application data" dır. SSL/TLS kullanan uygulamalar, onu gerçekten bir taşıma protokolü olarak kullanır. Daha sonra bu "application data" içinde kendi veri temsillerini ve mesajlarını ve ve mesajların anlamlarını kullanırlar. Bu sebeple, SSL / TLS, OSI modelinde 4. katmanda bulunur.
+
+## SSL/TLS’e Yönelik Gerçekleştirilmiş Saldırılar Nelerdir ?
+​ Şifre Paketi Düşürme Saldırısı
+Saldırganlar istemcide gönderilen “Client Hello” mesajından bulunan şifre paketlerini silip yerine “Null” (şifreleme yapmama anlamına gelir) şifrelerle değiştirip sunucuya gönderirler. Sunucunun iletişimi güvenli hâle getirmek için yapabileceği  bir şey kalmaz. Ya bağlantıyı sonlandırır ya da “Null” şifrelemeyi kabul eder.
+​ Bleichenbacher Saldırısı
+Saldırının gerçekleşebilmesi için saldırganın sunucuya istediği mesajı şifrelemesi ve şifreli mesaja da ulaşabilmesi gerekmektedir. Sonrasında saldırgan tahminlerde bulunarak hedefini daraltır ve daha önce seçmiş olduğu şifreli bir mesajın açık hâline erişir. Açık hâli elde edilen şifreli paketin istemcinin sunucuya gönderdiği ve ön ana giz değerini içeren Client Key Exchange mesajı olması durumunda, saldırgan oturum anahtarını hesaplayabilir ve tüm oturum verilerine erişebilir.
+​ Beast 
+Saldırı, el sıkışma gerçekleştikten ve simetrik anahtar ile gizli iletişim başladıktan sonra gerçekleşir. Taraflar simetrik şifreleme için AES ve şifreleme yöntemi için CBC modu seçilmiş ise, saldırıya açık hâle gelirler. SSL/TLS Haberleşme Protokolüne Yönelik Saldırılar BEAST saldırısını kritik yapan unsur, saldırıların nasıl gelişebildiğini göstermesidir.
+​ CRIME
+Taraflar arasında ortak oturum anahtarı oluşturulduktan sonra, çerezler de bu oturum anahtarı ile şifrelenirler. CRIME saldırısı da şifrelenmiş çerez içerisindeki gizli değeri ele geçirebilir.
+​ TIME
+Bu saldırının başarılı olabilmesi için saldırganın ağ paketlerini dinleyebilir olması kısıtlaması vardır. TIME saldırısı, sıkıştırılmış verilerin büyüklüğünü giriş ve çıkış zaman farklılıklarından ölçerek gerçekleştirilmektedir.
+​ Lucky 13
+Bu saldırı, araya giren saldırganın oturum anahtarı oluşturulurken Şifre-Bloku Zincirleme (Cipher Block Chaining – CBC) kipi kullanılması hâlinde şifreli metinlerden açık metinleri ortaya çıkarabilmektedir. CBC kipi içeren bir şifre paketi ile oluşan oturumda şifre çözme işlemi yapılırken küçük zaman farklılıkları oluşur. Lucky13 saldırısında tam olarak da bu zaman farklılıkları kullanılarak gerçekleştirilmekteydi.
+​ POODLE
+TLS versiyonları ile el sıkışma başarısız olursa, taraflar SSLv3 ile konuşmaya çalışabilir. Bu durum ağ kesintilerinden kaynaklı olabileceği gibi, bir saldırgan tarafından da zorlanmış olabilir. Bu saldırı sonucunda SSLv3’ün kesin olarak güvensiz olduğunu ortaya çıkmıştır.
+​ Heartbleed
+Bağlantı kuran iki cihaz arasında dikkatli bir şekilde belirlenmiş veri paketi kadar veri gönderilmediği taktirde arta kalan veriyi dekendi hafızasından (RAM) gönderirse saldırgan sunucunun hafızasında bulunan kritik verilere (diğer kullanıcıların anahtarları, şifreleri vs.) erişimi gerçekleşir. Bu bilginin uzunluğunun sunucu tarafından kontrol edilmemesi, heartbleed açıklığının temelidir. Heartbeat eklentisi ise; birbiri ile bağlantı kuran cihazların, birbirleri ile iletişimlerinin aktif olup olmadığını kontrol etmek için gönderilen periyodik sinyallerden oluşan bir protokoldür. 
+​ FREAK
+Bu açıklığa göre istemci, ithal RSA anahtarı içeren şifre paketleri ile el sıkışmayı kabul etmektedir. İstemci başlangıçta bu şifre paketlerini önermemiş olsa dahi sunucunun isteği ile tercih etmektedir. 
+​ Logjam
+İthal şifre paketlerinin kullanmaktadır. Ancak Logjam, hem saldırı senaryosu hem de Diffie-Hellman’ı hedef almasından ötürü kritik bir saldırıdır.
+​ DROWN
+DROWN saldırısı genel hâli ile Bleichenbacher saldırısının geliştirilmiş hâli kullanılarak ve birtakım protokol açıklıkları kullanılarak gerçekleştirilen bir saldırıdır. 2048-bit uzunluğundaki bir RSA TLS şifreli metnini çözebilmek için saldırganın, 1000 adet TLS el sıkışmasını ele geçirmesi, 40000 adet SSLv2 bağlantısı gerçeklemesi ve toplamda 2 üssü 50 çevrim dışı işlem yapması gerekir.

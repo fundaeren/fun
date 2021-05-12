@@ -461,28 +461,35 @@ Bunun için birinci yol ngrep komutu ile olur. Bunun nasıl yapıldığını yuk
 
 ## Network Forensics Çalışmalarını Atlatma İşlemleri Nasıl Yapılır ?
 * Dışa doğru herhangi bir TCP portu açıksa;
-•OpenVPN kullanarak doğrudan VPN kurulabilir
+•OpenVPN kullanarak doğrudan VPN kurulabilir.
 •Açık port üzerinden SSH tünelleme yapılarak tüm trafik kolayca tünellenebilir
 •Dışarıdaki bir kullanıcı iç ağa sokulabilir.
+
 * UDP üzerinden de tünelleme yöntemi yapılabilir.
 •Genellikle UDP 53(dns), UDP 500(IKE) portu dışa doğru açık unutulur.
 •Herhangi bir UDP portu açıksa OpenVPN kullanarak tüm trafik sınırsız bir şekilde tünel içerisinden dışarı çıkarılabilir.
 •Kullanmak için admin hakları gerektirir.
 •Dışarıda bir adet openvpn sunucu ihtiyacı vardır–Ücretsiz openvpn hizmeti sunan yerle
+
 * ICMP Üzerinden Tünelleme Yöntemleri
 •ICMP genellikle sorun giderme amaçlı kullanılır. Ping, traceroute vs.
 •Özellikle otel vs gibi ücretli internet hizmeti sunan yerlerde dışa doğru ICMP echo request paketlerine yetkisiz izin verilir
 •ICMP tünelleme kullanılarak tüm trafik bu protokol üzerinden tünellebilir
 •Dışarıda bir sunucu gerektirir
+
 * Proxy ile HTTPS’i Kontrol Etmek
 •Kullanıcı browser’ina ayar girilerek tüm HTTP/HTTPS trafiği proxy üzerinden çıkarılabilir
 •OpenVPN 443/TCP portunda
 •SSH Socks proxy kullanımı
+
 * Ultrasurf kullanımı tünnelleme yazılımlarının en ünlüsü
+
 * DNS Tünelleme
 •Amaç sadece yerel ağ dns sunucusuna erişimi olan iç ağ kullanıcısının bu DNS sunucuyu aracı olarak kullanarak internete paket gönderip alabilmesi.
+
 * SSH Tünelleme
 •En basit kullanıma sahip tünelleme yöntemlerindendir. Putty 443 portdan çalışan bir SSH sunucusu tüm erişim düzenleyicileri aşabilir.
+
 * WebTunnel
 •Aradaki engelleme cihazlarına normal HTTP istekleri gibi gözükeceği için yakalanma riski düşüktür
 
@@ -490,6 +497,7 @@ Bunun için birinci yol ngrep komutu ile olur. Bunun nasıl yapıldığını yuk
 
 • * WEB (Wired Equivalent Privacy)
 Her türlü harici saldırıdan kablosuz haberleşmeyi korumak için kullanılan algoritmaya WEB algoritması denir. WEP’in ikinci fonksiyonu ise kablosuz ağa yetkisiz erişimleri engellemektir. WEB'te güvenliği sağlamak için kimlik doğrulama, gizlilik, bilgi değiştirme kontrolü olmak üzere 3 adımdan oluşmaktadır.
+
 • * WPA (WI-FI PROTECTED ACCESS)
 WPA ise WEP’ten sonra ortaya atılan ve WEP’in dezavantajlarının bertaraf edilmeye çalışıldığı bir diğer şifreleme yöntemidir. WPA ile kimlik denetimi zorunlu olmuştur ve iki aşamadan oluşmuştur. Birincisi açık sistem kimlik denetiminin kullanılması ve kablosuz istemcinin veri paketi göndermek için kablosuz erişim noktasına sinyal göndermesidir. İkincisi ise 802.1X standardının kullanıcı seviye kimlik denetimini gerçekleştirmesidir.
 
@@ -568,7 +576,9 @@ SSL, TLS'in daha ilkel halidir. TLS, SSL'in yeni sürümü olarak ortaya çıkm�
 ## OSI Katmanında TLS’in Yeri ve Önemi
 
 •• SSL/TLS, çift yönlü bayt akışı sağlayan temel bir aktarım ortamı kullanır. Bu onu 4. tabakanın üzerinde olduğunu gösterir.
+
 •• SSL/TLS, verileri özellikle üçlü el sıkışma mesajları içerebilen kayıtlar olarak düzenler. El sıkışma mesajları 5. (Session) katmana benzer. Bu, SSL/TLS'yi 6. veya 7. katmana koyar.
+
 •• Bununla birlikte, SSL/TLS'nin aktardığı şey, aslında çift yönlü bir bayt akışı olan "application data" dır. SSL/TLS kullanan uygulamalar, onu gerçekten bir taşıma protokolü olarak kullanır. Daha sonra bu "application data" içinde kendi veri temsillerini ve mesajlarını ve ve mesajların anlamlarını kullanırlar. Bu sebeple, SSL / TLS, OSI modelinde 4. katmanda bulunur.
 
 ## SSL/TLS’e Yönelik Gerçekleştirilmiş Saldırılar Nelerdir ?

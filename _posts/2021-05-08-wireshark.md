@@ -628,11 +628,16 @@ sslsniff , SSL / TLS bağlantıları için ortadaki adam (MITM) saldırıları o
 sslsniff ayrıca, mümkün olduğunda bağlantıların sessiz müdahalesini sağlamak için boş önek veya OCSP saldırıları gibi diğer saldırıları da destekler.
 
 
+HTTP ve SSL Kullanılan Ortamlardaki Tehlikeler Nelerdir ?
+
+"Http" kullanılırken veriler şifrelenmez, düz metin olarak gönderilir. Bu, giriş bilgilerinizin, şifrelerinizin ve hatta kredi kartı bilgilerinizin bunlara erişebilen herkes tarafından okunabileceği anlamına gelir. Aynısı güvenli e-posta ayarları için de geçerlidir. E-posta için standart güvenli olmayanlar yerine güvenli bağlantı noktalarını kullanmanızı öneririz. Giden SMTP sunucunuz için 465 veya 587 kullandığınızda, tamamen şifrelenir, varsayılan bağlantı noktası 25 ise düz metin olarak gönderilir. IMAP için eşdeğer güvenli bağlantı noktası, varsayılan 143 yerine 993'tür. E-postanız için güvenli olmayan bağlantı noktalarını kullanmak, oturum açma bilgilerinizin ve e-postalarınızın düz metin olarak gönderildiği ve kesilip okunabileceği anlamına gelir. Bu, e-postanızın güvenliğinin ihlal edilmesinin yaygın bir yoludur - genellikle hesabının spam göndermek için ele geçirilmesine neden olur. SSL olmayan web sitelerini ve güvenli olmayan e-posta bağlantı noktalarını kullanırken en büyük risk alanları, kafelerde, havaalanlarında veya otellerde halka açık WiFi kullandığınızda ortaya çıkar. Aynı halka açık WiFi ağındaki herhangi biri potansiyel olarak diğer kullanıcılar tarafından iletilen verilere müdahale edebilir.
 
 
+## ssldump 
 
+SSL/TLS ile şifrelenmiş olan ağ trafiğindeki şifreleri çözmeye yarayan bir araçtır. SSLDump ile servera ait gizli olan anahtarlar elimizde gibi davranılır ve ve HTTPS gibi şifrelenmiş benzeri protokolleri trafik üzerinden geçen bilgileri okunabilmektedir. Daha önceden kaydedilmiş olan pcap dosyalarını da analiz edebilir.
 
-
+![ssldump](https://user-images.githubusercontent.com/55113204/118159543-ca8d9c80-b425-11eb-9792-8de6093881dd.PNG)
 
 
 

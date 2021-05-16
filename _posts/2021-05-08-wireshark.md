@@ -294,12 +294,12 @@ TCP trafiğine ulaşmak istersek ise aşağıdaki gibi bir arama gerçekleştire
 
 Şimdi de Wireshark kullanarak şifrelenen .pcap dosyasının trafiğine de bakabiliriz. 
 
+## Trafik Analizlerinde  Özet Bilgi Nasıl Alnınır?
 
+Çeşitli ağ trafiği dinleme araçları kullanarak bir ağ trafiğinin özet bilgilerini alabiliriz ama ben burada tshark kullanarak giden gelen framelerin özet bilgilerini almış bulunmaktayım. Burada sadece ttl değerleri, source address, destination address, ve frame durumları (SYN-ACK) bilgileri elde edilir.
 
+![bir](https://user-images.githubusercontent.com/55113204/118411454-5b21e200-b69d-11eb-8ab8-6130bd6010b3.PNG)
 
-
-
-**¯\\\_(ツ)\_/¯**
 
 ## Wireshark ile Tshark Arasındaki Farklar Nelerdir ?
 Wiresharkın terminal üzerinde çalışan haline tshark diyebiliriz.
@@ -649,3 +649,5 @@ SSL/TLS ile şifrelenmiş olan ağ trafiğindeki şifreleri çözmeye yarayan bi
 
 ssh tünelleme ile bir ağ üzerindeki tüm trafik şifreli bir şekilde bir başka server üzerinde akmaktadır. Bu sebeple giden gelen paketler incelenmez ve bundan dolayı zararlı yazılımlar hedefe ulaştırılabilir çünkü portlar kontrol edilmez.
 
+
+**¯\\\_(ツ)\_/¯**

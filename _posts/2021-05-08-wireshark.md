@@ -519,7 +519,18 @@ Her türlü harici saldırıdan kablosuz haberleşmeyi korumak için kullanılan
 WPA ise WEP’ten sonra ortaya atılan ve WEP’in dezavantajlarının bertaraf edilmeye çalışıldığı bir diğer şifreleme yöntemidir. WPA ile kimlik denetimi zorunlu olmuştur ve iki aşamadan oluşmuştur. Birincisi açık sistem kimlik denetiminin kullanılması ve kablosuz istemcinin veri paketi göndermek için kablosuz erişim noktasına sinyal göndermesidir. İkincisi ise 802.1X standardının kullanıcı seviye kimlik denetimini gerçekleştirmesidir.
 
 • * Şifreleme yöntemleri içerisinde en zayıf ve güvenilirliği en düşük olan yöntem WEP şifrelemesidir. Günümüzde WEP şifrelemeleri her türlü saldırıya açık durumdadır. Bunun sebebi olarak WEP’te IV değerinin çok düşük olması, veri bütünlüğünün zayıf olması, rekeying korumasının olmaması, tekrar koruma işleminin yapılmaması sayılabilir. Bu dezavantajlar WEP’te yapılan bazı düzenlemeler ve sürümler ile giderilmeye çalışılmışsa da tam anlamıyla güvenlik sağlanamamıştır. WEP’ten daha sonra ortaya çıkarılan WPA ve WPA2  şifreleme yöntemleri ile güvenlik daha da artırılmış ve gönderilen verilerin bütünlüğü korunmuştur. Bu amaçla WEP’te 24 bit olan IV değeri 48 bite çıkarılmış, Mikael ve CBC-MAC gibi algoritmalar ile ekstra şifreleme işlemleri yapılmış, ayrıca güvenlik seviyesinin artırılması için değişik özelliklerde ve çok sayıda şifreleme anahtarı kullanılmıştır. Tüm bu incelemelerin ışığında kablosuz ağ için en güvenilir şifreleme metodu olarak WPA 2 görülmektedir. Ancak WPA2 için çok önemli bir dezavantaj söz konusudur ki bu da şu an için WPA 2 uyumlu donanım cihazlarının yeteri kadar bulunmaması ve mevcut olan cihazların maliyetinin yüksek olmasıdır. Bununla birlikte WPA 2 uyumlu cihazların WEP ve WPA ile de uyumlu olduğu söylenebilir. 
- 
+
+## SSL Wrapper Nedir?
+
+Güvenli olan SSL tüneli içindeki güvenli olmayan bir ağ iletişimi şifreleyen ve kimlik doğrulama mekanizması sağlayan bir araçtır. Bir tarafta yada her iki taraftada şifreleme yapmaktadır.Seçeneklerden ilki olarak Client, SSL Wrapper ile giden istemci trafiğini şifreler. İkinci seçenek ise Server, SSL Wrapper ile gelen server trafiğinin şifresini çözer ve SSL sonlandırma proxy'si uygular. Yada her iki tarafta, iki eşleştirilmiş SSL Wrapper ile düz TCP trafiğini güvenli SSL tüneline kapatır.
+
+İki modda dinleme yapabilir. Birinci mod Dinlenen port SSL, host normal düz TCP'dir.
+İkinci mod ise Dinlenen port düz TCP, host ise SSL'dir.
+
+./ssl_wrapper dinlenecek_adres hedef_adres şeklinde çalışır.
+
+![sslwrappet](https://user-images.githubusercontent.com/55113204/118412007-4e52bd80-b6a0-11eb-9f0b-57b5af6a0451.PNG)
+
 
 ## Şifreleme protokolleri Nelerdir? 
 ### • 3-D Secure
@@ -649,5 +660,10 @@ SSL/TLS ile şifrelenmiş olan ağ trafiğindeki şifreleri çözmeye yarayan bi
 
 ssh tünelleme ile bir ağ üzerindeki tüm trafik şifreli bir şekilde bir başka server üzerinde akmaktadır. Bu sebeple giden gelen paketler incelenmez ve bundan dolayı zararlı yazılımlar hedefe ulaştırılabilir çünkü portlar kontrol edilmez.
 
+![ssh-local1](https://user-images.githubusercontent.com/55113204/118415165-7ac30580-b6b1-11eb-9559-ee9b3f70635e.png)
+
+## SSH Kullanarak Firewall/IPS/ Atlatma İşlemleri Nasıl Yapılır?
+
+Bir pentest yapılan kurumda ağda dışarıya iletişim belirli portlar haricinde kısıtlanmıştır. Bunu aşabilmek için de açık olan bir port üzerinden dışarıya SSH tünel kurulumu yapılmaktadır. Yada bir kurum kendisine test yapılmasını istediği zaman hangi IP adresleri üzerinden denemeler yapıldığını bilmek istediğinden ve duruma göre IPS/Firewall/WAF sistemlerinden kendisine test yapılan sistemlerden özel erişim sağlanmasına izin vermektedir. Pentest ekibi birden fazla kişiden oluşuyorsa bunlar aynı IP adresi üzerinden çıkış yapabilmek için çıkış IP adresi yada VPS server kullanabilirler ve bu VPS server eğer linuxta ise birden fazla kişi bu servera bağlanarak sızma testini gerçekleştirebilirler. 
 
 **¯\\\_(ツ)\_/¯**

@@ -610,27 +610,39 @@ SSL, TLS'in daha ilkel halidir. TLS, SSL'in yeni sürümü olarak ortaya çıkm�
 •• Bununla birlikte, SSL/TLS'nin aktardığı şey, aslında çift yönlü bir bayt akışı olan "application data" dır. SSL/TLS kullanan uygulamalar, onu gerçekten bir taşıma protokolü olarak kullanır. Daha sonra bu "application data" içinde kendi veri temsillerini ve mesajlarını ve ve mesajların anlamlarını kullanırlar. Bu sebeple, SSL / TLS, OSI modelinde 4. katmanda bulunur.
 
 ## SSL/TLS’e Yönelik Gerçekleştirilmiş Saldırılar Nelerdir ?
+
 ### • Şifre Paketi Düşürme Saldırısı
+
 Saldırganlar istemcide gönderilen “Client Hello” mesajından bulunan şifre paketlerini silip yerine “Null” (şifreleme yapmama anlamına gelir) şifrelerle değiştirip sunucuya gönderirler. Sunucunun iletişimi güvenli hâle getirmek için yapabileceği  bir şey kalmaz. Ya bağlantıyı sonlandırır ya da “Null” şifrelemeyi kabul eder.
 ### • Bleichenbacher Saldırısı
+
 Saldırının gerçekleşebilmesi için saldırganın sunucuya istediği mesajı şifrelemesi ve şifreli mesaja da ulaşabilmesi gerekmektedir. Sonrasında saldırgan tahminlerde bulunarak hedefini daraltır ve daha önce seçmiş olduğu şifreli bir mesajın açık hâline erişir. Açık hâli elde edilen şifreli paketin istemcinin sunucuya gönderdiği ve ön ana giz değerini içeren Client Key Exchange mesajı olması durumunda, saldırgan oturum anahtarını hesaplayabilir ve tüm oturum verilerine erişebilir.
 ### • Beast 
+
 Saldırı, el sıkışma gerçekleştikten ve simetrik anahtar ile gizli iletişim başladıktan sonra gerçekleşir. Taraflar simetrik şifreleme için AES ve şifreleme yöntemi için CBC modu seçilmiş ise, saldırıya açık hâle gelirler. SSL/TLS Haberleşme Protokolüne Yönelik Saldırılar BEAST saldırısını kritik yapan unsur, saldırıların nasıl gelişebildiğini göstermesidir.
 ### • CRIME
+
 Taraflar arasında ortak oturum anahtarı oluşturulduktan sonra, çerezler de bu oturum anahtarı ile şifrelenirler. CRIME saldırısı da şifrelenmiş çerez içerisindeki gizli değeri ele geçirebilir.
 ### • TIME
+
 Bu saldırının başarılı olabilmesi için saldırganın ağ paketlerini dinleyebilir olması kısıtlaması vardır. TIME saldırısı, sıkıştırılmış verilerin büyüklüğünü giriş ve çıkış zaman farklılıklarından ölçerek gerçekleştirilmektedir.
 ### • Lucky 13
+
 Bu saldırı, araya giren saldırganın oturum anahtarı oluşturulurken Şifre-Bloku Zincirleme (Cipher Block Chaining – CBC) kipi kullanılması hâlinde şifreli metinlerden açık metinleri ortaya çıkarabilmektedir. CBC kipi içeren bir şifre paketi ile oluşan oturumda şifre çözme işlemi yapılırken küçük zaman farklılıkları oluşur. Lucky13 saldırısında tam olarak da bu zaman farklılıkları kullanılarak gerçekleştirilmekteydi.
 ### • POODLE
+
 TLS versiyonları ile el sıkışma başarısız olursa, taraflar SSLv3 ile konuşmaya çalışabilir. Bu durum ağ kesintilerinden kaynaklı olabileceği gibi, bir saldırgan tarafından da zorlanmış olabilir. Bu saldırı sonucunda SSLv3’ün kesin olarak güvensiz olduğunu ortaya çıkmıştır.
 ### • Heartbleed
+
 Bağlantı kuran iki cihaz arasında dikkatli bir şekilde belirlenmiş veri paketi kadar veri gönderilmediği taktirde arta kalan veriyi dekendi hafızasından (RAM) gönderirse saldırgan sunucunun hafızasında bulunan kritik verilere (diğer kullanıcıların anahtarları, şifreleri vs.) erişimi gerçekleşir. Bu bilginin uzunluğunun sunucu tarafından kontrol edilmemesi, heartbleed açıklığının temelidir. Heartbeat eklentisi ise; birbiri ile bağlantı kuran cihazların, birbirleri ile iletişimlerinin aktif olup olmadığını kontrol etmek için gönderilen periyodik sinyallerden oluşan bir protokoldür. 
 ### • FREAK
+
 Bu açıklığa göre istemci, ithal RSA anahtarı içeren şifre paketleri ile el sıkışmayı kabul etmektedir. İstemci başlangıçta bu şifre paketlerini önermemiş olsa dahi sunucunun isteği ile tercih etmektedir. 
 ### • Logjam
+
 İthal şifre paketlerinin kullanmaktadır. Ancak Logjam, hem saldırı senaryosu hem de Diffie-Hellman’ı hedef almasından ötürü kritik bir saldırıdır.
 ### • DROWN
+
 DROWN saldırısı genel hâli ile Bleichenbacher saldırısının geliştirilmiş hâli kullanılarak ve birtakım protokol açıklıkları kullanılarak gerçekleştirilen bir saldırıdır. 2048-bit uzunluğundaki bir RSA TLS şifreli metnini çözebilmek için saldırganın, 1000 adet TLS el sıkışmasını ele geçirmesi, 40000 adet SSLv2 bağlantısı gerçeklemesi ve toplamda 2 üssü 50 çevrim dışı işlem yapması gerekir.
 
 ## sslsniff Nedir?
@@ -664,6 +676,41 @@ ssh tünelleme ile bir ağ üzerindeki tüm trafik şifreli bir şekilde bir ba�
 
 ## SSH Kullanarak Firewall/IPS/ Atlatma İşlemleri Nasıl Yapılır?
 
-Bir pentest yapılan kurumda ağda dışarıya iletişim belirli portlar haricinde kısıtlanmıştır. Bunu aşabilmek için de açık olan bir port üzerinden dışarıya SSH tünel kurulumu yapılmaktadır. Yada bir kurum kendisine test yapılmasını istediği zaman hangi IP adresleri üzerinden denemeler yapıldığını bilmek istediğinden ve duruma göre IPS/Firewall/WAF sistemlerinden kendisine test yapılan sistemlerden özel erişim sağlanmasına izin vermektedir. Pentest ekibi birden fazla kişiden oluşuyorsa bunlar aynı IP adresi üzerinden çıkış yapabilmek için çıkış IP adresi yada VPS server kullanabilirler ve bu VPS server eğer linuxta ise birden fazla kişi bu servera bağlanarak sızma testini gerçekleştirebilirler. 
+Bir pentest yapılan kurumda ağda dışarıya iletişim belirli portlar haricinde kısıtlanmıştır. Bunu aşabilmek için de açık olan bir port üzerinden dışarıya SSH tünel kurulumu yapılmaktadır. Yada bir kurum kendisine test yapılmasını istediği zaman hangi IP adresleri üzerinden denemeler yapıldığını bilmek istediğinden ve duruma göre IPS/Firewall/WAF sistemlerinden kendisine test yapılan sistemlerden özel erişim sağlanmasına izin vermektedir. Pentest ekibi birden fazla kişiden oluşuyorsa bunlar aynı IP adresi üzerinden çıkış yapabilmek için çıkış IP adresi yada VPS server kullanabilirler ve bu VPS server eğer linuxta ise birden fazla kişi bu servera bağlanarak sızma testini gerçekleştirebilirler. Bunun için SSHuttle aracını kullanabiliriz. Proxy sunucusu kurulumu yapılır.
+
+![on](https://user-images.githubusercontent.com/55113204/118418353-cc26c100-b6c0-11eb-8c59-b7e72258f63e.PNG)
+
+ Daha sonra atlama işlemi için aşağıdaki gibi bir syntax yazılabilir.
+ 
+![onn](https://user-images.githubusercontent.com/55113204/118418393-ef517080-b6c0-11eb-9f8b-b58694c44a79.PNG)
+
+## SSH Tünelleme ile İçerik Filtreleme Sistemlerini Atlatma İşlemleri Nasıl Yapılır ?
+
+rootshell.be gibi 443. portta çalışan ve SSH port Forwarding’e açık  bir SSH servisi sunuyor. Bu siteye kaydolarak ve Putty gibi bir araç kullanarak filtreleme sistemlerinden tünelleme yapabilirsiniz.
+
+![dokuz](https://user-images.githubusercontent.com/55113204/118418929-1dd04b00-b6c3-11eb-953f-6e18732eec04.PNG)
+
+![sekiz](https://user-images.githubusercontent.com/55113204/118418934-232d9580-b6c3-11eb-89ba-64cfa48727d9.PNG)
+
+Daha sonra netstat -an | find "8080" komutunu girip çıktı aldığımızda 127.0.0.1 ağında TCP ile dinleme yapıldığını görmekteyiz. Son olarak da kullanılan browserdan socks proxy kısmına "127.0.0.1 8080" yapılandırıması yapılarak browser kapatılıp açılır ve işlem son bulur.
+
+## Sahte SSL Sertifikaları Nasıl Tespit Edilir ?
+
+* Host adı doğrulanması,
+
+* Tüm sertifika zincirinin imzalarını doğrulama,
+
+* Her sertifika için meta veriler üzerinde ek kontroller yapma,
+
+* Sertifikanın süresinin dolup dolmadığı veya henüz geçerli olup olmadığı, "politika kısıtlamaları", "anahtar kullanımları", "genişletilmiş anahtar kullanımları" gibi birçok ek şeyi kontrol edilmesi,
+
+* Sertifikayı düzenleyenden sertifikanın public anahtarını alınması ve bu public anahtarı kullanarak doğrulanacak sertifikanın imzasını doğrulanabilmesi,
+
+* Sertifikalar güven zinciri diye birbirlerini takip ettiklerinden dolayı güvenilen bir veya daha fazla yayıncıdan oluşan bir zincire sahiptir ve Tarayıcılar ve neredeyse tüm SSL sertifika kütüphaneleri bu zincir kontrolünü yapar veya en azından seçeneği sunar. Sahte sertifikalar bu denetimden başarısız olabilmesi,
+
+* İmzalı root sertifikasının default olarak güvendiği sertifikalar arasında olup olmadığının kontrol edilmesi ile SSL sertifikarının sahte olup olmadığı tespit edilebilir.
+
+
+
 
 **¯\\\_(ツ)\_/¯**

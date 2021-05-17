@@ -460,6 +460,7 @@ Bunun için birinci yol ngrep komutu ile olur. Bunun nasıl yapıldığını yuk
 ![yeni8](https://user-images.githubusercontent.com/55113204/117879335-85475e80-b2af-11eb-8ab7-9f9b84347191.PNG)
 
 ## Network Forensics Çalışmalarını Atlatma İşlemleri Nasıl Yapılır ?
+
 * Dışa doğru herhangi bir TCP portu açıksa;
 
 •OpenVPN kullanarak doğrudan VPN kurulabilir.

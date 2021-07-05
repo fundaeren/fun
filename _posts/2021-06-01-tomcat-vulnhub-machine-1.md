@@ -109,6 +109,10 @@ Yeap artık tam yetki bizde çünkü biz rootuz artık.
 Bir sonraki makine çözümünde görüşmek üzere :)
 
 
+**¯\\\_(ツ)\_/¯**
+
+
+
 
 
 

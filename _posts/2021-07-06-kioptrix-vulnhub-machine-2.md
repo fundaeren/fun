@@ -70,15 +70,6 @@ Reverse shell için bir payload seçiyorum ve exploit diyip shell alıyorum.
 ![k2_3](https://user-images.githubusercontent.com/55113204/124678745-d9e01200-decb-11eb-9fa5-f59b9daa34d6.PNG)
 
 
-### YÖNTEM 2 FTP KULLANARAK DOSYA AKTARIMI
-
-Bu yöntem için ilk olarak ftp server kuralım. Ve çalıştıralım.
-
-![k3_1](https://user-images.githubusercontent.com/55113204/124679235-ba95b480-decc-11eb-8437-684ee578ff5f.PNG)
-
-
-
-
 
 
 

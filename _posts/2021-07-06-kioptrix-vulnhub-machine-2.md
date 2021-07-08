@@ -72,6 +72,8 @@ Reverse shell için bir payload seçiyorum ve exploit diyip shell alıyorum.
 
 
 
+**¯\\\_(ツ)\_/¯**
+
 
 
 

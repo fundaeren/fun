@@ -100,8 +100,7 @@ Görünen o ki artık root olduk. İşte makinenin sonuna geldik. Güzel bilgile
 
 
 
-¯\_(ツ)_/¯
-
+**¯\\\_(ツ)\_/¯**
 
 
 

@@ -95,7 +95,12 @@ sudo -l ile yetkilerin olanların dizinlerini bulalım. tüm hepsinde yetkili ol
 
 ![first_blood_22](https://user-images.githubusercontent.com/55113204/124842497-52aca000-df98-11eb-9f4b-77d96ecaa622.PNG)
 
-Görünen o ki artık root olduk. İşte makinenin sonuna geldik. Güzel bilgilendirici bir makineydi. Tabi yönlendirmesinden dolayı kolay oldu bizim için :D Ne diyelim, bir dahaki makinede görüşmek üzere o zaman byee :DD
+
+Görünen o ki artık root olduk. 
+
+![first_blood_23](https://user-images.githubusercontent.com/55113204/124843016-a8ce1300-df99-11eb-9a0e-d030a8cbc8f4.PNG)
+
+İşte makinenin sonuna geldik. Güzel bilgilendirici bir makineydi. Tabi yönlendirmesinden dolayı kolay oldu bizim için :D Ne diyelim, bir dahaki makinede görüşmek üzere o zaman byee :DD
 
 
 

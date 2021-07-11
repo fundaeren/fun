@@ -118,6 +118,13 @@ ile gerçekleştirilmektedir.
 
 ![10](https://user-images.githubusercontent.com/55113204/125143966-09d62200-e125-11eb-9586-0dbce83e0b7c.PNG)
 
+### Kriptografi 3 önemli yapıtaşından oluşmaktadır. 
+
+*** Confidentiality (Gizlilik)
+*** Data Integrity (Veri Bütünlüğü)
+*** Authentication (Kimlik Doğrulama)
+
+
 ## RSA ALGORİTMASI
 
 Genel olarak şifrelenmesi asal sayılar üzerinden gidilerek yapılmaktadır. Gizli p ve q isminde büyük değerli asal sayılar seçilir. Daha sonra e sayısı belirlenir ki bunun şartı
@@ -125,6 +132,50 @@ ise p x q dan küçük olan ve (p-1) x ( q-1) değeri ile aralarında asal olan 
 mod (p-1) x (q-1) e göre e değerinin tersidir. 
 
 ![18](https://user-images.githubusercontent.com/55113204/125144773-97b30c80-e127-11eb-8dfc-adc8edddbaf9.PNG)
+
+
+
+## TEK YÖNLÜ FONKSİYONLAR
+
+## SHA2 ALGORİTMASI
+
+Tek bir algoritma değildir. İçinde 6 farklı algoritmaya sahiptir. SHA (Secure Hash Algorithm) algoritması ismini çıktı uzunluğundan alır. Yani SHA256 algoritması 224 bittir.
+SHA224 ve SHA256'da 512 bitlik girişler işlemlere tabi tutulur. 16x32'lik diziler olmak üzere 8 parçaya bölünür. Ve bu parçalara işlemler başlatılır. Daha sonrasında 512 bitlik işlem blogunun sonuna işlemin boyutu mesaj olarak eklenir. Bu SHA224 ve SHA256 algoritmasında işleme giren kısıma "chunk" denir ve her bir chunk 64 hashi döngüde hesaplanmaktadır. Eğer blok 512 bitten küçük ise blok sonuna padding (ekleme) işlemi yapılmaktadır. 508 bitlik bir blok varsa bunun son 4 biti 1000 şeklinde padlenir. Yani ilk olarak 1 koyulur geriye kalanlara da 0 eklenir. Bunun sebebi 512 bite tamamlamaktır. 
+
+![hash](https://user-images.githubusercontent.com/55113204/125205300-42434080-e28a-11eb-99c8-1187de361abf.PNG)
+
+## SHA3 ALGORİTMASI
+
+SHA Algoritmalarının en güvenilir ve en güncel olan versiyonudur. İç yapısı olarak SHA1 ve SHA2 den farklı olarak yapılmıştır. Bu algoritma ayrıca saniyedeki çıktı sayısının yüksek olması düşük enerji tüketmesinden dolayı tercih edilmektedir. SHA3 Algoritmasında sponge method (sünger methodu) kullanılmıştır. 
+Temel olarak Absorbing (durum sönümleme) ve Squeezing (sıkıştırma) olmak üzere iki durumdan oluşmaktadır.
+
+![has2](https://user-images.githubusercontent.com/55113204/125206345-779e5d00-e28f-11eb-9eef-1d49fea0bdaf.PNG)
+
+Aslında r ve c toplam boyutu her zaman 1600 bite eşittir. Ama işleme giren mesaj boyutu r dğerine eşit olmak zorundadır. Bu demek oluyor ki chunk boyutu çıktı boyutuna göre değişmektedir. 
+
+![has3](https://user-images.githubusercontent.com/55113204/125206097-08743900-e28e-11eb-94a8-eaeb34fd5d60.PNG)
+
+Fonksiyon sonucunda çıkan çıktının tersinin elde edilmesi zor olmasından ve her sonucun aynı algoritma için aynı boyutta çıkması için hash fonksiyonlarının güvenliği önem kazanmıştır. 
+
+Veri bütünlüğünü doğrulama, verinin tam alındığını onaylamak için checksum karşılaştırması, digital imzalar, blockchain teknolojileri en çok kullanılan kullanım alanlarıdır.
+
+Bu algoritmaya yapılan saldırılardan biri dictionary (sözlük) saldırılarıdır. Eğer sizin elinde bir SHA256'nın bir hash değeri varsa, bu hash değerini sözlük içinde arattığınızda tersini bulmanız mümkündür. Bundan dolayı karmaşık şifreler koymak önemlidir.
+
+Diğer bir saldırı ise brute force (kaba kuvvet) saldırılarıdır. Bu saldırılarda elimizde bir özet değeri vardır. Bu özet değerleri çeşitli CPU ve GPU'larla çok fazla özet değeri girdileri ile karşılaştırılır. Bu saldırı çeşidinde önemli olan şey işlemi gerçekleştiren işlemcinin ne kadar güçlü olmasıdır. Bu işlem MD5 gibi 128 bitlik çıkışı olan, günümüz şartlarında küçük çıktı boyutu olarak kabul edilen algoritmalar için kabul edilmektedir. 256 bit ve fazlası olan çıktısı olan algoritmalarda başarılı olması zordur. 
+
+Collusion (çarpışma) atakları, her ne kadar düşük ihtimal de olsa iki farklı girdinin özet değerlerinin aynı olma olasılığından doğan ataklardır. Çarpışma olasılıklarını azaltmak için çeşitli matematiksel yöntemlerden en basiti olarak çıkıştaki bit sayısını arttırmaktadır. 
+
+
+
+
+
+
+**¯\\\_(ツ)\_/¯**
+
+
+
+
+
 
 
 

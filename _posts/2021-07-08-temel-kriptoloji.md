@@ -157,13 +157,15 @@ Aslında r ve c toplam boyutu her zaman 1600 bite eşittir. Ama işleme giren me
 
 Fonksiyon sonucunda çıkan çıktının tersinin elde edilmesi zor olmasından ve her sonucun aynı algoritma için aynı boyutta çıkması için hash fonksiyonlarının güvenliği önem kazanmıştır. 
 
+
+
 Veri bütünlüğünü doğrulama, verinin tam alındığını onaylamak için checksum karşılaştırması, digital imzalar, blockchain teknolojileri en çok kullanılan kullanım alanlarıdır.
 
-Bu algoritmaya yapılan saldırılardan biri dictionary (sözlük) saldırılarıdır. Eğer sizin elinde bir SHA256'nın bir hash değeri varsa, bu hash değerini sözlük içinde arattığınızda tersini bulmanız mümkündür. Bundan dolayı karmaşık şifreler koymak önemlidir.
+* Bu algoritmaya yapılan saldırılardan biri dictionary (sözlük) saldırılarıdır. Eğer sizin elinde bir SHA256'nın bir hash değeri varsa, bu hash değerini sözlük içinde arattığınızda tersini bulmanız mümkündür. Bundan dolayı karmaşık şifreler koymak önemlidir.
 
-Diğer bir saldırı ise brute force (kaba kuvvet) saldırılarıdır. Bu saldırılarda elimizde bir özet değeri vardır. Bu özet değerleri çeşitli CPU ve GPU'larla çok fazla özet değeri girdileri ile karşılaştırılır. Bu saldırı çeşidinde önemli olan şey işlemi gerçekleştiren işlemcinin ne kadar güçlü olmasıdır. Bu işlem MD5 gibi 128 bitlik çıkışı olan, günümüz şartlarında küçük çıktı boyutu olarak kabul edilen algoritmalar için kabul edilmektedir. 256 bit ve fazlası olan çıktısı olan algoritmalarda başarılı olması zordur. 
+* Diğer bir saldırı ise brute force (kaba kuvvet) saldırılarıdır. Bu saldırılarda elimizde bir özet değeri vardır. Bu özet değerleri çeşitli CPU ve GPU'larla çok fazla özet değeri girdileri ile karşılaştırılır. Bu saldırı çeşidinde önemli olan şey işlemi gerçekleştiren işlemcinin ne kadar güçlü olmasıdır. Bu işlem MD5 gibi 128 bitlik çıkışı olan, günümüz şartlarında küçük çıktı boyutu olarak kabul edilen algoritmalar için kabul edilmektedir. 256 bit ve fazlası olan çıktısı olan algoritmalarda başarılı olması zordur. 
 
-Collusion (çarpışma) atakları, her ne kadar düşük ihtimal de olsa iki farklı girdinin özet değerlerinin aynı olma olasılığından doğan ataklardır. Çarpışma olasılıklarını azaltmak için çeşitli matematiksel yöntemlerden en basiti olarak çıkıştaki bit sayısını arttırmaktadır. 
+* Collusion (çarpışma) atakları, her ne kadar düşük ihtimal de olsa iki farklı girdinin özet değerlerinin aynı olma olasılığından doğan ataklardır. Çarpışma olasılıklarını azaltmak için çeşitli matematiksel yöntemlerden en basiti olarak çıkıştaki bit sayısını arttırmaktadır. 
 
 
 

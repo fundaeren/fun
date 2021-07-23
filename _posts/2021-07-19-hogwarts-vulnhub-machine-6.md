@@ -74,8 +74,15 @@ Bu şekilde draco olduğunu öğrenebiliriz yine. Şimdi içeri girelim.
 duyulan gereklilik üzerine geliştirilen, programa yeni özellikler ekleyen yazılımdır. Plug-inler ana programdan bağımsız çalışamaz. Uygulamalar çok çeşitli nedenlerden dolayı 
 plug-inlere destek verirler.
 
+![hogwarts18](https://user-images.githubusercontent.com/55113204/126223536-4c1df0ef-c355-40db-a5ed-472307544b9c.png)
 
-Devamı Gelecek... biraz dinleneyim bari :)
+Bu temayı kullandığı için bizde bu temayı indirelim.
+
+![hogwarts17](https://user-images.githubusercontent.com/55113204/126223594-b9c6844c-3327-4285-99a3-7be45b7bafab.png)
+
+
+
+
 
 
 

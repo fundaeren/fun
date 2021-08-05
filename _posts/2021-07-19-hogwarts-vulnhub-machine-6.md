@@ -80,6 +80,29 @@ Bu temayı kullandığı için bizde bu temayı indirelim.
 
 ![hogwarts17](https://user-images.githubusercontent.com/55113204/126223594-b9c6844c-3327-4285-99a3-7be45b7bafab.png)
 
+Burada şifreyi görüyorum.
+
+![hog](https://user-images.githubusercontent.com/55113204/128427950-b4464ae1-993e-4e6e-b3f5-7062d399c81a.png)
+
+Çözmek için hangi yöntemi kullanacağımıza bakalım.
+
+![hog2](https://user-images.githubusercontent.com/55113204/128427956-3780d256-3701-4708-9ab6-2ab3d7fe8454.png)
+
+Girişte gördüğümüz kodu çözelim.
+
+![hog3](https://user-images.githubusercontent.com/55113204/128427969-291a2c97-b192-44d9-9975-0c5d0b6c1850.png)
+
+WpScan aracı kullanarak wordpress zaafiyetlerini tarayabiliriz.
+
+![hog4](https://user-images.githubusercontent.com/55113204/128427984-41c59804-ae1d-48d4-8917-6f5dff469d14.png)
+
+Draco kullanıcısının index oflarına ulaştım.
+
+![2021-08-06_011634](https://user-images.githubusercontent.com/55113204/128428390-1493028f-35d8-43a7-9ac2-d4f392c1ff2b.png)
+
+
+**¯\\\_(ツ)\_/¯**
+
 
 
 
